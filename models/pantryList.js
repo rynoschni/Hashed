@@ -19,7 +19,7 @@ class pantryListReturn {
     }
     static async createPantryList(data, theID){
         try{
-            const response = await db.result('INSERT INTO pantry (item, qty, units) VALUES($1, $2, $3, $4);', [data.pantryItems, data.qty, data.unit, theID])
+            const response = await db.result('INSERT INTO pantry (item, qty, units,user_id) VALUES($1, $2, $3, $4);', [data.pantryItems, data.qty, data.unit, theID])
             return response
         }
         catch(error) {

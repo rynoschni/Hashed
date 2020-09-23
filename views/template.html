@@ -12,9 +12,11 @@
                 <nav class="navbar">
                     <div class="container">
                         <div class="navbar-brand">
-                            <a href="/" class="navbar-item">
-                                <h1 class="title">Hashed</h1>
-                            </a>
+                            ${!!is_logged_in ? `<a class="navbar-item" href="/pantry"><h1 class="title">Hashed</h1></a>` : `
+                            <a class="navbar-item" href="/"><h1 class="title">Hashed</h1></a> `}
+                        
+                                ${!!is_logged_in ? `<div class="navbar-item">Hi ${name}</div> <a role="button" class="navbar-item" href="/logout">Logout</a>` : `<a role="button" class="navbar-item" href="/login">Login</a> `}
+                            
                             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenuHeroA">
                                 <span aria-hidden="true"></span>
                                 <span aria-hidden="true"></span>
