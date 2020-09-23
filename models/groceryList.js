@@ -1,11 +1,14 @@
 const db = require("./conn")
 
 class groceryListReturn {
-    constructor (id, to_do, completed, user){
-    this.id = id,
-    this.to_do = to_do,
-    this.completed = completed,
-    this.user = user
+    constructor (id, item, qty, unit, recipe_id, completed, user){
+    this.id = id;
+    this.item = item;
+    this.qty = qty;
+    this.unit = unit;
+    this.recipe_id = recipe_id;
+    this.completed = completed;
+    this.user = user;
     }
     static async getGroceryList(user_id){
         try{
@@ -16,12 +19,12 @@ class groceryListReturn {
             return error.message
         }
     }
-    static async createGroceryList(data){
+    static async createGroceryList(data, theID){
         try{
-            const response = await db.result('INSERT INTO shopping (item, qty, units, recipe_id, completed, user_id) VALUES($1, $2, $3, $4, false, $5);', [data.item, data.qty, data.units, data.recipe_id, data.user_id])
+            const response = await db.result('INSERT INTO shopping (item, qty, units, recipe_id, completed, user_id) VALUES($1, $2, $3, $4, false, $5);', [data.groceries, data.qty, data.unit, data.recipe_id, theID])
             return response
         }
-        catch {
+        catch(error) {
             return error.message
         }
     }

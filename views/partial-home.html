@@ -1,35 +1,7 @@
-<section class="hero is-medium is-danger">
-    <div class="hero-head">
-        <nav class="navbar">
-            <div class="container">
-                <div class="navbar-brand">
-                    <a href="/" class="navbar-item">
-                        <h1 class="title">${title}</h1>
-                    </a>
-                </div>
-                <div id="navbarMenuHeroA" class="navbar-menu">
-                    <div class="navbar-end">
-                        <a href="/" class="navbar-item is-active">
-                            Home
-                        </a>
-                        <a class="navbar-item">
-                            Groceries
-                        </a>
-                        <a class="navbar-item">
-                            Recipes
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </div>
-</section>
-
-<br />
 <section>
     <div class="columns is-centered">
         <div class="column content is-half has-text-centered">
-            <form action="/users/login" method="POST" class="form">
+            <form action="/login" method="POST" class="form">
                 <div class="field">
                     <p class="control has-icons-left has-icons-right">
                         <input class="input" type="email" placeholder="Email" name="email">
@@ -57,6 +29,7 @@
                     </p>
                 </div>
             </form>
+            <br />
             <p>Not Already a User?<a href="/signup"> Sign Up</a></p>
         </div>
     </div>

@@ -21,16 +21,16 @@ router.get('/logout', (req, res) =>{
 
 router.post("/", (req, res)=>{
     const {  email , password } = req.body
-    const userInstance = new User(null, null, null, email, password);
+    const userInstance = new User(null, null, email, password);
     userInstance.login().then(response => {
         req.session.is_logged_in = response.isValid;
         console.log(req.session.is_logged_in)
         if (!!response.isValid){
-            const {first_name, last_name, user_id}= response;
-            req.session.name = `${first_name} ${last_name}`;
+            const {name, user_id}= response;
+            req.session.name = `${name}`;
             req.session.user_id = user_id;
             console.log("session: ", req.session)
-            res.redirect('/todo')
+            res.redirect('/grocery')
         }else {
             res.sendStatus(401)
         }

@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Express To Do App | ${title}</title>
+        <title>Express Grocery App</title>
         <meta name='viewport' content="width=device-width initial-scale = 1"/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
         <link rel="stylesheet" href="/css/styles.css">
     </head>
     <body>
+        <section class="hero is-medium is-danger">
+            <div class="hero-head">
+                <nav class="navbar">
+                    <div class="container">
+                        <div class="navbar-brand">
+                            <a href="/" class="navbar-item">
+                                <h1 class="title">Grocery and Recipe App</h1>
+                            </a>
+                        </div>
+                        <div id="navbarMenuHeroA" class="navbar-menu">
+                            <div class="navbar-end">
+                                <a href="/" class="navbar-item is-active">
+                                    Home
+                                </a>
+                                <a href="/grocery" class="navbar-item">
+                                    Groceries
+                                </a>
+                                <a href="recipes" class="navbar-item">
+                                    Recipes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </section>
         <main>${partial}</main>
         <script src="https://kit.fontawesome.com/b91ebdb5e6.js" crossorigin="anonymous"></script>
-        <script src="../public/scripts/index.js"></script>   
+        <script src="../scripts/index.js"></script>   
     </body>
 </html>

@@ -21,12 +21,12 @@ router.get('/', async (req, res) =>{
 
 router.post('/', async (req, res) => {
     console.log(req.body)
-    const { first_name, last_name, email, password } = req.body;
+    const { name, email, password } = req.body;
     //SALTing the HASH
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(password, salt)
 
-    const userInstance = new User(null, first_name, last_name, email, hash)
+    const userInstance = new User(null, name, email, hash)
     userInstance.save().then(response =>{
         if (response.id !== undefined){
             res.redirect('/login')

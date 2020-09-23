@@ -1,36 +1,46 @@
-<section class="hero is-medium is-danger">
-    <div class="hero-head">
-        <nav class="navbar">
-            <div class="container">
-                <div class="navbar-brand">
-                    <a href="/" class="navbar-item">
-                        <h1 class="title">${title}</h1>
-                    </a>
-                </div>
-                <div id="navbarMenuHeroA" class="navbar-menu">
-                    <div class="navbar-end">
-                        <a href="/" class="navbar-item is-active">
-                            Home
-                        </a>
-                        <a class="navbar-item">
-                            Groceries
-                        </a>
-                        <a class="navbar-item">
-                            Recipes
-                        </a>
+<h1 class="title">${title}</h1>
+<section>
+    <div class="columns is-centered">
+        <div class="column content is-half has-text-centered">
+            <form action="/signup" method="POST" class="form">
+                <div class="field">
+                    <label class="label">Full Name</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Full Name" name="name">
                     </div>
                 </div>
-            </div>
-        </nav>
-    </div>
-</section>
 
-<h1>${title}</h1>
-<form action="/signup" method="POST">
-    <input type="text" name="first_name" value="" placeholder="First Name">
-    <input type="text" name="last_name" value="" placeholder="Last Name">
-    <input type="email" name="email" value="" placeholder="Email">
-    <input type="password" name="password" value="" placeholder="Password">
-    <input type="submit" name="submit">
-</form>
-<!-- <a href="/">Home</a> -->
+                <div class="field">
+                    <label class="label">Email</label>
+                    <div class="control has-icons-left has-icons-right">
+                        <input class="input" type="email" placeholder="you@email.com" name="email">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Password</label>
+                    <p class="control has-icons-left">
+                        <input class="input" type="password" placeholder="Password" name="password">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </p>
+                </div>
+
+                <div class="field is-grouped is-grouped-centered">
+                    <div class="control">
+                        <button type="submit" class="button is-link">Sign Up</button>
+                    </div>
+                    <div class="control">
+                        <button class="button is-link is-light">Cancel</button>
+                    </div>
+                </div>
+            </form>
+            <br />
+            <p>Already a User?<a href="/login"> Log In</a></p>
+        </div>
+    </div>
+    <section>

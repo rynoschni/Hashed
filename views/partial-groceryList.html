@@ -1,66 +1,53 @@
-<section class="hero is-medium is-danger">
-    <div class="hero-head">
-        <nav class="navbar">
-            <div class="container">
-                <div class="navbar-brand">
-                    <a href="/" class="navbar-item">
-                        <h1 class="title">${title}</h1>
-                    </a>
-                </div>
-                <div id="navbarMenuHeroA" class="navbar-menu">
-                    <div class="navbar-end">
-                        <a href="/" class="navbar-item is-active">
-                            Home
-                        </a>
-                        <a class="navbar-item">
-                            Groceries
-                        </a>
-                        <a class="navbar-item">
-                            Recipes
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </nav>
+<section>
+    <div class="columns is-centered">
+        <div class="column content is-half has-text-centered">
+            <h2>Shopping List</h2>
+            <form action='/grocery' method="POST">
+                <input type="text" value='' name="qty" placeholder="qty" required>
+                <select value="" name="unit">
+                        <option name="unit" value="tbsp">tbsp</option>
+                        <option name="unit" value="tsp">tsp</option>
+                        <option name="unit" value="cup">cup</option>
+                        <option name="unit" value="each">each</option>
+                </select>
+                <input type='text' value='' name='groceries' placeholder="What else?" required>
+                <input type='text' value='' name='recipe_id' placeholder="Recipe-ID">
+                <input type='submit' name="add" value="Add">
+            </form>
+            <section>
+                <h4>Still Out There</h4>
+                <form action="/grocery" method="POST">
+                    <ul>
+                        ${list.map(grocery =>{
+                            if (!grocery.completed){
+                                return `<li>
+                                    <input type="checkbox" class="todo" id="${grocery.id}" name ="id" value="${grocery.id}">
+                                    <label for="${grocery.id}">${grocery.qty} ${grocery.units} ${grocery.item}</label>
+                                </li>`
+                            }
+                        }).join('')}
+                    </ul>
+                    <input type="submit" name="update" value="Update">
+                    <input type="submit" name="delete" value="Delete">
+                </form>
+            </section>
+            <section>
+                <form action='/grocery' method="POST" >
+                    <h4>All Done!</h4>
+                    <ul>
+                        ${list.map(grocery =>{
+                            if (grocery.completed){
+                                return `<li>
+                                    <input type="checkbox" class="todo" id="${grocery.id}" name ="id" value="${grocery.id}" checked>
+                                    <label for="${grocery.id}"><del>${grocery.qty} ${grocery.units} ${grocery.item}<del></label>
+                                </li>`
+                            }
+                        }).join('')}
+                    </ul>
+                    <input type="submit" name="undo" value="Undo">
+                </form>
+            </section>
+            <a href="/">Home</a>
+        </div>
     </div>
-</section>
-
-<h1>Shopping List</h1>
-<form action='/grocery' method="POST">
-    <input type='text' value='' name='groceries' placeholder="What else?" required>
-    <input type='submit' name="add" value="Add">
-</form>
 <section>
-    <h2>Still Out There</h2>
-    <form action="/grocery" method="POST">
-        <ul>
-            ${list.map(item =>{
-                if (!item.completed){
-                    return `<li>
-                        <input type="checkbox" class="todo" id="${item.id}" name ="id" value="${item.id}">
-                        <label for="${item.id}">${item.to_do}</label>
-                    </li>`
-                }
-            }).join('')}
-        </ul>
-        <input type="submit" name="update" value="Update">
-        <input type="submit" name="delete" value="Delete">
-    </form>
-</section>
-<section>
-    <form action='/grocery' method="POST" >
-        <h2>All Done!</h2>
-        <ul>
-            ${list.map(item =>{
-                if (item.completed){
-                    return `<li>
-                        <input type="checkbox" id="${item.id}" name ="id" value="${item.id}" checked>
-                        <label for="${item.to_do}"><del>${item.to_do}</del></label>
-                    </li>`
-                }
-            }).join('')}
-        </ul>
-        <input type="submit" name="undo" value="Undo">
-    </form>
-</section>
-<a href="/">Home</a>
