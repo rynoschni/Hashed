@@ -42,8 +42,10 @@ server.listen(port, hostname, () => {
 const rootController = require('./routes/index')
 const userController = require('./routes/user')
 const shoppingController = require('./routes/groceryList')
+const pantryController = require('./routes/pantryList')
 
 app.use('/', rootController)
 app.use('/login', rootController)
 app.use('/signup', userController)
 app.use('/grocery', shoppingController)
+app.use('/pantry', pantryController)
