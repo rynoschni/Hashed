@@ -58,10 +58,10 @@
                     </dl>
                     <div class="field is-grouped is-grouped-centered">
                         <div class="control">
-                            <button class="button is-link" type="submit" name="update" value="Update">Update</button>
+                            <button class="button is-link" type="submit" name="update" value="Update" ${list.filter(grocery => !grocery.completed).length ? '' : 'disabled'}>Update</button>
                         </div>
                         <div class="control">
-                            <button class="button is-link is-danger" type="submit" name="delete" value="Delete">Delete</button>
+                            <button class="button is-link is-danger" type="submit" name="delete" value="Delete" ${list.filter(grocery => !grocery.completed).length ? '' : 'disabled'}>Delete</button>
                         </div>
                     </div>
                 </form>
@@ -74,15 +74,19 @@
                         ${list.map(grocery =>{
                             if (grocery.completed){
                                 return `<li>
-                                    <input type="checkbox" class="todo" id="${grocery.id}" name ="id" value="${grocery.id}" checked>
+                                    <input type="checkbox" class="todo" id="${grocery.id}" name ="id" value="${grocery.id}">
                                     <label for="${grocery.id}"><del>${grocery.qty} ${grocery.units} ${grocery.item}<del></label>
                                 </li>`
                             }
                         }).join('')}
                     </dl>
-                    <div class="field">
+                    <div class="field is-grouped is-grouped-centered">
                         <div class="control">
-                            <button type='submit' name="undo" value="Undo" class="button is-link">Undo</button>
+                            <button type='submit' name="undo" value="Undo" class="button is-link" ${list.filter(grocery => grocery.completed).length ? '' : 'disabled'}>Move to Shopping List</button>
+                        </div>
+                        <div class="control">
+                            <button type='submit' name="pantry" value="Pantry" class="button is-link" ${list.filter(grocery=>
+                                grocery.completed).length ? '' : 'disabled'}>Move to Pantry</button>
                         </div>
                     </div>
                 </form>
