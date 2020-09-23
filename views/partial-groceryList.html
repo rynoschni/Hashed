@@ -17,7 +17,7 @@
             <section>
                 <h4>Still Out There</h4>
                 <form action="/grocery" method="POST">
-                    <ul>
+                    <dl style="list-style-type: none;"> 
                         ${list.map(grocery =>{
                             if (!grocery.completed){
                                 return `<li>
@@ -26,7 +26,7 @@
                                 </li>`
                             }
                         }).join('')}
-                    </ul>
+                    </dl>
                     <input type="submit" name="update" value="Update">
                     <input type="submit" name="delete" value="Delete">
                 </form>
