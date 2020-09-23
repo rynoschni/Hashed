@@ -1,56 +1,16 @@
 <section>
-    <div class="columns is-centered">
+    <div class="columns is-mobile is-centered">
         <div class="column content is-one-third has-text-centered">
-            <h2>Shopping List</h2>
-            <form action='/grocery' method="POST">
-                <div class="field">
-                    <div class="control">
-                        <input class="input" type='text' value='' name='groceries' placeholder="Grocery Item" required>
-                    </div>
-                </div>
-                
-                <div class="field">
-                    <div class="control">
-                        <input class="input" type="text" value='' name="qty" placeholder="qty" required>
-                    </div>
-                </div>
-                
-                <div class="field">
-                    <label class="label">Units</label>
-                    <div class="control">
-                        <div class="select">
-                            <select value="" name="unit">
-                                <option name="unit" value="each" selected>each</option>
-                                <option name="unit" value="tbsp">tbsp</option>
-                                <option name="unit" value="tsp">tsp</option>
-                                <option name="unit" value="cup">cup</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="field">
-                    <div class="control">
-                        <input class="input" type='text' value='' name='recipe_id' placeholder="Recipe-ID">
-                    </div>
-                </div>
-                
-                <div class="field">
-                    <div class="control">
-                        <button type='submit' name="add" value="Add" class="button is-link">Add</button>
-                    </div>
-                </div>
-            </form>
+            <h2>Pantry List</h2
             <br />
             <section>
-                <h4>Still Out There</h4>
                 <form action="/grocery" method="POST">
                     <dl style="list-style-type: none;"> 
-                        ${list.map(grocery =>{
-                            if (!grocery.completed){
+                        ${list.map(pantryItem =>{
+                            if (!pantryItem.completed){
                                 return `<li>
-                                    <input type="checkbox" class="todo" id="${grocery.id}" name ="id" value="${grocery.id}">
-                                    <label for="${grocery.id}">${grocery.qty} ${grocery.units} ${grocery.item}</label>
+                                    <input type="checkbox" class="todo" id="${pantryItem.id}" name ="id" value="${pantryItem.id}">
+                                    <label for="${pantryItem.id}">${pantryItem.qty} ${pantryItem.units} ${pantryItem.item}</label>
                                 </li>`
                             }
                         }).join('')}
@@ -67,26 +27,38 @@
             </section>
             <br />
             <section>
-                <form action='/grocery' method="POST" >
-                    <h4>All Done!</h4>
-                    <ul>
-                        ${list.map(grocery =>{
-                            if (grocery.completed){
-                                return `<li>
-                                    <input type="checkbox" class="todo" id="${grocery.id}" name ="id" value="${grocery.id}" checked>
-                                    <label for="${grocery.id}"><del>${grocery.qty} ${grocery.units} ${grocery.item}<del></label>
-                                </li>`
-                            }
-                        }).join('')}
-                    </ul>
-                    <div class="field">
-                        <div class="control">
-                            <button type='submit' name="undo" value="Undo" class="button is-link">Add</button>
+            <form action='/pantry' method="POST">
+                <div class="field">
+                    <div class="control">
+                        <input class="input" type='text' value='' name='pantryItems' placeholder="Pantry Item" required>
+                    </div>
+                </div>
+                
+                <div class="field">
+                    <div class="control">
+                        <input class="input" type="text" value='' name="qty" placeholder="qty" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Units</label>
+                    <div class="control">
+                        <div class="select">
+                            <select value="" name="unit">
+                                <option name="unit" value="each" selected>each</option>
+                                <option name="unit" value="tbsp">tbsp</option>
+                                <option name="unit" value="tsp">tsp</option>
+                                <option name="unit" value="cup">cup</option>
+                            </select>
                         </div>
                     </div>
-                </form>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button type='submit' name="add" value="Add" class="button is-link">Add</button>
+                    </div>
+                </div>
+            </form>
             </section>
-            <a href="/">Home</a>
         </div>
     </div>
 <section>

@@ -33,19 +33,21 @@ app.use(
     })
 )
 
-const server = http.createServer(app)
+const server = http.createServer(app);
 
 server.listen(port, hostname, () => {
     console.log(`Listening at ${hostname}:${port}`)
-})
+});
 
-const rootController = require('./routes/index')
-const userController = require('./routes/user')
-const shoppingController = require('./routes/groceryList')
-const pantryController = require('./routes/pantryList')
+const rootController = require('./routes/index');
+const userController = require('./routes/user');
+const shoppingController = require('./routes/groceryList');
+const pantryController = require('./routes/pantryList');
+const updateController = require('./routes/updateList');
 
-app.use('/', rootController)
-app.use('/login', rootController)
-app.use('/signup', userController)
-app.use('/grocery', shoppingController)
-app.use('/pantry', pantryController)
+app.use('/', rootController);
+app.use('/login', rootController);
+app.use('/signup', userController);
+app.use('/grocery', shoppingController);
+app.use('/pantry', pantryController);
+app.use('/update', updateController);

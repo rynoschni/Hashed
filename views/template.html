@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Express Grocery App</title>
-        <meta name='viewport' content="width=device-width initial-scale = 1"/>
+        <title>Hashed</title>
+        <meta name="viewport" content="width=device-width initial-scale = 1"/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
         <link rel="stylesheet" href="/css/styles.css">
     </head>
@@ -13,19 +13,25 @@
                     <div class="container">
                         <div class="navbar-brand">
                             <a href="/" class="navbar-item">
-                                <h1 class="title">Grocery and Recipe App</h1>
+                                <h1 class="title">Hashed</h1>
+                            </a>
+                            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenuHeroA">
+                                <span aria-hidden="true"></span>
+                                <span aria-hidden="true"></span>
+                                <span aria-hidden="true"></span>
+                                <span aria-hidden="true"></span>
                             </a>
                         </div>
                         <div id="navbarMenuHeroA" class="navbar-menu">
                             <div class="navbar-end">
-                                <a href="/" class="navbar-item is-active">
+                                <a href="/" class="navbar-item">
                                     Home
                                 </a>
                                 <a href="/grocery" class="navbar-item">
                                     Groceries
                                 </a>
-                                <a href="recipes" class="navbar-item">
-                                    Recipes
+                                <a href="/pantry" class="navbar-item">
+                                    Pantry
                                 </a>
                             </div>
                         </div>
@@ -34,6 +40,14 @@
             </div>
         </section>
         <main>${partial}</main>
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <a href="/">Home</a>
+                <br />
+                <br />
+                <p><strong>Built</strong> by <a href="https://github.com/Mjheverett/recipe_grocery">Hashed</a>.</p>
+            </div>
+        </footer>
         <script src="https://kit.fontawesome.com/b91ebdb5e6.js" crossorigin="anonymous"></script>
         <script src="../scripts/index.js"></script>   
     </body>

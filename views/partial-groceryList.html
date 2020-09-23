@@ -1,5 +1,6 @@
+<br />
 <section>
-    <div class="columns is-centered">
+    <div class="columns is-mobile is-centered">
         <div class="column content is-one-third has-text-centered">
             <h2>Shopping List</h2>
             <form action='/grocery' method="POST">
@@ -11,7 +12,7 @@
                 
                 <div class="field">
                     <div class="control">
-                        <input class="input" type="text" value='' name="qty" placeholder="qty" required>
+                        <input class="input" type="text" value='' name="qty" placeholder="Quantity" required>
                     </div>
                 </div>
                 
@@ -69,7 +70,7 @@
             <section>
                 <form action='/grocery' method="POST" >
                     <h4>All Done!</h4>
-                    <ul>
+                    <dl style="list-style-type: none;">
                         ${list.map(grocery =>{
                             if (grocery.completed){
                                 return `<li>
@@ -78,15 +79,14 @@
                                 </li>`
                             }
                         }).join('')}
-                    </ul>
+                    </dl>
                     <div class="field">
                         <div class="control">
-                            <button type='submit' name="undo" value="Undo" class="button is-link">Add</button>
+                            <button type='submit' name="undo" value="Undo" class="button is-link">Undo</button>
                         </div>
                     </div>
                 </form>
             </section>
-            <a href="/">Home</a>
         </div>
     </div>
 <section>
