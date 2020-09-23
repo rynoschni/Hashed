@@ -9,7 +9,7 @@ router.get('/', async (req, res) =>{
             title:'Welcome',
         },
         partials: {
-            partial:'partial-login'
+            partial:'partial-home'
         }
     })
 })

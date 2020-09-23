@@ -41,9 +41,9 @@ server.listen(port, hostname, () => {
 
 const rootController = require('./routes/index')
 const userController = require('./routes/user')
-const todoController = require('./routes/todo')
+const shoppingController = require('./routes/groceryList')
 
 app.use('/', rootController)
 app.use('/login', rootController)
 app.use('/signup', userController)
-app.use('/todo', todoController)
+app.use('/grocery', shoppingController)

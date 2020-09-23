@@ -1,18 +1,18 @@
 'use strict'
 const express = require('express'),
     router = express.Router();
-const theList = require('../models/todo')
+const theList = require('../models/groceryList')
 router.get('/', async (req, res) =>{
-    const todos = await theList.getToDos(req.session.user_id)
+    const todos = await theList.getGroceryList(req.session.user_id)
     //console.log(todos)
     res.render('template', {
         locals: {
-            title:'To Do',
+            title:'Grocery List',
             is_logged_in: req.session.is_logged_in,
             list: todos
         },
         partials: {
-            partial:'partial-todo'
+            partial:'partial-groceryList'
         }
     })
 })
@@ -22,31 +22,31 @@ router.post('/', async (req, res) =>{
         try{
             if(req.body.add === 'Add'){
                 console.log(req.body)
-                await theList.createToDo(req.body.to_do, req.session.user_id)
+                await theList.createGroceryList(req.body, req.session.user_id)
             }
             else if (req.body.update === 'Update'){
                 const update = async ()=>{
                     if((typeof req.body.id) === 'string'){
-                        theList.updateToDo(req.body.id, true)
+                        theList.updateGroceryList(req.body.id, true)
                     }
                     else{
                         req.body.id.map(todo=>{
-                            return theList.updateToDo(todo, true)
+                            return theList.updateGroceryList(shopping_id, true)
                         })
                     }
                     console.log(req.body)
-                    ('/todo')
+                    ('/grocery')
                 }
                 await update()
                 
             }
             else if (req.body.delete === 'Delete'){
                 if((typeof req.body.id) === 'string'){
-                    theList.removeToDo(req.body.id)
+                    theList.removeGroceryList(req.body.id)
                 }
                 else{
                     req.body.id.map(todo=>{
-                        return theList.removeToDo(todo)
+                        return theList.removeGroceryList(shopping_id)
                     })
                 }
                 console.log(req.body)
@@ -54,9 +54,9 @@ router.post('/', async (req, res) =>{
             
             else if (req.body.undo === 'Undo'){
                 console.log(req.body.id)
-                const theToDos = await theList.getToDos(req.session.user_id)
-                console.log(theToDos)
-                let todoArr = theToDos.filter(toDo => toDo.completed)
+                const theGroceryList = await theList.getGroceryList(req.session.user_id)
+                console.log(theGroceryList)
+                let groceryListArray = theToDos.filter(toDo => toDo.completed)
                 console.log(todoArr)
                 todoArr.map(todo=> {
                     
@@ -81,9 +81,9 @@ router.post('/', async (req, res) =>{
     }   
     const sendInfo = await sendData()
     sendInfo;
-    const redirected = await res.redirect('/todo')
+    const redirected = await res.redirect('/grocery')
     redirected;
     
 })
 
-module.exports = router
+module.exports = router;

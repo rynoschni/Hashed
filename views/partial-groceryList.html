@@ -1,0 +1,66 @@
+<section class="hero is-medium is-danger">
+    <div class="hero-head">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="/" class="navbar-item">
+                        <h1 class="title">${title}</h1>
+                    </a>
+                </div>
+                <div id="navbarMenuHeroA" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a href="/" class="navbar-item is-active">
+                            Home
+                        </a>
+                        <a class="navbar-item">
+                            Groceries
+                        </a>
+                        <a class="navbar-item">
+                            Recipes
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</section>
+
+<h1>Shopping List</h1>
+<form action='/grocery' method="POST">
+    <input type='text' value='' name='groceries' placeholder="What else?" required>
+    <input type='submit' name="add" value="Add">
+</form>
+<section>
+    <h2>Still Out There</h2>
+    <form action="/grocery" method="POST">
+        <ul>
+            ${list.map(item =>{
+                if (!item.completed){
+                    return `<li>
+                        <input type="checkbox" class="todo" id="${item.id}" name ="id" value="${item.id}">
+                        <label for="${item.id}">${item.to_do}</label>
+                    </li>`
+                }
+            }).join('')}
+        </ul>
+        <input type="submit" name="update" value="Update">
+        <input type="submit" name="delete" value="Delete">
+    </form>
+</section>
+<section>
+    <form action='/grocery' method="POST" >
+        <h2>All Done!</h2>
+        <ul>
+            ${list.map(item =>{
+                if (item.completed){
+                    return `<li>
+                        <input type="checkbox" id="${item.id}" name ="id" value="${item.id}" checked>
+                        <label for="${item.to_do}"><del>${item.to_do}</del></label>
+                    </li>`
+                }
+            }).join('')}
+        </ul>
+        <input type="submit" name="undo" value="Undo">
+    </form>
+</section>
+<a href="/">Home</a>

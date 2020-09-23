@@ -1,0 +1,63 @@
+<section class="hero is-medium is-danger">
+    <div class="hero-head">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="/" class="navbar-item">
+                        <h1 class="title">${title}</h1>
+                    </a>
+                </div>
+                <div id="navbarMenuHeroA" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a href="/" class="navbar-item is-active">
+                            Home
+                        </a>
+                        <a class="navbar-item">
+                            Groceries
+                        </a>
+                        <a class="navbar-item">
+                            Recipes
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</section>
+
+<br />
+<section>
+    <div class="columns is-centered">
+        <div class="column content is-half has-text-centered">
+            <form action="/users/login" method="POST" class="form">
+                <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                        <input class="input" type="email" placeholder="Email" name="email">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                        <span class="icon is-small is-right">
+                            <i class="fas fa-check"></i>
+                        </span>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control has-icons-left">
+                        <input class="input" type="password" placeholder="Password" name="password">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <button class="button is-success">
+                            Login
+                        </button>
+                    </p>
+                </div>
+            </form>
+            <p>Not Already a User?<a href="/signup"> Sign Up</a></p>
+        </div>
+    </div>
+<section>
