@@ -4,13 +4,13 @@
             <h2>Pantry List</h2
             <br />
             <section>
-                <form action="/grocery" method="POST">
+                <form action="/pantry" method="POST">
                     <dl style="list-style-type: none;"> 
                         ${list.map(pantryItem =>{
                             if (!pantryItem.completed){
                                 return `<li>
                                     <input type="checkbox" class="todo" id="${pantryItem.id}" name ="id" value="${pantryItem.id}">
-                                    <label for="${pantryItem.id}">${pantryItem.qty} ${pantryItem.units} ${pantryItem.item}</label>
+                                    <label for="${pantryItem.id}"> ${pantryItem.item}, <input type="text" id="qty" name="qty" value="${pantryItem.qty}"> ${pantryItem.units}</label>
                                 </li>`
                             }
                         }).join('')}

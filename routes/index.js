@@ -7,6 +7,8 @@ router.get('/', async (req, res) =>{
     res.render('template', {
         locals: {
             title:'Welcome',
+            name: req.session.name,
+            is_logged_in: req.session.is_logged_in
         },
         partials: {
             partial:'partial-home'
@@ -30,7 +32,7 @@ router.post("/", (req, res)=>{
             req.session.name = `${name}`;
             req.session.user_id = user_id;
             console.log("session: ", req.session)
-            res.redirect('/grocery')
+            res.redirect('/pantry')
         }else {
             res.sendStatus(401)
         }
