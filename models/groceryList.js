@@ -34,9 +34,9 @@ class groceryListReturn {
 
     static async updateGroceryList (shopping_id, boolean){
         try {
-            const response = await db.result('UPDATE shopping SET completed = $1 WHERE id = $2;',[boolean, shopping_id]);
-            console.log("update response is:", response);
-            return response;
+                const response = await db.result('UPDATE shopping SET completed = $1 WHERE id = $2;',[boolean, shopping_id]);
+                console.log("update response is:", response);
+                return response;
         }
         catch(error) {
             return error.message
