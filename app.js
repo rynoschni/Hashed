@@ -4,6 +4,7 @@ const express = require('express'),
     http = require('http'),
     hostname = '127.0.0.1',
     port = 3333,
+    path = require('path'),
     es6Renderer = require('express-es6-template-engine'),
     helmet = require('helmet'),
     morgan = require('morgan'),
@@ -19,7 +20,8 @@ const logger = morgan('tiny')
 app.use(logger)
 
 app.use(helmet())
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static('public'))
 app.use(express.json())
 app.use(express.urlencoded({entended:false}))
 app.use(cookieParser())

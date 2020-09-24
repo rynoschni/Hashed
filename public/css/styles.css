@@ -5,3 +5,8 @@ body {
 select {
     margin-bottom: 2rem;
 }
+
+.home-hero{
+    background-image: url("../images/shopping-cart.jpg");
+    /* background-color: rgba(0, 0, 0, 0.623); */
+}
