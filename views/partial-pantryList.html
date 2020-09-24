@@ -2,32 +2,7 @@
 <section>
     <div class="columns is-mobile is-centered">
         <div class="column content is-one-third has-text-centered">
-            <h2>Pantry List</h2
-            <br />
-            <section>
-                <form action="/pantry" method="POST">
-                    <dl style="list-style-type: none;"> 
-                        ${list.map(pantryItem =>{
-                            if (!pantryItem.completed){
-                                return `<li>
-                                    <input type="checkbox" class="todo" id="${pantryItem.id}" name ="id" value="${pantryItem.id}">
-                                    <label for="${pantryItem.id}"> ${pantryItem.item}, <input type="text" id="qty" name="qty" value="${pantryItem.qty}"> ${pantryItem.units}</label>
-                                </li>`
-                            }
-                        }).join('')}
-                    </dl>
-                    <div class="field is-grouped is-grouped-centered">
-                        <div class="control">
-                            <button class="button is-link" type="submit" name="update" value="Update">Update</button>
-                        </div>
-                        <div class="control">
-                            <button class="button is-link is-danger" type="submit" name="delete" value="Delete">Delete</button>
-                        </div>
-                    </div>
-                </form>
-            </section>
-            <br />
-            <section>
+            <h2>Pantry List</h2>
             <div class="field" id="addItemsButton">
                 <div class="control">
                     <button type='button' name="addItems" value="AddItems" class="button is-link">Add Items</button>
@@ -67,6 +42,28 @@
                     </div>
                 </div>
             </form>
+            <br />
+            <section>
+                <form action="/pantry" method="POST">
+                    <dl style="list-style-type: none;"> 
+                        ${list.map(pantryItem =>{
+                            if (!pantryItem.completed){
+                                return `<li>
+                                    <input type="checkbox" class="todo" id="${pantryItem.id}" name ="id" value="${pantryItem.id}">
+                                    <label for="${pantryItem.id}"> ${pantryItem.item}, <input type="text" id="qty" name="qty" value="${pantryItem.qty}"> ${pantryItem.units}</label>
+                                </li>`
+                            }
+                        }).join('')}
+                    </dl>
+                    <div class="field is-grouped is-grouped-centered">
+                        <div class="control">
+                            <button class="button is-link" type="submit" name="update" value="Update">Update</button>
+                        </div>
+                        <div class="control">
+                            <button class="button is-link is-danger" type="submit" name="delete" value="Delete">Delete</button>
+                        </div>
+                    </div>
+                </form>
             </section>
         </div>
     </div>

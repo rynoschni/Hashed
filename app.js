@@ -44,6 +44,7 @@ const userController = require('./routes/user');
 const shoppingController = require('./routes/groceryList');
 const pantryController = require('./routes/pantryList');
 const updateController = require('./routes/updateList');
+const recipesController = require('./routes/recipesList');
 
 app.use('/', rootController);
 app.use('/login', rootController);
@@ -51,3 +52,4 @@ app.use('/signup', userController);
 app.use('/grocery', shoppingController);
 app.use('/pantry', pantryController);
 app.use('/update', updateController);
+app.use('/recipes', recipesController);
