@@ -1,7 +1,11 @@
 'use strict'
 
+const addItemsButton = document.getElementById('addItemsButton');
+const closeAddItems = document.getElementById('closeAddItems');
+
 document.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
+    document.getElementById('addItems').style.display = "none";
 
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
@@ -24,6 +28,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
             });
         });
     }
+});
+
+addItemsButton.addEventListener('click', () => {
+    document.getElementById('addItemsButton').style.display = "none";
+    document.getElementById('addItems').style.display = "block";
+});
+
+closeAddItems.addEventListener('click', () => {
+    document.getElementById('addItems').style.display = "none";
+    document.getElementById('addItemsButton').style.display = "block";
 });
 
 const buttonClick = document.querySelectorAll('input')
