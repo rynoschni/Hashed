@@ -32,5 +32,15 @@ class recipesListReturn {
         }
     };
 
+    static async getRecipeValues(recipe_id){
+        try {
+            const response = await db.result('SELECT * FROM recipe WHERE id = $1;', [recipe_id])
+            return response
+        }
+        catch (error) {
+            return error.message
+        }
+    }
+
 }
 module.exports = recipesListReturn

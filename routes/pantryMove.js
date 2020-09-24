@@ -4,7 +4,7 @@ const express = require('express'),
 const theList = require('../models/pantryList')
 
 router.post('/', async (req, res) =>{
-    if (req.body.pantry === 'Pantry'){
+    if (req.body.grocery === 'Grocery'){
         const pantryList = await theList.getPantryList(req.session.user_id)
         console.log(pantryList)
         const selectedList = pantryList.filter(item=> {

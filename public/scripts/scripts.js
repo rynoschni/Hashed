@@ -4,6 +4,7 @@ const addItemsButton = document.getElementById('addItemsButton');
 const closeAddItems = document.getElementById('closeAddItems');
 const itemList = document.getElementById('itemList');
 const itemSearch = document.getElementById('itemSearch');
+const itemSearchButton = document.getElementByID('itemSearchButton');
 
 document.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
@@ -85,7 +86,7 @@ buttonClick.forEach(button=>{
 const getIngred = (searchText) => {
     const key = '3633c51b86b2490a866cac434f6bfb09';
     // uses GET to access the API
-    const url = `https://api.spoonacular.com/food/ingredients/autocomplete?query=${______}?apiKey=${key}`;
+    const url = `https://api.spoonacular.com/food/ingredients/autocomplete?query=${itemSearch}?apiKey=${key}`;
     get(url).then(function (response) {
       //Assigning the JSON response as an array
         const items = response;
@@ -155,6 +156,6 @@ const outputHtml = (matches) => {
 };
 
   //Passes content (value) of the input box to the getCountries function
-searchItem.addEventListener("keyup", () =>
-    getIngred(searchItem.value)
+itemSearchButton.addEventListener("click", () =>
+    getIngred(itemSearch.value)
 );
