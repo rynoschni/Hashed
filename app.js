@@ -27,7 +27,6 @@ app.use(express.urlencoded({entended:false}))
 app.use(cookieParser())
 app.use(
     session({
-        store: new FileStore(),
         secret: "not get rad",
         resave: false,
         saveUninitialized: true,
