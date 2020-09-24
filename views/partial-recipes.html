@@ -1,0 +1,110 @@
+<br />
+<section>
+    <div class="columns is-mobile is-centered">
+        <div class="column content is-one-third has-text-centered">
+            <h2>Recipes List</h2>
+            <div class="field" id="addItemsButton">
+                <div class="control">
+                    <button type='button' name="addItems" value="AddItems" class="button is-link">Add Items</button>
+                </div>
+            </div>
+            <!-- <form action='/recipes' method="POST" id="addItems">
+                <div class="field">
+                    <div class="control">
+                        <input class="input" type='text' value='' name='groceries' placeholder="Grocery Item" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <input class="input" type="text" value='' name="qty" placeholder="Quantity" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Units</label>
+                    <div class="control">
+                        <div class="select">
+                            <select value="" name="unit">
+                                <option name="unit" value="each" selected>each</option>
+                                <option name="unit" value="tbsp">tbsp</option>
+                                <option name="unit" value="tsp">tsp</option>
+                                <option name="unit" value="cup">cup</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <input class="input" type='text' value='' name='recipe_id' placeholder="Recipe-ID">
+                    </div>
+                </div>
+
+                <div class="field is-grouped is-grouped-centered">
+                    <div class="control">
+                        <button type='submit' name="add" value="Add" class="button is-link">Add</button>
+                    </div>
+                    <div class="control">
+                        <button type='button' name="close" value="Close" class="button"
+                            id="closeAddItems">Close</button>
+                    </div>
+                </div>
+            </form> -->
+            <br />
+            <section>
+                <h4>Things to buy:</h4>
+                <!-- <form action="/grocery" method="POST" id="grocery-form">
+                    <dl style="list-style-type: none;">
+                        ${list.map(grocery =>{
+                        if (!grocery.completed){
+                        return `<li>
+                            <input type="checkbox" class="todo" id="${grocery.id}" name="id" value="${grocery.id}">
+                            <label for="${grocery.id}">${grocery.qty} ${grocery.units} ${grocery.item}</label>
+                        </li>`
+                        }
+                        }).join('')}
+                    </dl>
+                    <div class="field is-grouped is-grouped-centered">
+                        <div class="control">
+                            <button class="button is-link" type="submit" name="update" value="Update"
+                                ${list.filter(grocery=> !grocery.completed).length ? '' : 'disabled'}>Update</button>
+                        </div>
+                        <div class="control">
+                            <button class="button is-link is-danger" type="submit" name="delete" value="Delete"
+                                ${list.filter(grocery=> !grocery.completed).length ? '' : 'disabled'}>Delete</button>
+                        </div>
+                    </div>
+                </form> -->
+            </section>
+            <br />
+            <!-- <section>
+                <form action='/grocery' method="POST" id="grocery-form1">
+                    <h4>Already grabbed:</h4>
+                    <dl style="list-style-type: none;">
+                        ${list.map(grocery =>{
+                        if (grocery.completed){
+                        return `<li>
+                            <input type="checkbox" class="todo" id="${grocery.id}" name="id" value="${grocery.id}">
+                            <label for="${grocery.id}"><del>${grocery.qty} ${grocery.units} ${grocery.item}<del></label>
+                        </li>`
+                        }
+                        }).join('')}
+                    </dl>
+                    <div class="field is-grouped is-grouped-centered">
+                        <div class="control">
+                            <button type='submit' name="undo" value="Undo" class="button is-link"
+                                ${list.filter(grocery=> grocery.completed).length ? '' : 'disabled'}>Move to Shopping
+                                List</button>
+                        </div>
+                        <div class="control">
+                            <button type='submit' name="pantry" value="Pantry" class="button is-link"
+                                ${list.filter(grocery=>
+                                grocery.completed).length ? '' : 'disabled'}>Move to Pantry</button>
+                        </div>
+                    </div>
+                </form>
+            </section> -->
+        </div>
+    </div>
+    <section>
