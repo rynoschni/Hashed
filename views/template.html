@@ -7,15 +7,15 @@
         <link rel="stylesheet" href="/css/styles.css">
     </head>
     <body>
-        <section class="hero is-medium is-danger">
+        <section class="hero is-medium is-success">
             <div class="hero-head">
                 <nav class="navbar">
                     <div class="container">
                         <div class="navbar-brand">
                             ${!!is_logged_in ? `<a class="navbar-item" href="/pantry"><h1 class="title">Hashed</h1></a>` : `
-                            <a class="navbar-item" href="/"><h1 class="title">Hashed</h1></a> `}
+                            <a class="navbar-item navbar-end" href="/"><h1 class="title">Hashed</h1></a> `}
                         
-                                ${!!is_logged_in ? `<div class="navbar-item">Hi ${name}</div> <a role="button" class="navbar-item" href="/logout">Logout</a>` : `<a role="button" class="navbar-item" href="/login">Login</a> `}
+                                ${!!is_logged_in ? `<div class="navbar-item is-grouped-centered">Hi ${name}</div>` : ``}
                             
                             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenuHeroA">
                                 <span aria-hidden="true"></span>
@@ -26,6 +26,7 @@
                         </div>
                         <div id="navbarMenuHeroA" class="navbar-menu">
                             <div class="navbar-end">
+                                ${!!is_logged_in ? `
                                 <a href="/" class="navbar-item">
                                     Home
                                 </a>
@@ -35,6 +36,14 @@
                                 <a href="/pantry" class="navbar-item">
                                     Pantry
                                 </a>
+                                <div class="navbar-item">
+                                    <div class="buttons">
+                                        <a class="button is-light" href="/logout">Logout</a>` 
+                                        : 
+                                        `<a class="button is-warning mr-1" href="/signup"><strong>Sign Up</strong></a>
+                                        <a class="button is-light" href="/login">Login</a> `}
+                                    </div>
+                                </div>  
                             </div>
                         </div>
                     </div>
@@ -44,10 +53,19 @@
         <main>${partial}</main>
         <footer class="footer">
             <div class="content has-text-centered">
-                <a href="/">Home</a>
+                ${!!is_logged_in ? 
+                    `<a class="navbar-item" href="/pantry">Home</a>` 
+                    : 
+                    `<a class="navbar-item navbar-end" href="/">Home</a> `}
                 <br />
                 <br />
                 <p><strong>Built</strong> by <a href="https://github.com/Mjheverett/recipe_grocery">Hashed</a>.</p>
+                <div>
+                    <a href="https://bulma.io">
+                        <img src="/images/made-with-bulma--black.png" alt="Made with Bulma" width="128" height="24">
+                        </a>
+
+                </div>
             </div>
         </footer>
         <script src="https://kit.fontawesome.com/b91ebdb5e6.js" crossorigin="anonymous"></script>
