@@ -11,7 +11,8 @@
             <form action='/pantry/add' method="POST" id="addItems">
                 <div class="field">
                     <div class="control">
-                        <input class="input" type='text' value='' name='pantryItems' placeholder="Pantry Item" required>
+                        <input id="itemSearch" class="input" type='text' value='' name='pantryItems' placeholder="Pantry Item" required>
+                        <div class="match-list" id="itemList"></div>
                     </div>
                 </div>
                 

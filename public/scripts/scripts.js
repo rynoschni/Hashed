@@ -2,7 +2,8 @@
 
 const addItemsButton = document.getElementById('addItemsButton');
 const closeAddItems = document.getElementById('closeAddItems');
-const ingredList = document.getElementById('ingredList');
+const itemList = document.getElementById('itemList');
+const itemSearch = document.getElementById('itemSearch');
 
 document.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
@@ -82,8 +83,9 @@ buttonClick.forEach(button=>{
 
 //Function to access API, filter results and assign value to DOM
 const getIngred = (searchText) => {
+    const key = '3633c51b86b2490a866cac434f6bfb09';
     // uses GET to access the API
-    const url = `https://api.spoonacular.com/food/ingredients/autocomplete?query=`;
+    const url = `https://api.spoonacular.com/food/ingredients/autocomplete?query=${______}?apiKey=${key}`;
     get(url).then(function (response) {
       //Assigning the JSON response as an array
         const items = response;
@@ -95,7 +97,7 @@ const getIngred = (searchText) => {
       //clear the matches if there is no text in input box
         if (searchText.length === 0) {
         matches = [];
-        ingredList.innerHTML = "";
+        itemList.innerHTML = "";
         }
       //display the matches and assign clicked match
         outputHtml(matches);
@@ -120,39 +122,39 @@ const getIngred = (searchText) => {
 const clickedMatch = (matches) => {
     const matchArray = document.querySelectorAll("#suggestMatch");
     matchArray.forEach(function (suggestMatch) {
-      suggestMatch.addEventListener("click", function (event) {
-        event.preventDefault();
-        searchCountry.value = suggestMatch.innerHTML;
-        matchList.classList.toggle("hide");  //Ryan Add to hide search box
-      });
-      searchCountry.addEventListener("keydown", function (event) {  //Ryan Reopen search list on backspace
-        if (event.key === "Backspace" || event.key === "Delete") {
-          matchList.classList.remove("hide");
-        }
-      });
-      searchCountry.addEventListener("click", function (event) {  //Ryan Reopen search list on backspace
-        matchList.classList.toggle("hide");
-      });
+        suggestMatch.addEventListener("click", function (event) {
+            event.preventDefault();
+            searchItem.value = suggestMatch.innerHTML;
+            matchList.classList.toggle("hide");  //Ryan Add to hide search box
+        });
+        searchItem.addEventListener("keydown", function (event) {  //Ryan Reopen search list on backspace
+            if (event.key === "Backspace" || event.key === "Delete") {
+                matchList.classList.remove("hide");
+            }
+        });
+        searchItem.addEventListener("click", function (event) {  //Ryan Reopen search list on backspace
+            matchList.classList.toggle("hide");
+        });
     });
-  };
+};
 
   //Function to display matches under the input box
 const outputHtml = (matches) => {
     if (matches.length > 0) {
-      const html = matches
+        const html = matches
         .map(
-          (match) => `
-          <div>
-              <h4 id= "suggestMatch" >${match.name}</h4>
-          </div>
-          `
+            (match) => `
+            <div>
+                <h4 id= "suggestMatch" >${match.name}</h4>
+            </div>
+            `
         )
         .join("");
-      matchList.innerHTML = html;
+        itemList.innerHTML = html;
     }
-  };
-  
+};
+
   //Passes content (value) of the input box to the getCountries function
-  searchCountry.addEventListener("keyup", () =>
-    getCountries(searchCountry.value)
-  );
+searchItem.addEventListener("keyup", () =>
+    getIngred(searchItem.value)
+);

@@ -10,3 +10,20 @@ select {
     background-image: url("../images/shopping-cart.jpg");
     /* background-color: rgba(0, 0, 0, 0.623); */
 }
+
+.match-list{
+    background-color: rgb(32, 31, 31);
+    border-radius: .3rem;
+    box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+    color: white;
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.match-list > div:hover{
+    background-color:rgb(145, 223, 117);
+    color: black;
+    cursor: pointer;
+    border-radius:5px;
+    /* text-align: left; */
+    text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+}
