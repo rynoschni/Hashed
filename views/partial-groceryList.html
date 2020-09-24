@@ -8,7 +8,7 @@
                     <button type='button' name="addItems" value="AddItems" class="button is-link">Add Items</button>
                 </div>
             </div>
-            <form action='/grocery' method="POST" id="addItems">
+            <form action='/grocery/add' method="POST" id="addItems">
                 <div class="field">
                     <div class="control">
                         <input class="input" type='text' value='' name='groceries' placeholder="Grocery Item" required>
@@ -53,7 +53,7 @@
             <br />
             <section>
                 <h4>Things to buy:</h4>
-                <form action="/grocery" method="POST" id="grocery-form">
+                <form action="/grocery/update" method="POST" id="grocery-form">
                     <dl style="list-style-type: none;"> 
                         ${list.map(grocery =>{
                             if (!grocery.completed){
@@ -76,7 +76,7 @@
             </section>
             <br />
             <section>
-                <form action='/grocery' method="POST"  id="grocery-form1">
+                <form action='/grocery/link' method="POST"  id="grocery-form1">
                     <h4>Already grabbed:</h4>
                     <dl style="list-style-type: none;">
                         ${list.map(grocery =>{

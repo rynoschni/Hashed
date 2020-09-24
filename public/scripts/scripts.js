@@ -40,7 +40,7 @@ closeAddItems.addEventListener('click', () => {
     document.getElementById('addItemsButton').style.display = "block";
 });
 
-const buttonClick = document.querySelectorAll('input')
+const buttonClick = document.querySelectorAll('.todo')
 
 // document.addEventListener('DOMContentLoaded', ()=>{
     
@@ -74,7 +74,6 @@ buttonClick.forEach(button=>{
         .catch((error) => {
             console.error('Error:', error);
         }),10000)
-        // location.reload();
-        // return false;
+        
     })                                                                                                 
 })
