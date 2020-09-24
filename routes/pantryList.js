@@ -19,32 +19,24 @@ router.get('/', async (req, res) =>{
 })
 
 router.post('/', async (req, res) =>{
-    if(req.body.add === 'Add'){
-        console.log("add:" ,req.body)
-        const response = await theList.createPantryList(req.body, req.session.user_id)
-        console.log(response)
+    if (req.body.update === 'Update'){
+        for (let id in req.body){
+            if (id !== 'update'){
+                await theList.updatePantryList(id, req.body[id])
+            }
+        }
+ 
+        console.log(req.body)
         await res.redirect('/pantry')
     }
-    // else if (req.body.update === 'Update'){
-    //     if((typeof req.body.id) === 'string'){
-    //         theList.updatePantryList(req.body.id, true)
-    //     }
-    //     else{
-    //         req.body.id.map(pantryListItem =>{
-    //             return theList.updatePantryList(pantryListItem , true)
-    //         })
-    //     }
-    //     console.log(req.body)
-    //     await res.redirect('/pantry')
-    // }
         
-    else if (req.body.delete === 'Delete'){
+    else{
         if((typeof req.body.id) === 'string'){
-            theList.removePantryList(req.body.id)
+            await theList.removePantryList(req.body.id)
         }
         else{
             req.body.id.map(pantryListItem =>{
-                return theList.removePantryList(pantry_id)
+                return theList.removePantryList(pantryListItem)
             })
         }
         console.log(req.body)

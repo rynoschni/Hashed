@@ -8,7 +8,7 @@
                     <button type='button' name="addItems" value="AddItems" class="button is-link">Add Items</button>
                 </div>
             </div>
-            <form action='/pantry' method="POST" id="addItems">
+            <form action='/pantry/add' method="POST" id="addItems">
                 <div class="field">
                     <div class="control">
                         <input class="input" type='text' value='' name='pantryItems' placeholder="Pantry Item" required>
@@ -50,7 +50,7 @@
                             if (!pantryItem.completed){
                                 return `<li>
                                     <input type="checkbox" class="todo" id="${pantryItem.id}" name ="id" value="${pantryItem.id}">
-                                    <label for="${pantryItem.id}"> ${pantryItem.item}, <input type="text" id="qty" name="qty" value="${pantryItem.qty}"> ${pantryItem.units}</label>
+                                    <label for="${pantryItem.id}"> ${pantryItem.item}, <input type="text" id="qty" name="${pantryItem.id}" value="${pantryItem.qty}"> ${pantryItem.units}</label>
                                 </li>`
                             }
                         }).join('')}

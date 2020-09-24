@@ -26,21 +26,21 @@ class pantryListReturn {
             return error.message
         }
     }
-    // static async updatePantryList (pantryItem_id, boolean){
-    //     try {
-    //         const response = await db.result('UPDATE pantry SET completed = $1 WHERE id = $2;',[boolean, pantryItem_id])
-    //         return response
-    //     }
-    //     catch {
-    //         return error.message
-    //     }
-    // }
+    static async updatePantryList (pantryItem_id, qty){
+        try {
+            const response = await db.result('UPDATE pantry SET qty = $1 WHERE id = $2;',[qty, pantryItem_id])
+            return response
+        }
+        catch (error){
+            return error.message
+        }
+    }
     static async removePantryList (pantryItem_id){
         try{
             const response = await db.result(`DELETE FROM pantry WHERE id = $1`,[pantryItem_id])
             return response
         }
-        catch{
+        catch(error) {
             return error.message
         }
     }
