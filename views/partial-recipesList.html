@@ -18,19 +18,28 @@
             
                 <div class="field">
                     <div class="control">
-                        <input class="input" type="text" value='' name="ingred" placeholder="Ingredients" required>
+                        <input class="input" type="text" value='' name="ingredName" placeholder="Ingredients" required>
+                        <input class="input" type="text" value='' name="ingredQty" placeholder="Quantity" required>
+                        <div class="select">
+                            <select value="" name="unit">
+                                <option name="unit" value="each" selected>each</option>
+                                <option name="unit" value="tbsp">tbsp</option>
+                                <option name="unit" value="tsp">tsp</option>
+                                <option name="unit" value="cup">cup</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             
                 <div class="field">
                     <div class="control">
-                        <input class="input" type='text' value='' name='instructions' placeholder="Instructions">
+                        <textarea class="textarea" type='text' value='' name='instructions' placeholder="Instructions"></textarea>
                     </div>
                 </div>
             
                 <div class="field is-grouped is-grouped-centered">
                     <div class="control">
-                        <button type='submit' name="add" value="Add" class="button is-link">Add</button>
+                        <button type='submit' name="add" value="Add" class="button is-link">Add Recipe</button>
                     </div>
                     <div class="control">
                         <button type='button' name="close" value="Close" class="button" id="closeAddItems">Close</button>

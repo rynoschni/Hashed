@@ -29,8 +29,27 @@ router.post('/', async (req, res) =>{
         console.log(req.body)
         await res.redirect('/pantry')
     }
-        
-    else{
+    if (req.body.grocery === 'Grocery'){
+        const pantryList = await theList.getPantryList(req.session.user_id)
+        console.log(pantryList)
+        const selectedList = pantryList.filter(item=> {
+            console.log(item.id)
+            console.log(req.body.id)
+            return req.body.id.indexOf(String(item.id)) >= 0
+            })
+        console.log(selectedList)
+        if((typeof req.body.id) === 'string'){
+            await theList.moveFromPantryToGrocery(selectedList[0], req.session.user_id)
+        }
+        else{
+            selectedList.map(pantryListItem=>{
+                return theList.moveFromPantryToGrocery(pantryListItem, req.session.user_id)
+            })
+        }
+        console.log("req.body pantry", req.body)
+        await res.redirect('/grocery')
+    }   
+    if (req.body.delete === 'Delete'){
         if((typeof req.body.id) === 'string'){
             await theList.removePantryList(req.body.id)
         }

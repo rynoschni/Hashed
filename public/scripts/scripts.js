@@ -2,9 +2,6 @@
 
 const addItemsButton = document.getElementById('addItemsButton');
 const closeAddItems = document.getElementById('closeAddItems');
-const itemList = document.getElementById('itemList');
-const itemSearch = document.getElementById('itemSearch');
-const itemSearchButton = document.getElementByID('itemSearchButton');
 
 document.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
@@ -50,7 +47,7 @@ const buttonClick = document.querySelectorAll('.todo')
 const debounce = (callback, delay)=>{
     let timerId = null;
     return(...args) =>{
-        clearTimerout(timerId);
+        clearTimeout(timerId);
         timerId = setTimeout(()=>{
             timerId = null;
             callback(...args);
@@ -82,80 +79,3 @@ buttonClick.forEach(button=>{
 })
 
 
-//Function to access API, filter results and assign value to DOM
-const getIngred = (searchText) => {
-    const key = '3633c51b86b2490a866cac434f6bfb09';
-    // uses GET to access the API
-    const url = `https://api.spoonacular.com/food/ingredients/autocomplete?query=${itemSearch}?apiKey=${key}`;
-    get(url).then(function (response) {
-      //Assigning the JSON response as an array
-        const items = response;
-      // Get Matches to current text input g:global; i:insensitive
-        let matches = items.filter((item) => {
-        const regex = new RegExp(`^${searchText}`, "gi");
-        return item.name.match(regex);
-        });
-      //clear the matches if there is no text in input box
-        if (searchText.length === 0) {
-        matches = [];
-        itemList.innerHTML = "";
-        }
-      //display the matches and assign clicked match
-        outputHtml(matches);
-      //function to assign clicked match to input box
-        clickedMatch(matches);
-    });
-};
-
-//   //Function capitalize string 
-// function titleCase(str) {
-//     var splitStr = str.toLowerCase().split(' ');
-//     for (var i = 0; i < splitStr.length; i++) {
-//       // You do not need to check if i is larger than splitStr length, as your for does that for you
-//       // Assign it back to the array
-//       splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
-//     }
-//     // Directly return the joined string
-//     return splitStr.join(' ');
-//   }
-
-  //Assigns an event listener to each match, if match is clicked it assigns the value to the input value
-const clickedMatch = (matches) => {
-    const matchArray = document.querySelectorAll("#suggestMatch");
-    matchArray.forEach(function (suggestMatch) {
-        suggestMatch.addEventListener("click", function (event) {
-            event.preventDefault();
-            searchItem.value = suggestMatch.innerHTML;
-            matchList.classList.toggle("hide");  //Ryan Add to hide search box
-        });
-        searchItem.addEventListener("keydown", function (event) {  //Ryan Reopen search list on backspace
-            if (event.key === "Backspace" || event.key === "Delete") {
-                matchList.classList.remove("hide");
-            }
-        });
-        searchItem.addEventListener("click", function (event) {  //Ryan Reopen search list on backspace
-            matchList.classList.toggle("hide");
-        });
-    });
-};
-
-  //Function to display matches under the input box
-const outputHtml = (matches) => {
-    if (matches.length > 0) {
-        const html = matches
-        .map(
-            (match) => `
-            <div>
-                <h4 id= "suggestMatch" >${match.name}</h4>
-            </div>
-            `
-        )
-        .join("");
-        itemList.innerHTML = html;
-    }
-};
-
-  //Passes content (value) of the input box to the getCountries function
-itemSearchButton.addEventListener("click", () =>
-    getIngred(itemSearch.value)
-);

@@ -1,14 +1,66 @@
 <br />
 <section>
     <div class="columns is-mobile is-centered">
-        <div class="column content is-one-third has-text-centered">
-            <h2>${recipe.title}</h2>
-            <div>
-                ${recipe.ingred}
+        <div class="column content is-half has-text-centered">
+            <div class="box">
+                <h2>${data.title}</h2>
+                <article class="media">
+                    <div class="media-left">
+                        <figure class="image is-256x256">
+                            <img src="https://via.placeholder.com/256" alt="Image">
+                        </figure>
+                        <div>
+                            <i class="${data.rating > 0 ? 'fas fa-star checked' : 'far fa-star'}"></i>
+                            <i class="${data.rating > 1 ? 'fas fa-star checked' : 'far fa-star'}"></i>
+                            <i class="${data.rating > 2 ? 'fas fa-star checked' : 'far fa-star'}"></i>
+                            <i class="${data.rating > 3 ? 'fas fa-star checked' : 'far fa-star'}"></i>
+                            <i class="${data.rating > 4 ? 'fas fa-star checked' : 'far fa-star'}"></i>
+                        </div>
+                    </div>
+                    <div class="media-content">
+                        <div class="content">
+                            <h4>Ingredients</h4>
+                            <form  action="/recipes/add/${recipe_id}" method="POST" id="addToShopping">
+                                <p>
+                                    ${data.ingred} = {
+                                        1: {
+                                            name: eggs,
+                                            qty: 6,
+                                            units: each,
+                                        }
+                                    }
+                                </p>
+                                <div class="field">
+                                    <div class="control">
+                                        <button type='submit' name="addToShopping" value="AddToShopping" class="button is-link">Add to Shopping List</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <br />
+                            <h4>Instructions</h4>
+                            <p>
+                                ${data.instructions}
+                            </p>
+                        </div>
+                        <!-- <nav class="level is-mobile">
+                            <div class="level-left">
+                                <a class="level-item" aria-label="reply">
+                                    <span class="icon is-small">
+                                        <i class="fas fa-reply" aria-hidden="true"></i>
+                                    </span>
+                                </a>
+                                <a class="level-item" aria-label="retweet">
+                                    <span class="icon is-small">
+                                        <i class="fas fa-retweet" aria-hidden="true"></i>
+                                    </span>
+                                </a>
+                                <a class="level-item" aria-label="like">
+                                    <span class="icon is-small">
+                                        <i class="fas fa-heart" aria-hidden="true"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </nav> -->
+                    </div>
+                </article>
             </div>
-            <div>
-                ${recipe.instructions}
-            </div>
-        </div>
-    </div>
-<section>

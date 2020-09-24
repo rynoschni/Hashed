@@ -18,7 +18,12 @@ app.set('view engine', 'html')
 const logger = morgan('tiny')
 app.use(logger)
 
-app.use(helmet())
+
+app.use(
+    helmet({
+        contentSecurityPolicy: false,
+    })
+);
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use(express.static('public'))
 app.use(express.json())
@@ -50,6 +55,7 @@ const groceryListLink = require('./routes/groceryPantryLink')
 const recipesController = require('./routes/recipesList');
 const pantryAddController = require('./routes/pantryAdd');
 const pantryMoveController = require('./routes/pantryMove')
+const recipeGroceryAddController = require('./routes/recipeGrocAdd')
 
 app.use('/', rootController);
 app.use('/login', rootController);
@@ -63,3 +69,4 @@ app.use('/update', updateController);
 app.use('/recipes', recipesController);
 app.use('/pantry/add', pantryAddController);
 app.use('/pantry/move',pantryMoveController)
+app.use('/recipes/add', recipeGroceryAddController)

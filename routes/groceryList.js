@@ -11,7 +11,7 @@ router.get('/', async (req, res) =>{
             title:'Grocery List',
             is_logged_in: req.session.is_logged_in,
             list: groceryList,
-            name: req.session.name,
+            name: req.session.name
         },
         partials: {
             partial:'partial-groceryList'

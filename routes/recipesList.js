@@ -11,21 +11,22 @@ router.get('/:name?', async (req, res) => {
                 title: 'Recipes List',
                 is_logged_in: req.session.is_logged_in,
                 list: recipesList,
-            name: req.session.name,
-},
+                name: req.session.name
+            },
             partials: {
                 partial: 'partial-recipesList'
             }
         })
-    }
-    else {
-        const recipeDetails = theList.getRecipeValues(req.params.name)
+    } else {
+        const recipeDetails = await theList.getRecipeValues(req.params.name)
+        console.log(recipeDetails)
         res.render('template', {
             locals: {
                 title: recipeDetails.title,
                 is_logged_in: req.session.is_logged_in,
-                data: recipeDetails,
-                name: req.session.name
+                data: recipeDetails[0],
+                name: req.session.name,
+                recipe_id: req.params.name
             },
             partials: {
                 partial: 'partial-recipes'
@@ -33,6 +34,27 @@ router.get('/:name?', async (req, res) => {
         })
     }
 })
+
+// When adding a recipe from api to database, grab all of extendedIngredients and add as single object. Pulling from database will only call the info that is also created when manually creating recipe.
+// {
+//     "extendedIngredients": [
+//         {
+//             "id": 1001,
+//             "measures": {
+//                 "metric": {
+//                     "amount": 1.0,
+//                     "unitLong": "Tbsp",
+//                 },
+//                 "us": {
+//                     "amount": 1.0,
+//                     "unitLong": "Tbsp",
+//                 }
+//             },
+//             "name": "butter",
+//             "original": "1 tbsp butter",
+//         },
+//     ]
+// }
 
 router.post('/', async (req, res) => {
     console.log("add:", req.body)
