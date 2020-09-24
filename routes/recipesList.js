@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
             name: req.session.name,
         },
         partials: {
-            partial: 'partial-recipes'
+            partial: 'partial-recipesList'
         }
     })
 })

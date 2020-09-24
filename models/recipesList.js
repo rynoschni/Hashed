@@ -13,7 +13,7 @@ class recipesListReturn {
 
     static async getRecipesList(user_id) {
         try {
-            const response = await db.any(`SELECT * FROM recipe WHERE user_id = $1;`, [user_id])
+            const response = await db.any(`SELECT * FROM recipe WHERE user_id = $1 ORDER BY title;`, [user_id])
             return response
         }
         catch (error) {
