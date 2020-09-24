@@ -26,27 +26,41 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 });
 
-// const buttonClick = document.querySelectorAll('.todo')
+const buttonClick = document.querySelectorAll('input')
 
 // document.addEventListener('DOMContentLoaded', ()=>{
     
-//     buttonClick.forEach(button=>{
-//         button.addEventListener('click', async ()=>{
-//         console.log('happened')
-//         const data = {username: 'heyp'};    
-//         await fetch('/grocery',{
-//                 method: 'POST',
-//                 body: JSON.stringify(data)
-//             })
-//             .then(response => response.json())
-//             .then(data => {
-//                 console.log('Success', data)
-//             })
-//             .catch((error) => {
-//             console.error('Error', error)
-//             })
-        
-//         })
-//         window.location.reload();
-//     })
-// })
+const debounce = (callback, delay)=>{
+    let timerId = null;
+    return(...args) =>{
+        clearTimerout(timerId);
+        timerId = setTimeout(()=>{
+            timerId = null;
+            callback(...args);
+        }, delay);
+    };
+};
+buttonClick.forEach(button=>{
+    button.addEventListener('click', (event)=>{
+        console.log('happened')
+        const data = {box: event.target.id};
+        //const data = new FormData(document.getElementById('grocery-form'));  
+        console.log(data)  
+        debounce(fetch('/grocery', {
+            method: 'POST',
+            // headers: {
+            //     'Content-Type': 'application/json',
+            // },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        }),10000)
+        // location.reload();
+        // return false;
+    })                                                                                                 
+})

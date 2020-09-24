@@ -2,6 +2,7 @@
 const express = require('express'),
     router = express.Router();
 const theList = require('../models/groceryList')
+
 router.get('/', async (req, res) =>{
     const groceryList = await theList.getGroceryList(req.session.user_id)
     //console.log(todos)
@@ -63,30 +64,20 @@ router.post('/', async (req, res) =>{
         console.log("req.body update",req.body)
         await res.redirect('/grocery')
     }
-    // Use checked to display completed items, currently has last item errors
-    // else if (req.body.undo === 'Undo'){
-    //     console.log("req body id", req.body.id)
-    //     const theToDos = await theList.getGroceryList(req.session.user_id)
-    //     console.log("the todos", theToDos)
-    //     let todoArr = theToDos.filter(toDo => toDo.completed).map(todos=>todos.id)
-    //     console.log("todoArr", todoArr)
-    //     todoArr.map(todo=> {
-    //         if (req.body.id.indexOf(todo)=== -1){
-    //             theList.updateGroceryList(todo, false)
-    //         }
-    //     })
-    //     await res.redirect('/grocery')
-        // console.log('happened')
-        // const thetodos = await theList.getToDos(req.session.user_id)
-        // const undoArr = await thetodos.filter(todo=>{
-        //     if(todo.completed) { return todo.id}})
-        // console.log("undo",undoArr)
-        // undoArr.map(td => {
-        //     console.log(req.body.id.indexOf(td.id))
-        //     if(req.body.id.indexOf(td.id) === -1)
-        //     { theList.updateToDo(td.id, false)}
-        // } )
-        // console.log(req.body)
+
+    console.log('posted', req.body)
+    //await theList.updateGroceryList(req.body.box, true)
+    console.log(req.session.user_id)
+    const item = await theList.getGroceryListItem(req.body.box)
+    console.log(item)
+    if (item[0].completed){
+        await theList.updateGroceryList(req.body.box, false)
+    }
+    else {
+        await theList.updateGroceryList(req.body.box, true)
+    }
+    res.redirect('/grocery')
+    setTimeout(function(){res.redirect('/grocery')},1000)
 })
     
 

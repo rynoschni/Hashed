@@ -8,7 +8,6 @@ const express = require('express'),
     helmet = require('helmet'),
     morgan = require('morgan'),
     session = require('express-session'),
-    FileStore = require('session-file-store')(session),
     cookieParser = require('cookie-parser');
 
 app.engine('html', es6Renderer)
@@ -25,7 +24,6 @@ app.use(express.urlencoded({entended:false}))
 app.use(cookieParser())
 app.use(
     session({
-        store: new FileStore(),
         secret: "not get rad",
         resave: false,
         saveUninitialized: true,

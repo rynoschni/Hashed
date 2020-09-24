@@ -20,6 +20,15 @@ class groceryListReturn {
             return error.message
         }
     };
+    static async getGroceryListItem(item_id){
+        try{
+            const response = await db.any(`SELECT * FROM shopping WHERE id = $1;`,[item_id])
+            return response
+        }
+        catch(error){
+            return error.message
+        }
+    }
 
     static async createGroceryList(data, theID){
         try{

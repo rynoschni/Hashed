@@ -45,7 +45,7 @@
             <br />
             <section>
                 <h4>Things to buy:</h4>
-                <form action="/grocery" method="POST">
+                <form action="/grocery" method="POST" id="grocery-form">
                     <dl style="list-style-type: none;"> 
                         ${list.map(grocery =>{
                             if (!grocery.completed){
@@ -68,7 +68,7 @@
             </section>
             <br />
             <section>
-                <form action='/grocery' method="POST" >
+                <form action='/grocery' method="POST"  id="grocery-form1">
                     <h4>Already grabbed:</h4>
                     <dl style="list-style-type: none;">
                         ${list.map(grocery =>{
