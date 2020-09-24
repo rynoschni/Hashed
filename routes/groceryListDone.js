@@ -69,7 +69,7 @@ router.post('/', async (req, res) =>{
                 return theList.moveFromGroceryToPantry(groceryListItem, req.session.user_id)
             })
         }
-        console.log("req.body pantry", req.body)
+        console.log("req.body delete", req.body)
         await res.redirect('/grocery')
     }
     else if (req.body.undo === 'Undo'){
@@ -85,18 +85,18 @@ router.post('/', async (req, res) =>{
         await res.redirect('/grocery')
     }
 
-    // console.log('posted', req.body)
-    // await theList.updateGroceryList(req.body.box, true)
-    // console.log(req.session.user_id)
-    // const item = await theList.getGroceryListItem(req.body.box)
-    // console.log(item)
-    // if (item[0].completed){
-    //     await theList.updateGroceryList(req.body.box, false)
-    // }
-    // else {
-    //     await theList.updateGroceryList(req.body.box, true)
-    // }
-    // res.redirect('/grocery')
+    console.log('posted', req.body)
+    await theList.updateGroceryList(req.body.box, true)
+    console.log(req.session.user_id)
+    const item = await theList.getGroceryListItem(req.body.box)
+    console.log(item)
+    if (item[0].completed){
+        await theList.updateGroceryList(req.body.box, false)
+    }
+    else {
+        await theList.updateGroceryList(req.body.box, true)
+    }
+    res.redirect('/grocery')
     // setTimeout(function(){res.redirect('/grocery')},1000)
 })
     

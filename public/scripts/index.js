@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 });
 
-const buttonClick = document.querySelectorAll('input')
+const buttonClick = document.querySelectorAll('.todo')
 
 // document.addEventListener('DOMContentLoaded', ()=>{
     
@@ -48,9 +48,9 @@ buttonClick.forEach(button=>{
         console.log(data)  
         debounce(fetch('/grocery', {
             method: 'POST',
-            // headers: {
-            //     'Content-Type': 'application/json',
-            // },
+            headers: {
+                'Content-Type': 'application/json',
+            },
             body: JSON.stringify(data)
         })
         .then(response => response.json())

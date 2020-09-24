@@ -40,6 +40,14 @@ class groceryListReturn {
             return error.message
         }
     };
+    static async moveFromGroceryToPantry(data, user_id){
+        try{
+            const response = await db.result (`INSERT INTO pantry (item, qty, units, user_id) VALUES ($1, $2, $3, $4);`, [data.item, data.qty, data.units, user_id])
+        }
+        catch(error){
+
+        }
+    }
 
     static async updateGroceryList (shopping_id, boolean){
         try {
