@@ -3,7 +3,12 @@
     <div class="columns is-mobile is-centered">
         <div class="column content is-one-third has-text-centered">
             <h2>Shopping List</h2>
-            <form action='/grocery' method="POST">
+            <div class="field" id="addItemsButton">
+                <div class="control">
+                    <button type='button' name="addItems" value="AddItems" class="button is-link">Add Items</button>
+                </div>
+            </div>
+            <form action='/grocery' method="POST" id="addItems">
                 <div class="field">
                     <div class="control">
                         <input class="input" type='text' value='' name='groceries' placeholder="Grocery Item" required>
@@ -36,9 +41,12 @@
                     </div>
                 </div>
                 
-                <div class="field">
+                <div class="field is-grouped is-grouped-centered">
                     <div class="control">
                         <button type='submit' name="add" value="Add" class="button is-link">Add</button>
+                    </div>
+                    <div class="control">
+                        <button type='button' name="close" value="Close" class="button" id="closeAddItems">Close</button>
                     </div>
                 </div>
             </form>
