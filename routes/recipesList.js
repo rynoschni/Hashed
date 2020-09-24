@@ -4,6 +4,7 @@ const express = require('express'),
 const theList = require('../models/recipesList')
 
 router.get('/', async (req, res) => {
+    const recipesList = await theList.getRecipesList(req.session.user_id)
     res.render('template', {
         locals: {
             title: 'Recipes List',
@@ -15,6 +16,13 @@ router.get('/', async (req, res) => {
             partial: 'partial-recipes'
         }
     })
+})
+
+router.post('/', async (req, res) => {
+    console.log("add:", req.body)
+    const response = await theList.createRecipe(req.body, req.session.user_id)
+    console.log("add response is:", response)
+    await res.redirect('/recipes')
 })
 
 module.exports = router;
