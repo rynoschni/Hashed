@@ -36,6 +36,9 @@
                                 <a href="/pantry" class="navbar-item">
                                     Pantry
                                 </a>
+                                <a href="/recipes" class="navbar-item">
+                                    Recipes
+                                </a>
                                 <div class="navbar-item">
                                     <div class="buttons">
                                         <a class="button is-light" href="/logout">Logout</a>` 
@@ -53,11 +56,12 @@
         <main>${partial}</main>
         <footer class="footer">
             <div class="content has-text-centered">
-                ${!!is_logged_in ? 
-                    `<a class="navbar-item" href="/pantry">Home</a>` 
+                <div>
+                    <p>${!!is_logged_in ? 
+                    `<a href="/pantry">Home</a>` 
                     : 
-                    `<a class="navbar-item navbar-end" href="/">Home</a> `}
-                <br />
+                    `<a href="/">Home</a> `}</p>
+                </div>
                 <br />
                 <p><strong>Built</strong> by <a href="https://github.com/Mjheverett/recipe_grocery">Hashed</a>.</p>
                 <div>
