@@ -71,7 +71,8 @@ app.use('/home', homeController);
 app.use('/pantry', pantryController);
 app.use('/update', updateController);
 app.use('/recipes', recipesController);
+app.use('/recipes/add', recipesController);
 app.use('/pantry/add', pantryAddController);
 app.use('/pantry/move',pantryMoveController)
-app.use('/recipes/add', recipeGroceryAddController)
+app.use('/recipes/addToGrocery', recipeGroceryAddController)
 app.use('/grocery/updated', updatingShoppingController)

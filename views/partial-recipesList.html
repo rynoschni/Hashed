@@ -9,7 +9,7 @@
                 </div>
             </div>
             <!-- Add recipe form -->
-            <form action='/recipes' method="POST" id="addItems">
+            <form id="addItems">
                 <div class="field">
                     <div class="control">
                         <input id="recipeSearch" class="input is-rounded" type='text' name='pantryItems' placeholder="Search recipes..." required>
@@ -48,11 +48,11 @@
                     </div>
                 </form>
                 <div class="field is-grouped is-grouped-centered">
-                    <div class="control">
+                    <!-- <div class="control">
                         <button type='submit' name="add" value="Add" class="button is-link">Add Recipe</button>
-                    </div>
+                    </div> -->
                     <div class="control">
-                        <button type='button' name="close" value="Close" class="button" id="closeAddItems">Close</button>
+                        <button type='button' name="close" value="Close" class="button" id="closeAddItems" style="display:none;">Close</button>
                     </div>
                 </div>
             </form>

@@ -68,9 +68,9 @@
                 <nav class="tabs is-boxed is-fullwidth">
                     <div class="container">
                         <ul>
-                            <li ${url = "/grocery" ? `class="is-active"` : ``}><a href="/grocery">Groceries</a></li>
-                            <li ${url = "/pantry" ? `class="is-active"` : ``}><a href="/pantry">Pantry</a></li>
-                            <li ${url = "/recipes" ? `class="is-active"` : ``}><a href="/recipes">Recipes</a></li>
+                            <li ${url === "/grocery" ? `class="is-active"` : `class='not-active'`}><a href="/grocery">Groceries</a></li>
+                            <li ${url === "/pantry" ? `class="is-active"` : ``}><a href="/pantry">Pantry</a></li>
+                            <li ${url === "/recipes" ? `class="is-active"` : ``}><a href="/recipes">Recipes</a></li>
                         </ul>
                     </div>
                 </nav>
