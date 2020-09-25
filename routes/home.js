@@ -13,7 +13,8 @@ router.get('/', async (req, res) => {
             baseUrl: req.baseUrl
         },
         partials: {
-            partial: 'partial-userHome'
+            partial: 'partial-userHome',
+            scripts: 'partial-empty'
         }
     })
 })
