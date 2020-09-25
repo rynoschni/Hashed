@@ -1,5 +1,5 @@
 {
-  "name": "Hashed",
+  "name": "hashed",
   "version": "1.0.0",
   "description": "A personal pantry/grocery list app with added recipes to simplify your shopping process.",
   "main": "app.js",
