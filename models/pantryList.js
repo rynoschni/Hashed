@@ -42,8 +42,7 @@ class pantryListReturn {
         catch (error){
             return error.message
         }
-    }
-    static async removePantryList (pantryItem_id){
+    }static async removePantryList (pantryItem_id){
         try{
             const response = await db.result(`DELETE FROM pantry WHERE id = $1`,[pantryItem_id])
             return response
@@ -52,5 +51,22 @@ class pantryListReturn {
             return error.message
         }
     }
+    static async incrementPantryItem (pantryItem_id, qty){
+        try {
+            const response = await db.result(`UPDATE pantry SET qty = $1 + 1 WHERE id = $2`, [qty, pantryItem_id])
+        }
+        catch (error) {
+            return error.message
+        }
+    }
+    static async decrementPantryItem (pantryItem_id, qty){
+        try {
+            const response = await db.result(`UPDATE pantry SET qty = $1 - 1 WHERE id = $2`, [qty, pantryItem_id])
+        }
+        catch (error) {
+            return error.message
+        }
+    }
 }
 module.exports = pantryListReturn
+
