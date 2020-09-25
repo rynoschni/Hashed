@@ -9,11 +9,7 @@ router.get('/', async (req, res) =>{
             title:'Welcome',
             name: req.session.name,
             is_logged_in: req.session.is_logged_in,
-<<<<<<< HEAD
-            url: ''
-=======
             baseUrl: req.baseUrl
->>>>>>> 84528f64278ce736a0299b123ba549b385e5501b
         },
         partials: {
             partial:'partial-home'
