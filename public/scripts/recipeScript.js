@@ -2,7 +2,7 @@
 
 const searchData = document.getElementById('recipeSearch');
 const searchButton = document.getElementById('searchButton');
-const key = '3633c51b86b2490a866cac434f6bfb09';
+const APIKey = '3633c51b86b2490a866cac434f6bfb09';
 // const itemSearchButton = document.getElementByID('itemSearchButton');
 console.log('clicked')
 //Function to access API, filter results and assign value to DOM
@@ -10,7 +10,7 @@ const getRecipes = () => {
     
     
     // uses GET to access the API
-    const url = `https://api.spoonacular.com/recipes/complexSearch?query=${searchData.value}&instructionsRequired=true&addRecipeNutrition=true&number=2&apiKey=${key}`;
+    const url = `https://api.spoonacular.com/recipes/complexSearch?query=${searchData.value}&instructionsRequired=true&addRecipeNutrition=true&number=2&apiKey=${APIKey}`;
     const returnObj = get(url).then(function (response) {
       //Assigning the JSON response as an array
         const items = response;

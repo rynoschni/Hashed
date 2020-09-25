@@ -28,7 +28,7 @@ const getIngred = (value) => {
       //display the matches and assign clicked match
         outputHtml(matches);
     //  function to assign clicked match to input box
-        clickedMatch(matches, ids);
+        clickedMatch(matches);
     });
 };
 
