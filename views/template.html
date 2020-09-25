@@ -12,7 +12,7 @@
                 <nav class="navbar">
                     <div class="container">
                         <div class="navbar-brand">
-                            ${!!is_logged_in ? `<a class="navbar-item" href="/pantry"><h1 class="title">Hashed</h1></a>` : `
+                            ${!!is_logged_in ? `<a class="navbar-item" href="/"><h1 class="title">Hashed</h1></a>` : `
                             <a class="navbar-item navbar-end" href="/"><h1 class="title">Hashed</h1></a> `}
                         
                                 ${!!is_logged_in ? `<div class="navbar-item is-grouped-centered">Hi ${name}</div>` : ``}
@@ -27,7 +27,7 @@
                         <div id="navbarMenuHeroA" class="navbar-menu">
                             <div class="navbar-end">
                                 ${!!is_logged_in ? `
-                                <a href="/" class="navbar-item">
+                                <a href="/home" class="navbar-item">
                                     Home
                                 </a>
                                 <a href="/grocery" class="navbar-item">

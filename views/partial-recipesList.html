@@ -5,12 +5,18 @@
             <h2>Recipes List</h2>
             <div class="field" id="addItemsButton">
                 <div class="control">
-                    <button type='button' name="addItems" value="AddItems" class="button is-link">Add Items</button>
+                    <button type='button' name="addItems" value="AddItems" class="button is-link">Add Recipes</button>
                 </div>
             </div>
             <!-- Add recipe form -->
             <form action='/recipes' method="POST" id="addItems">
                 <div class="field">
+                    <div class="control">
+                        <input id="itemSearch" class="input is-rounded" type='text' value='' name='pantryItems' placeholder="Search recipes.." required>
+                        <div class="match-list" id="itemList"></div>
+                    </div>
+                </div>
+                <!-- <div class="field">
                     <div class="control">
                         <input class="input" type='text' value='' name='title' placeholder="Recipe Title" required>
                     </div>
@@ -35,7 +41,7 @@
                     <div class="control">
                         <textarea class="textarea" type='text' value='' name='instructions' placeholder="Instructions"></textarea>
                     </div>
-                </div>
+                </div> -->
             
                 <div class="field is-grouped is-grouped-centered">
                     <div class="control">
