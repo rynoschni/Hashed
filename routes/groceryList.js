@@ -8,10 +8,11 @@ router.get('/', async (req, res) =>{
     //console.log(todos)
     res.render('template', {
         locals: {
-            title:'Grocery List',
+            title:'Shopping List',
             is_logged_in: req.session.is_logged_in,
             list: groceryList,
-            name: req.session.name
+            name: req.session.name,
+            url: req.baseUrl
         },
         partials: {
             partial:'partial-groceryList'
