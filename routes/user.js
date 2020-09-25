@@ -11,7 +11,8 @@ router.get('/', async (req, res) =>{
         res.render('template', {
             locals: {
                 title:'Sign Up',
-                is_logged_in: req.session.is_logged_in
+                is_logged_in: req.session.is_logged_in,
+                baseUrl: req.baseUrl
             },
             partials: {
                 partial:'partial-signup'
