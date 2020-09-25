@@ -15,7 +15,8 @@ router.get('/:name?', async (req, res) => {
                 baseUrl: req.baseUrl
             },
             partials: {
-                partial: 'partial-recipesList'
+                partial: 'partial-recipesList',
+                scripts: 'partial-recipe-scripts'
             }
         })
     } else {
@@ -31,7 +32,8 @@ router.get('/:name?', async (req, res) => {
                 baseUrl: req.baseUrl
             },
             partials: {
-                partial: 'partial-recipes'
+                partial: 'partial-recipes',
+                scripts: 'partial-recipe-scripts'
             }
         })
     }
