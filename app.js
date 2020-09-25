@@ -56,7 +56,9 @@ const recipesController = require('./routes/recipesList');
 const pantryAddController = require('./routes/pantryAdd');
 const pantryMoveController = require('./routes/pantryMove')
 const recipeGroceryAddController = require('./routes/recipeGrocAdd')
+const updatingShoppingController = require('./routes/updateShoppingList')
 const homeController = require('./routes/home');
+
 
 app.use('/', rootController);
 app.use('/login', rootController);
@@ -72,3 +74,4 @@ app.use('/recipes', recipesController);
 app.use('/pantry/add', pantryAddController);
 app.use('/pantry/move',pantryMoveController)
 app.use('/recipes/add', recipeGroceryAddController)
+app.use('/grocery/updated', updatingShoppingController)

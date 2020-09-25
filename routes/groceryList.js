@@ -34,7 +34,7 @@ router.post('/', async (req, res) =>{
     //     await theList.updateGroceryList(req.body.box, true)
     // }
     // res.redirect('/grocery')
-    // setTimeout(function(){res.redirect('/grocery')},1000)
+    // //setTimeout(function(){res.redirect('/grocery')},1000)
 })
     
 

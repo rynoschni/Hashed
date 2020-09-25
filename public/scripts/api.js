@@ -69,9 +69,9 @@ const outputHtml = (matches) => {
 };
 
   //Passes content (value) of the input box to the getCountries function
-const debounceWrapper = debounce(getIngred, 1000);
+// const debounceWrapper = debounce(getIngred, 1000);
 
-itemSearch.addEventListener("input", () => {
-    const itemValue = document.getElementById('itemSearch').value;
-    debounceWrapper(itemValue);
-});
+// itemSearch.addEventListener("input", () => {
+//     const itemValue = document.getElementById('itemSearch').value;
+//     debounceWrapper(itemValue);
+// });
