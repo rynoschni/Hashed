@@ -25,6 +25,7 @@ const getRecipes = () => {
             const recipeCalories = document.createElement('p')
             const recipeServings = document.createElement('p')
             const recipeTime = document.createElement('p')
+            const addRecipeButton = document.createElement('input')
             searchCardDiv.appendChild(recipeTitle)
             recipeTitle.innerText = `${recipe.title}`
             searchCardDiv.appendChild(recipeImage)
@@ -39,6 +40,11 @@ const getRecipes = () => {
             recipeServings.innerText = `Servings: ${recipe.servings}`
             recipeInfoDiv.appendChild(recipeTime)
             recipeTime.innerText = `Time: ${recipe.readyInMinutes}`
+            searchCardDiv.appendChild(addRecipeButton)
+            addRecipeButton.id ="add_recipe"
+            addRecipeButton.type = "submit"
+            addRecipeButton.value= "add"
+            addRecipeButton.name ="Add"
         })
     });
 };
