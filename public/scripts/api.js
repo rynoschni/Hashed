@@ -19,6 +19,8 @@ const getIngred = (value) => {
         const regex = new RegExp(`^${value}`, "gi");
         return item.name.match(regex);
         });
+        let ids = items.map(item => item.id)
+        console.log(ids)
       //clear the matches if there is no text in input box
         if (value.length === 0) {
         matches = [];
@@ -27,19 +29,22 @@ const getIngred = (value) => {
       //display the matches and assign clicked match
         outputHtml(matches);
     //  function to assign clicked match to input box
-        clickedMatch(matches);
+        clickedMatch(matches, ids);
     });
 };
 
   //Assigns an event listener to each match, if match is clicked it assigns the value to the input value
-const clickedMatch = (matches) => {
+const clickedMatch = (matches, ids) => {
     const matchArray = document.querySelectorAll("#suggestMatch");
     matchArray.forEach(function (suggestMatch) {
         suggestMatch.addEventListener("click", function (event) {
             event.preventDefault();
+            
             itemSearch.value = suggestMatch.innerHTML;
             itemList.classList.toggle("hide");  //Ryan Add to hide search box
         });
+        
+          
         itemSearch.addEventListener("keydown", function (event) {  //Ryan Reopen search list on backspace
             if (event.key === "Backspace" || event.key === "Delete") {
                 itemList.classList.remove("hide");
@@ -48,7 +53,9 @@ const clickedMatch = (matches) => {
         itemSearch.addEventListener("click", function (event) {  //Ryan Reopen search list on backspace
             itemList.classList.toggle("hide");
         });
+        
     });
+    
 };
 
   //Function to display matches under the input box
@@ -68,10 +75,10 @@ const outputHtml = (matches) => {
     }
 };
 
-  //Passes content (value) of the input box to the getCountries function
-// const debounceWrapper = debounce(getIngred, 1000);
+  // Passes content (value) of the input box to the getCountries function
+const debounceWrapper = debounce(getIngred, 1000);
 
-// itemSearch.addEventListener("input", () => {
-//     const itemValue = document.getElementById('itemSearch').value;
-//     debounceWrapper(itemValue);
-// });
+itemSearch.addEventListener("input", () => {
+    const itemValue = document.getElementById('itemSearch').value;
+    debounceWrapper(itemValue);
+});
