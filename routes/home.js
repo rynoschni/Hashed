@@ -8,7 +8,8 @@ router.get('/', async (req, res) => {
         locals: {
             title: `Welcome! You're logged in!`,
             name: req.session.name,
-            is_logged_in: req.session.is_logged_in
+            is_logged_in: req.session.is_logged_in,
+            baseUrl: req.baseUrl
         },
         partials: {
             partial: 'partial-userHome'

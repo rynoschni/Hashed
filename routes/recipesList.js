@@ -12,7 +12,7 @@ router.get('/:name?', async (req, res) => {
                 is_logged_in: req.session.is_logged_in,
                 list: recipesList,
                 name: req.session.name,
-                url: req.baseUrl
+                baseUrl: req.baseUrl
             },
             partials: {
                 partial: 'partial-recipesList'
