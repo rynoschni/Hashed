@@ -6,7 +6,7 @@ const User = require('../models/userLogs');
 router.get('/', async (req, res) => {
     res.render('template', {
         locals: {
-            title: 'Welcome',
+            title: `Welcome! You're logged in!`,
             name: req.session.name,
             is_logged_in: req.session.is_logged_in
         },

@@ -8,6 +8,7 @@
     </head>
     <body>
         <section class="hero is-medium is-success">
+            <!-- Hero head: will stick at the top -->
             <div class="hero-head">
                 <nav class="navbar">
                     <div class="container">
@@ -30,7 +31,7 @@
                                 <a href="/home" class="navbar-item">
                                     Home
                                 </a>
-                                <a href="/grocery" class="navbar-item">
+                                <!-- <a href="/grocery" class="navbar-item">
                                     Groceries
                                 </a>
                                 <a href="/pantry" class="navbar-item">
@@ -38,7 +39,7 @@
                                 </a>
                                 <a href="/recipes" class="navbar-item">
                                     Recipes
-                                </a>
+                                </a> -->
                                 <div class="navbar-item">
                                     <div class="buttons">
                                         <a class="button is-light" href="/logout">Logout</a>` 
@@ -52,8 +53,33 @@
                     </div>
                 </nav>
             </div>
+
+            <!-- Hero content: will be in the middle -->
+            <div class="hero-body home-hero mb-2">
+                <div class="container has-text-centered">
+                    <h1 class="title hero-title">
+                        ${title}
+                    </h1>
+                </div>
+            </div>
+
+            <!-- Hero footer: will stick at the bottom -->
+            <div class="hero-foot">
+                <nav class="tabs is-boxed is-fullwidth">
+                    <div class="container">
+                        <ul>
+                            <li ${url = "/grocery" ? `class="is-active"` : ``}><a href="/grocery">Groceries</a></li>
+                            <li ${url = "/pantry" ? `class="is-active"` : ``}><a href="/pantry">Pantry</a></li>
+                            <li ${url = "/recipes" ? `class="is-active"` : ``}><a href="/recipes">Recipes</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
         </section>
+
         <main>${partial}</main>
+
         <footer class="footer">
             <div class="content has-text-centered">
                 <div>
