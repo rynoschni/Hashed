@@ -26,10 +26,33 @@ router.post('/', async (req, res) =>{
                 await theList.updatePantryList(id, req.body[id])
             }
         }
- 
         console.log(req.body)
         await res.redirect('/pantry')
     }
+
+    if (req.body.add === 'Add'){
+        for (let id in req.body){
+            if (id !== 'add'){
+                await theList.incrementPantryItem(id, req.body[id])
+            }
+        }
+        console.log(req.body)
+        await res.redirect('/pantry')
+    }
+
+    if (req.body.subtract === 'Subtract'){
+        for (let id in req.body){
+            if (id !== 'subtract'){
+                await theList.decrementPantryItem(id, req.body[id])
+            }
+        }
+        console.log(req.body)
+        await res.redirect('/pantry')
+    }
+
+
+
+
     if (req.body.grocery === 'Grocery'){
         const pantryList = await theList.getPantryList(req.session.user_id)
         console.log(pantryList)

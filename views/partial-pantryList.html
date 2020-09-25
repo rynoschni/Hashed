@@ -49,7 +49,17 @@
                             if (!pantryItem.completed){
                                 return `<li>
                                     <input type="checkbox" class="todo" id="${pantryItem.id}" name ="id" value="${pantryItem.id}">
-                                    <label for="${pantryItem.id}"> ${pantryItem.item}, <input class="input-is-inline" type="text" id="qty" name="${pantryItem.id}" value="${pantryItem.qty}"> ${pantryItem.units}</label>
+                                    <label for="${pantryItem.id}"> ${pantryItem.item}, <input type="text" id="qty" name="${pantryItem.id}" value="${pantryItem.qty}"> ${pantryItem.units}</label>
+                                    <button class="button is-small" type="submit" name="add" value="Add" id="add">
+                                            <span class="icon is-small">
+                                                <i class="fas fa-plus"></i>
+                                            </span>
+                                        </button>
+                                        <button class="button is-small" type="submit" name="subtract" value="Subtract" id="subtract">
+                                            <span class="icon is-small">
+                                                <i class="fas fa-minus"></i>
+                                            </span>
+                                        </button>
                                 </li>`
                             }
                         }).join('')}
