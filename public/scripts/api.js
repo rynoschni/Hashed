@@ -34,7 +34,7 @@ const getIngred = (value) => {
 
 
   //Assigns an event listener to each match, if match is clicked it assigns the value to the input value
-const clickedMatch = (matches, ids) => {
+const clickedMatch = (matches) => {
     const matchArray = document.querySelectorAll("#suggestMatch");
     matchArray.forEach(function (suggestMatch) {
         suggestMatch.addEventListener("click", function (event) {

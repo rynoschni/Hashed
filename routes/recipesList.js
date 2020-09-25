@@ -24,7 +24,7 @@ router.get('/:name?', async (req, res) => {
         console.log(recipeDetails)
         res.render('template', {
             locals: {
-                title: recipeDetails.title,
+                title: recipeDetails[0].title,
                 is_logged_in: req.session.is_logged_in,
                 data: recipeDetails[0],
                 name: req.session.name,
