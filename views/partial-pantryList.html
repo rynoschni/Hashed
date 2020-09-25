@@ -2,7 +2,7 @@
 <section>
     <div class="columns is-mobile is-centered">
         <div class="column content is-one-third has-text-centered">
-            <h2>Pantry List</h2>
+            <!-- <h2>Pantry List</h2> -->
             <div class="field" id="addItemsButton">
                 <div class="control">
                     <button type='button' name="addItems" value="AddItems" class="button is-link">Add Items</button>
@@ -49,7 +49,7 @@
                             if (!pantryItem.completed){
                                 return `<li>
                                     <input type="checkbox" class="todo" id="${pantryItem.id}" name ="id" value="${pantryItem.id}">
-                                    <label for="${pantryItem.id}"> ${pantryItem.item}, <input type="text" id="qty" name="${pantryItem.id}" value="${pantryItem.qty}"> ${pantryItem.units}</label>
+                                    <label for="${pantryItem.id}"> ${pantryItem.item}, <input class="input-is-inline" type="text" id="qty" name="${pantryItem.id}" value="${pantryItem.qty}"> ${pantryItem.units}</label>
                                 </li>`
                             }
                         }).join('')}

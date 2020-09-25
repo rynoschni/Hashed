@@ -33,10 +33,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 addItemsButton.addEventListener('click', () => {
     document.getElementById('addItemsButton').style.display = "none";
     document.getElementById('addItems').style.display = "block";
+    document.getElementById('closeAddItems').style.display = "block";
 });
 
 closeAddItems.addEventListener('click', () => {
     document.getElementById('addItems').style.display = "none";
+    document.getElementById('closeAddItems').style.display = "none";
     document.getElementById('addItemsButton').style.display = "block";
 });
 
@@ -54,28 +56,29 @@ const debounce = (callback, delay)=>{
         }, delay);
     };
 };
-buttonClick.forEach(button=>{
-    button.addEventListener('click', (event)=>{
-        console.log('happened')
-        const data = {box: event.target.id};
-        //const data = new FormData(document.getElementById('grocery-form'));  
-        console.log(data)  
-        debounce(fetch('/grocery', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        }),10000)
+// buttonClick.forEach(button=>{
+//     button.addEventListener('change', (event)=>{
+//         console.log('happened')
+//         const data = {box: event.target.id};
+//         console.log(event.target.id)
+//         //const data = new FormData(document.getElementById('grocery-form'));  
+//         console.log(data)  
+//         debounce(fetch('/grocery/updated', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json',
+//             },
+//             body: JSON.stringify(data)
+//         })
+//         .then(response => response.text())
+//         .then(data => {
+//             console.log('Success:', data);
+//         })
+//         .catch((error) => {
+//             console.error('Error:', error);
+//         }),10000)
         
-    })                                                                                                 
-})
+//     })                                                                                                 
+// })
 
 

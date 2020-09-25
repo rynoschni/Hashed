@@ -11,7 +11,8 @@ router.get('/:name?', async (req, res) => {
                 title: 'Recipes List',
                 is_logged_in: req.session.is_logged_in,
                 list: recipesList,
-                name: req.session.name
+                name: req.session.name,
+                baseUrl: req.baseUrl
             },
             partials: {
                 partial: 'partial-recipesList'
@@ -26,7 +27,8 @@ router.get('/:name?', async (req, res) => {
                 is_logged_in: req.session.is_logged_in,
                 data: recipeDetails[0],
                 name: req.session.name,
-                recipe_id: req.params.name
+                recipe_id: req.params.name,
+                baseUrl: req.baseUrl
             },
             partials: {
                 partial: 'partial-recipes'

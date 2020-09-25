@@ -8,10 +8,11 @@ router.get('/', async (req, res) =>{
     //console.log(todos)
     res.render('template', {
         locals: {
-            title:'Grocery List',
+            title:'Shopping List',
             is_logged_in: req.session.is_logged_in,
             list: groceryList,
-            name: req.session.name
+            name: req.session.name,
+            baseUrl: req.baseUrl
         },
         partials: {
             partial:'partial-groceryList'
@@ -34,7 +35,7 @@ router.post('/', async (req, res) =>{
     //     await theList.updateGroceryList(req.body.box, true)
     // }
     // res.redirect('/grocery')
-    // setTimeout(function(){res.redirect('/grocery')},1000)
+    // //setTimeout(function(){res.redirect('/grocery')},1000)
 })
     
 
