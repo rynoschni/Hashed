@@ -11,8 +11,9 @@
             <form action='/grocery/add' method="POST" id="addItems">
                 <div class="field">
                     <div class="control">
-                        <input class="input" type='text' value='' name='groceries' placeholder="Grocery Item" required>
+                        <input id="itemSearch" class="input" type='text' value='' name='groceries' placeholder="Grocery Item" required>
                     </div>
+                    <div class="match-list" id="itemList"></div>
                 </div>
                 
                 <div class="field">
@@ -25,11 +26,9 @@
                     <label class="label">Units</label>
                     <div class="control">
                         <div class="select">
-                            <select value="" name="unit">
+                            <select id='unitsList' value="" name="unit">
                                 <option name="unit" value="each" selected>each</option>
-                                <option name="unit" value="tbsp">tbsp</option>
-                                <option name="unit" value="tsp">tsp</option>
-                                <option name="unit" value="cup">cup</option>
+                                
                             </select>
                         </div>
                     </div>
@@ -49,6 +48,7 @@
                         <button type='button' name="close" value="Close" class="button" id="closeAddItems">Close</button>
                     </div>
                 </div>
+                <div id='hiddenInfo'></div>
             </form>
             <br />
             <section>
@@ -60,6 +60,16 @@
                                 return `<li>
                                     <input type="checkbox" class="todo" id="${grocery.id}" name ="id" value="${grocery.id}">
                                     <label for="${grocery.id}">${grocery.qty} ${grocery.units} ${grocery.item}</label>
+                                    <button class="button is-small" type="submit" name="add" value="Add" id="add">
+                                        <span class="icon is-small">
+                                            <i class="fas fa-plus"></i>
+                                        </span>
+                                    </button>
+                                    <button class="button is-small" type="submit" name="subtract" value="Subtract" id="subtract">
+                                        <span class="icon is-small">
+                                            <i class="fas fa-minus"></i>
+                                        </span>
+                                    </button>
                                 </li>`
                             }
                         }).join('')}

@@ -1,12 +1,14 @@
 {
-  "name": "Hashed",
+  "name": "hashed",
   "version": "1.0.0",
   "description": "A personal pantry/grocery list app with added recipes to simplify your shopping process.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon ./app.js",
-    "start": "node app.js"
+    "start": "node ./app.js",
+    "web": "node ./app.js"
+
   },
   "keywords": [],
   "author": "Brittani Ericksen, Eric Schorling, Matthew Everett, Ryan Schniederjan",
