@@ -28,13 +28,13 @@ const getIngred = (value) => {
       //display the matches and assign clicked match
         outputHtml(matches);
     //  function to assign clicked match to input box
-        clickedMatch(matches, ids);
+        clickedMatch(matches);
     });
 };
 
 
   //Assigns an event listener to each match, if match is clicked it assigns the value to the input value
-const clickedMatch = (matches, ids) => {
+const clickedMatch = (matches) => {
     const matchArray = document.querySelectorAll("#suggestMatch");
     matchArray.forEach(function (suggestMatch) {
         suggestMatch.addEventListener("click", function (event) {
