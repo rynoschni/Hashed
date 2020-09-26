@@ -16,7 +16,8 @@ router.get('/', async (req, res) =>{
             baseUrl: req.baseUrl
         },
         partials: {
-            partial:'partial-groceryList'
+            partial:'partial-groceryList',
+            scripts:'partial-api-scripts'
         }
     })
 })
