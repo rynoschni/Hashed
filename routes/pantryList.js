@@ -30,22 +30,16 @@ router.post('/', async (req, res) =>{
         await res.redirect('/pantry')
     }
 
-    if (req.body.add === 'Add'){
-        for (let id in req.body){
-            if (id !== 'add'){
-                await theList.incrementPantryItem(id, req.body[id])
-            }
-        }
+    if (req.body.add[0] === 'A'){
+        let id = req.body.add.split('').slice(4).join('')
+        await theList.incrementPantryItem(id, req.body[id])
         console.log(req.body)
         await res.redirect('/pantry')
     }
 
-    if (req.body.subtract === 'Subtract'){
-        for (let id in req.body){
-            if (id !== 'subtract'){
-                await theList.decrementPantryItem(id, req.body[id])
-            }
-        }
+    if (req.body.subtract === 'S'){
+        let id = req.body.add.split('').slice(9).join('')
+        await theList.decrementPantryItem(id, req.body[id])
         console.log(req.body)
         await res.redirect('/pantry')
     }
@@ -66,9 +60,9 @@ router.post('/', async (req, res) =>{
             await theList.moveFromPantryToGrocery(selectedList[0], req.session.user_id)
         }
         else{
-            selectedList.map(pantryListItem=>{
-                return theList.moveFromPantryToGrocery(pantryListItem, req.session.user_id)
-            })
+            for(let pantryListItem of selectedList){
+                await theList.moveFromPantryToGrocery(pantryListItem, req.session.user_id)
+            }
         }
         console.log("req.body pantry", req.body)
         await res.redirect('/grocery')
@@ -78,9 +72,9 @@ router.post('/', async (req, res) =>{
             await theList.removePantryList(req.body.id)
         }
         else{
-            req.body.id.map(pantryListItem =>{
-                return theList.removePantryList(pantryListItem)
-            })
+            for(let pantryListItem of req.body.id){
+                await theList.removePantryList(pantryListItem)
+            }
         }
         console.log(req.body)
         await res.redirect('/pantry')

@@ -23,7 +23,7 @@ router.get('/', async (req, res) =>{
 
 router.post('/', async (req, res) =>{
     
-
+    res.redirect('/grocery')
     // console.log('posted', req.body)
     // await theList.updateGroceryList(req.body.box, true)
     // console.log(req.session.user_id)
@@ -35,7 +35,7 @@ router.post('/', async (req, res) =>{
     // else {
     //     await theList.updateGroceryList(req.body.box, true)
     // }
-    // res.redirect('/grocery')
+    //res.redirect('/grocery')
     // //setTimeout(function(){res.redirect('/grocery')},1000)
 })
     

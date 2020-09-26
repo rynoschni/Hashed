@@ -76,9 +76,9 @@ const debounce = (callback, delay)=>{
 //         })
 //         .catch((error) => {
 //             console.error('Error:', error);
-//         }),10000)
-        
-//     })                                                                                                 
+//         }),2000)
+//         location.reload()
+//     })                                        
 // })
 
 
