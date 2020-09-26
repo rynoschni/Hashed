@@ -23,9 +23,9 @@ router.post('/', async (req, res) =>{
             await theList.removeGroceryList(req.body.id)
         }
         else{
-            req.body.id.map(groceryListItem=>{
-                return theList.removeGroceryList(groceryListItem)
-            })
+            for (let groceryListItem of req.body.id) {
+                await theList.removeGroceryList(groceryListItem)
+            }
         }
         console.log("req.body delete", req.body)
         await res.redirect('/grocery')

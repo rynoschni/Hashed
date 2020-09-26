@@ -10,7 +10,7 @@ class pantryListReturn {
     }
     static async getPantryList(user_id){
         try{
-            const response = await db.any(`SELECT * FROM pantry WHERE user_id = $1;`, [user_id])
+            const response = await db.any(`SELECT * FROM pantry WHERE user_id = $1 ORDER BY id ASC;`, [user_id])
             return response
         }
         catch (error){

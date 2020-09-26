@@ -10,11 +10,20 @@ const getRecipes = () => {
     
     
     // uses GET to access the API
-    const url = `https://api.spoonacular.com/recipes/complexSearch?query=${searchData.value}&instructionsRequired=true&addRecipeNutrition=true&number=2&apiKey=${apiKey}`;
+
+    const url = `https://api.spoonacular.com/recipes/complexSearch?query=${searchData.value}&instructionsRequired=true&addRecipeNutrition=true&number=1&apiKey=${apiKey}`;
+    const returnObj = get(url).then(function (response) {
+      //Assigning the JSON response as an array
         const items = response;
-        const searchCardDiv = document.getElementById('searchCards')
+        console.log(items);
+        //const searchCardDiv = document.getElementById('searchCards')
+
         
+        const cardHolder = document.getElementById('cardHolder')
+
         items.results.map(recipe=>{
+            const searchCardDiv = document.createElement('form')
+            const recipeTitledata = document.createElement('input')
             const recipeTitle = document.createElement('h2')
             const recipeImage = document.createElement('img')
             const recipeDescription = document.createElement('p')
@@ -22,12 +31,29 @@ const getRecipes = () => {
             const recipeCalories = document.createElement('p')
             const recipeServings = document.createElement('p')
             const recipeTime = document.createElement('p')
+            const imageHolder = document.createElement('p')
+            const recipeJSON = document.createElement('input')
             const addRecipeButton = document.createElement('input')
+            const recipeInstructions = document.createElement('input')
+            const recipeIngredients = document.createElement('input')
+            const recipePictureLink = document.createElement('input')
+            const recipeOriginLink = document.createElement('a')
+            cardHolder.appendChild(searchCardDiv)
             searchCardDiv.appendChild(recipeTitle)
+            searchCardDiv.action =`/recipes/add`;
+            searchCardDiv.method = "POST"
             recipeTitle.innerText = `${recipe.title}`
-            searchCardDiv.appendChild(recipeImage)
+            searchCardDiv.appendChild(recipeTitledata)
+            recipeTitledata.value = `${recipe.title}`
+            recipeTitledata.name = `title`
+            recipeTitledata.hidden = true
+            searchCardDiv.appendChild(imageHolder)
+            imageHolder.appendChild(recipeImage)
             recipeImage.src = `${recipe.image}`
             recipeImage.alt =`${recipe.title}`
+            searchCardDiv.appendChild(recipeOriginLink)
+            recipeOriginLink.href = `${recipe.sourceUrl}`
+            recipeOriginLink.innerHTML = `${recipe.title}`
             searchCardDiv.appendChild(recipeDescription)
             recipeDescription.innerHTML = `${recipe.summary}`
             searchCardDiv.appendChild(recipeInfoDiv)
@@ -38,10 +64,29 @@ const getRecipes = () => {
             recipeInfoDiv.appendChild(recipeTime)
             recipeTime.innerText = `Time: ${recipe.readyInMinutes}`
             searchCardDiv.appendChild(addRecipeButton)
-            addRecipeButton.id ="add_recipe"
             addRecipeButton.type = "submit"
             addRecipeButton.value= "add"
             addRecipeButton.name ="Add"
+            searchCardDiv.appendChild(recipeJSON)
+            recipeJSON.value = recipe;
+            recipeJSON.name = "json"
+            recipeJSON.hidden = true
+            //console.log("value", recipeJSON.value)
+            searchCardDiv.appendChild(recipeInstructions)
+            recipeInstructions.name = "instructions";
+            recipeInstructions.value = `${recipe.analyzedInstructions[0].steps.map(steps => steps.step).join(':')}`
+            recipeInstructions.type = "text"
+            searchCardDiv.appendChild(recipeIngredients)
+            recipeIngredients.name = "ingred"
+            recipeIngredients.value = `${recipe.nutrition.ingredients.map(ingredient => `${ingredient.amount},${ingredient.unit}, ${ingredient.name}`).join(':')}`
+            recipeIngredients.hidden = true
+            recipeInstructions.hidden = true
+            console.log(recipeInstructions.value, recipeIngredients.value)
+            searchCardDiv.appendChild(recipePictureLink)
+            recipePictureLink.name = "picLink"
+            recipePictureLink.value = `${recipe.image}`
+            recipePictureLink.type = "text"
+            recipePictureLink.hidden = true
         })
 
 };
