@@ -7,6 +7,17 @@ const hiddenInfo = document.getElementById('hiddenInfo');
 const key = '3633c51b86b2490a866cac434f6bfb09';
 
 // const itemSearchButton = document.getElementByID('itemSearchButton');
+//Debounce delay
+const debounce = (callback, delay)=>{
+  let timerId = null;
+  return(...args) =>{
+      clearTimeout(timerId);
+      timerId = setTimeout(()=>{
+          timerId = null;
+          callback(...args);
+      }, delay);
+  };
+};
 
 //Function to access API, filter results and assign value to DOM
 const getIngred = (value) => {
