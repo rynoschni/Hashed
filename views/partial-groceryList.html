@@ -2,12 +2,12 @@
 <section>
     <div class="columns is-mobile is-centered">
         <div class="column content is-one-third has-text-centered">
-            <!-- <h2>Shopping List</h2> -->
             <div class="field" id="addItemsButton">
                 <div class="control">
                     <button type='button' name="addItems" value="AddItems" class="button is-link">Add Items</button>
                 </div>
             </div>
+            <!-- Add Items form activated by Add Items Button above -->
             <form action='/grocery/add' method="POST" id="addItems">
                 <div class="field">
                     <div class="control">
@@ -16,13 +16,18 @@
                     <div class="match-list" id="itemList"></div>
                 </div>
                 
-                <div class="field">
+                <div class="field is-grouped is-grouped-centered">
                     <div class="control">
-                        <input class="input" type="text" value='' name="qty" placeholder="Quantity" required>
+                        <input class="input-is-inline" type="text" value='' name="qty" placeholder="Quantity" required>
+                        <div class="select">
+                            <select id='unitsList' value="" name="unit">
+                                <option name="unit" value="each" selected>each</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="field">
+                <!-- <div class="field">
                     <label class="label">Units</label>
                     <div class="control">
                         <div class="select">
@@ -32,11 +37,11 @@
                             </select>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="field">
+                <div class="field" hidden>
                     <div class="control">
-                        <input class="input" type='text' value='' name='recipe_id' placeholder="Recipe-ID">
+                        <input class="input" type='text' value='' name='recipe_id' placeholder="Recipe-ID" hidden>
                     </div>
                 </div>
                 
@@ -51,6 +56,7 @@
                 <div id='hiddenInfo'></div>
             </form>
             <br />
+            <!-- Displayed Shopping list -->
             <section>
                 <h4>Things to buy:</h4>
                 <form action="/grocery/update" method="POST" id="grocery-form">
@@ -85,6 +91,7 @@
                 </form>
             </section>
             <br />
+            <!-- Displayed Completed List -->
             <section>
                 <form action='/grocery/link' method="POST"  id="grocery-form1">
                     <h4>Already grabbed:</h4>
