@@ -8,7 +8,6 @@ console.log('clicked')
 //Function to access API, filter results and assign value to DOM
 const getRecipes = () => {
     
-    
     // uses GET to access the API
 
     const url = `https://api.spoonacular.com/recipes/complexSearch?query=${searchData.value}&instructionsRequired=true&addRecipeNutrition=true&number=1&apiKey=${apiKey}`;
@@ -88,8 +87,9 @@ const getRecipes = () => {
             recipePictureLink.type = "text"
             recipePictureLink.hidden = true
         })
-
+    })
 };
+
 searchButton.addEventListener('click', (e)=>{
     //console.log('clicked')
     e.preventDefault()
