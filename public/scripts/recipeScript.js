@@ -77,7 +77,8 @@ const getRecipes = () => {
             recipeInstructions.type = "text"
             searchCardDiv.appendChild(recipeIngredients)
             recipeIngredients.name = "ingred"
-            recipeIngredients.value = `${recipe.nutrition.ingredients.map(ingredient => `${ingredient.amount},${ingredient.unit}, ${ingredient.name}`).join(':')}`
+            // recipeIngredients.value = `${recipe.nutrition.ingredients.map(ingredient => `${ingredient.amount},${ingredient.unit}, ${ingredient.name}`).join(':')}`
+            recipeIngredients.value = `${recipe.extendedIngredients.map(ingredient => `${ingredient.measures.us.amount},${ingredient.measures.us.unitLong}, ${ingredient.name}`).join(':')}`
             recipeIngredients.hidden = true
             recipeInstructions.hidden = true
             console.log(recipeInstructions.value, recipeIngredients.value)
