@@ -23,7 +23,8 @@ class recipesListReturn {
 
     static async createRecipe(data, theID) {
         try {
-            const response = await db.result('INSERT INTO recipe (title, ingred, instructions, user_id, rating, extra, image) VALUES ($1, $2, $3, $4, $5, $6, $7);', [data.title, data.ingred, data.instructions, theID, 1, {}, data.picLink]);
+            console.log("create recipe json data is:", data.json);
+            const response = await db.result('INSERT INTO recipe (title, ingred, instructions, user_id, rating, extra, image) VALUES ($1, $2, $3, $4, $5, $6, $7);', [data.title, data.ingred, data.instructions, theID, 3, {}, data.picLink]);
             console.log("create response is:", response);
             return response;
         }
