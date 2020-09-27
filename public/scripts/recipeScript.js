@@ -87,13 +87,15 @@ const getRecipes = () => {
             recipePictureLink.value = `${recipe.image}`
             recipePictureLink.type = "text"
             recipePictureLink.hidden = true
-        })
-
+        });
+    });
 };
+
+
 searchButton.addEventListener('click', (e)=>{
     //console.log('clicked')
-    e.preventDefault()
+    e.preventDefault();
     console.log(`Test Item search Value: ${searchData.value}`);
-    console.log('clicked')
-    getRecipes()
+    console.log('clicked');
+    getRecipes();
 });
