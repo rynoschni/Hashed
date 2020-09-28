@@ -1,19 +1,53 @@
 <section>
     <div class="columns is-mobile is-centered">
-        <div class="column content is-half has-text-centered">
-            <br />
-            <div class="block">
-                <h3><i class="fas fa-shopping-basket"></i><a href="/grocery"> Grocery List </a></i></h3>
+        <div class="column content is-four-fifths has-text-centered">
+            <div class="container">
+                <h3>Welcome to your profile page.  Here you can update your User information.</h3>
             </div>
-            <br />
-            <div class="block">
-                <h3><i class="fas fa-apple-alt"></i><a href="/pantry"> Pantry List </a></h3>
+            <form class="block">
+                <form action="/routes/home.js" method="POST"></form>
+                    <div class="content is-centered">
+                        <figure class="image is-128x128">
+                            <image class="is-rounded" src="../images/avatar-1280.png"/><span class="tag is-danger">Profile pic coming soon!</span>
+
+                        </figure>
+                    </div>
+                        <div class="field">
+                            <label class="label">Full Name</label>
+                            <div class="control">
+                                <input class="input is-rounded" type="text" value="${name}" name="name">
+                            </div>
+                        </div>
+        
+                        <div class="field">
+                            <label class="label">Email</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input class="input is-rounded" type="email" value="${email}" name="email">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                            </div>
+                        </div>
+        
+                        <div class="field">
+                            <label class="label">Password</label>
+                            <p class="control has-icons-left">
+                                <input class="input is-rounded" type="password" placeholder="password" name="password">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                            </p>
+                        </div>
+        
+                        <div class="field is-grouped is-grouped-centered">
+                            <div class="control">
+                                <button type="submit" class="button is-link">Update</button>
+                            </div>
+                        </div>
+                </form
+
+                
             </div>
-            <br />
-            <div class="block">
-                <h3><i class="fas fa-archive"></i><a href="/recipes"> Recipe List </a></h3>
-            </div>
-            <br />
         </div>
     </div>
 </section>

@@ -29,17 +29,8 @@
                             <div class="navbar-end">
                                 ${!!is_logged_in ? `
                                 <a href="/home" class="navbar-item">
-                                    Home
+                                    Profile Home
                                 </a>
-                                <!-- <a href="/grocery" class="navbar-item">
-                                    Groceries
-                                </a>
-                                <a href="/pantry" class="navbar-item">
-                                    Pantry
-                                </a>
-                                <a href="/recipes" class="navbar-item">
-                                    Recipes
-                                </a> -->
                                 <div class="navbar-item">
                                     <div class="buttons">
                                         <a class="button is-light" href="/logout">Logout</a>` 
@@ -64,22 +55,38 @@
             </div>
 
             <!-- Hero footer: will stick at the bottom -->
-            <div class="hero-foot">
+            <div class="hero-foot"> ${!!is_logged_in? `
                 <nav class="tabs is-boxed is-fullwidth">
                     <div class="container">
                         <ul>
-                            <li ${baseUrl === "/grocery" ? `class="is-active"` : `class='not-active'`}><a href="/grocery">Groceries</a></li>
-                            <li ${baseUrl === "/pantry" ? `class="is-active"` : ``}><a href="/pantry">Pantry</a></li>
-                            <li ${baseUrl === "/recipes" ? `class="is-active"` : ``}><a href="/recipes">Recipes</a></li>
+                            <li ${baseUrl === "/grocery" ? `class="is-active"` : `class='not-active'`}><a href="/grocery"><i class="fas fa-shopping-basket"></i> Groceries</a></li>
+                            <li ${baseUrl === "/pantry" ? `class="is-active"` : ``}><a href="/pantry"><i class="fas fa-apple-alt"></i>Pantry</a></li>
+                            <li ${baseUrl === "/recipes" ? `class="is-active"` : ``}><a href="/recipes"><i class="fas fa-archive"></i>Recipes</a></li>
                         </ul>
                     </div>
-                </nav>
+                </nav> `
+                :
+                ``}
             </div>
 
         </section>
+    <div class="columns">
+        <!-- <aside class="menu column is-one-fifth">
+            <p><a>Profile</a></li></p>
+            <p class="menulist"><i class="fas fa-apple-alt"></i><a href="/pantry"> Pantry List</a></p>
+            <p class="menulist"><i class="fas fa-shopping-basket"></i><a href="/grocery"> Grocery List</a></p>
+            <p class="menulist"><i class="fas fa-archive"></i><a href="/recipes"> Recipe List</a></p>
 
-        <main>${partial}</main>
+            <ul class="menu-list">
+                <li><a>Profile</a></li>
+                <li><i class="fas fa-apple-alt"></i><a href="/pantry"> Pantry List</a></li>
+                <li><i class="fas fa-shopping-basket"></i><a href="/grocery"> Grocery List</a></li>
+                <li><i class="fas fa-archive"></i><a href="/recipes"> Recipe List</a></li>
+            </ul>
+        </aside> -->
 
+        <main class="column is-full">${partial}</main>
+    </div>
         <footer class="footer">
             <div class="content has-text-centered">
                 <div>
