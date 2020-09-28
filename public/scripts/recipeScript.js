@@ -10,12 +10,14 @@ const getRecipes = () => {
     
     
     // uses GET to access the API
+
     const url = `https://api.spoonacular.com/recipes/complexSearch?query=${searchData.value}&instructionsRequired=true&addRecipeNutrition=true&number=1&apiKey=${apiKey}`;
     const returnObj = get(url).then(function (response) {
       //Assigning the JSON response as an array
         const items = response;
         console.log(items);
         //const searchCardDiv = document.getElementById('searchCards')
+
         
         const cardHolder = document.getElementById('cardHolder')
 
@@ -85,7 +87,7 @@ const getRecipes = () => {
             recipePictureLink.type = "text"
             recipePictureLink.hidden = true
         })
-    });
+
 };
 searchButton.addEventListener('click', (e)=>{
     //console.log('clicked')
@@ -93,5 +95,4 @@ searchButton.addEventListener('click', (e)=>{
     console.log(`Test Item search Value: ${searchData.value}`);
     console.log('clicked')
     getRecipes()
-})
-
+});

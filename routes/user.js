@@ -15,7 +15,8 @@ router.get('/', async (req, res) =>{
                 baseUrl: req.baseUrl
             },
             partials: {
-                partial:'partial-signup'
+                partial:'partial-signup',
+                scripts: 'partial-empty'
             }
         })
     }

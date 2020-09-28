@@ -15,7 +15,8 @@ router.get('/:name?', async (req, res) => {
                 baseUrl: req.baseUrl
             },
             partials: {
-                partial: 'partial-recipesList'
+                partial: 'partial-recipesList',
+                scripts: 'partial-recipe-scripts'
             }
         })
     } else {
@@ -23,7 +24,7 @@ router.get('/:name?', async (req, res) => {
         console.log(recipeDetails)
         res.render('template', {
             locals: {
-                title: recipeDetails.title,
+                title: recipeDetails[0].title,
                 is_logged_in: req.session.is_logged_in,
                 data: recipeDetails[0],
                 name: req.session.name,
@@ -31,7 +32,8 @@ router.get('/:name?', async (req, res) => {
                 baseUrl: req.baseUrl
             },
             partials: {
-                partial: 'partial-recipes'
+                partial: 'partial-recipes',
+                scripts: 'partial-recipe-scripts'
             }
         })
     }
