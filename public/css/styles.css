@@ -102,3 +102,11 @@ select {
 .tabicon{
     padding-right: 1rem;
 }
+
+#add {
+    vertical-align: middle;
+}
+
+#subtract {
+    vertical-align: middle;
+}
