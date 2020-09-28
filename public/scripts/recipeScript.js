@@ -67,8 +67,11 @@ const getRecipes = () => {
             recipeTime.innerText = `Time: ${recipe.readyInMinutes}`
             searchCardDiv.appendChild(addRecipeButton)
             addRecipeButton.type = "submit"
-            addRecipeButton.value= "add"
-            addRecipeButton.name ="Add"
+            addRecipeButton.value= "Add to Recipes"
+            addRecipeButton.name = "Add"
+            addRecipeButton.classList.add("button")
+            addRecipeButton.classList.add("is-primary")
+            addRecipeButton.classList.add("addRecipeButton")
             searchCardDiv.appendChild(recipeJSON)
             recipeJSON.value = recipe;
             recipeJSON.name = "json"

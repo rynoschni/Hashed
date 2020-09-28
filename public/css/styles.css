@@ -6,13 +6,25 @@ select {
     margin-bottom: 2rem;
 }
 
+.addRecipeButton {
+    margin-top: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
 .checked {
     color: orange;
 }
 
-.tabicon{
-    padding-right: 1rem;
+.grocery-list-input-qty {
+    width: 3rem;
+}
 
+.grocery-list-input-unit {
+    width: 4rem;
+}
+
+.grocery-list-input-item {
+    width: 10rem;
 }
 
 .hero-title {
@@ -80,16 +92,14 @@ select {
     text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
 }
 
+.recipeResults {
+    
+}
+
 .search_button {
     margin-top: .75rem;
 }
 
-.grocery-list-input-qty {
-    width: 3rem;
-}
-.grocery-list-input-unit {
-    width: 4rem;
-}
-.grocery-list-input-item {
-    width: 10rem;
+.tabicon{
+    padding-right: 1rem;
 }
