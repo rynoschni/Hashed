@@ -1,58 +1,57 @@
+<br />
 <section>
-    <div class="columns is-mobile is-centered">
-        <div class="column content is-two-thirds has-text-centered">
-            <br />
-            <div class="container">
-                <h3>Update your information or select a tab to get started.</h3>
+    <div class="content has-text-centered">
+        <h3>Update your information or select a tab to get started.</h3>
+    </div>
+    
+    <div class="columns is-centered">    
+        <div class="column is-one-third">
+            <div class="box is-flex has-text-centered profileCard">
+                <figure class="image is-128x128">
+                    <image class="is-rounded" src="../images/avatar-1280.png" />
+                </figure>
+                <br />
+                <span class="tag is-danger">Profile pics coming soon!</span>
             </div>
-            <form class="block" action="/home" method="POST">
-                <div class="columns">    
-                    <div class="column is-one-third content is-centered">
-                        <figure class="image is-128x128">
-                            <image class="is-rounded" src="../images/avatar-1280.png"/><span class="tag is-danger">Profile pic coming soon!</span>
-                        </figure>
+        </div>
+        <div class="column is-two-thirds has-text-centered">
+            <form class="block" action="/home" method="POST">        
+                <div class="column is-two-thirds">
+                    <div class="field">
+                        <label class="label">Full Name</label>
+                        <div class="control">
+                            <!-- <input class="hide" type="" -->
+                            <input class="input is-rounded" type="text" value="${name}" name="name" required>
+                        </div>
                     </div>
-                    <div class="column is-two-thirds">
-                        <div class="field">
-                            <label class="label">Full Name</label>
-                            <div class="control">
-                                <!-- <input class="hide" type="" -->
-                                <input class="input is-rounded" type="text" value="${name}" name="name" required>
-                            </div>
+
+                    <div class="field">
+                        <label class="label">Email</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input is-rounded" type="email" value="${email}" name="email" required>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
                         </div>
-        
-                        <div class="field">
-                            <label class="label">Email</label>
-                            <div class="control has-icons-left has-icons-right">
-                                <input class="input is-rounded" type="email" value="${email}" name="email" required>
-                                <span class="icon is-small is-left">
-                                    <i class="fas fa-envelope"></i>
-                                </span>
-                            </div>
-                        </div>
-        
-                        <div class="field">
-                            <label class="label">Password</label>
-                            <p class="control has-icons-left">
-                                <input class="input is-rounded" type="password" placeholder="password" name="password" required>
-                                <span class="icon is-small is-left">
-                                    <i class="fas fa-lock"></i>
-                                </span>
-                            </p>
-                        </div>
-                        <div class="field is-grouped is-grouped-centered">
-                            <div class="control">
-                                <button type="submit" class="button is-primary">Update</button>
-                            </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Password</label>
+                        <p class="control has-icons-left">
+                            <input class="input is-rounded" type="password" placeholder="password" name="password" required>
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="field is-grouped is-grouped-centered">
+                        <div class="control">
+                            <button type="submit" class="button is-primary">Update</button>
                         </div>
                     </div>
                 </div>
-    
-                    
             </form>
-
-                
         </div>
-    </div>
 </section>
 
