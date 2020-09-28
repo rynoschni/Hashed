@@ -5,14 +5,14 @@
             <!-- <h2>Pantry List</h2> -->
             <div class="field" id="addItemsButton">
                 <div class="control">
-                    <button type='button' name="addItems" value="AddItems" class="button is-link">Add Items</button>
+                    <button type='button' name="addItems" value="AddItems" class="button is-primary">Add Items</button>
                 </div>
             </div>
             <!-- Add Items form activated by Add Items Button above -->
             <form action='/pantry/add' method="POST" id="addItems">
                 <div class="field">
                     <div class="control">
-                        <input id="itemSearch" class="input" type='text' value='' name='pantryItems' placeholder="Pantry Item" required>
+                        <input id="itemSearch" class="input is-rounded" type='text' value='' name='pantryItems' placeholder="Pantry Item" required>
                         <div class="match-list" id="itemList"></div>
                     </div>
                 </div>
@@ -41,10 +41,10 @@
 
                 <div class="field is-grouped is-grouped-centered">
                     <div class="control">
-                        <button type='submit' name="add" value="Add" class="button is-link">Add</button>
+                        <button type='submit' name="add" value="Add" class="button is-primary">Add</button>
                     </div>
                     <div class="control">
-                        <button type='button' name="close" value="Close" class="button" id="closeAddItems">Close</button>
+                        <button type='button' name="close" value="Close" class="button is-danger" id="closeAddItems">Close</button>
                     </div>
                 </div>
                 <div id='hiddenInfo'></div>
@@ -77,13 +77,15 @@
                     </dl>
                     <div class="field is-grouped is-grouped-centered">
                         <div class="control">
-                            <button class="button is-link" type="submit" name="update" value="Update">Update</button>
+                            <button class="button is-primary" type="submit" name="update" value="Update">Update</button>
                         </div>
                         <div class="control">
-                            <button class="button is-link is-danger" type="submit" name="delete" value="Delete">Delete</button>
+                            <button class="button is-danger" type="submit" name="delete" value="Delete">Delete</button>
                         </div>
+                    </div>
+                    <div class="field is-centered">    
                         <div class="control">
-                            <button class="button is-link is-danger" type="submit" name="grocery" value="Grocery">Add to Shopping</button>
+                            <button class="button is-primary" type="submit" name="grocery" value="Grocery">Add to Shopping List</button>
                         </div>
                     </div>
                 </form>
