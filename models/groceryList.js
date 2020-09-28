@@ -32,7 +32,7 @@ class groceryListReturn {
 
     static async createGroceryList(data, theID){
         try{
-            const response = await db.result('INSERT INTO shopping (item, qty, units, recipe_id, completed, user_id) VALUES($1, $2, $3, $4, false, $5);', [data.groceries, data.qty, data.unit, data.recipe_id, theID]);
+            const response = await db.result('INSERT INTO shopping (item, qty, units, recipe_id, completed, user_id) VALUES($1, $2, $3, 1, false, $5);', [data.groceries, data.qty, data.unit, data.recipe_id, theID]);
             console.log("create response is:", response);
             return response;
         }
@@ -59,6 +59,17 @@ class groceryListReturn {
             return error.message
         }
     };
+
+    static async updateGroceryListItem (item_id, item_info){
+        try{
+            const response = await db.result('UPDATE shopping SET item = $1, qty = $2, units = $3 WHERE id = $4;',[item_info[2], item_info[0], item_info[1], item_id])
+            console.log('edit response: ', response)
+            return response
+        }
+        catch (error) {
+            return error.message
+        }
+    }
 
     static async removeGroceryList (shopping_id){
         try{
