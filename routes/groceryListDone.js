@@ -5,7 +5,7 @@ const theList = require('../models/groceryList')
 
 
 router.post('/', async (req, res) =>{
-    if (req.body.update === 'Update'){
+    if (req.body.update === "Update"){
         if((typeof req.body.id) === 'string'){
             await theList.updateGroceryList(req.body.id, true)
         }
@@ -17,8 +17,12 @@ router.post('/', async (req, res) =>{
         console.log("req.body update",req.body)
         await res.redirect('/grocery')
         }
-        
-    else {
+    if(req.body.updateItem === 'submit'){
+        console.log("edit: ",req.body.id, req.body.update)
+        console.log(await theList.updateGroceryListItem(req.body.id, req.body.update))
+        res.redirect('/grocery')
+    }
+    if (req.body.delete){
         if((typeof req.body.id) === 'string'){
             await theList.removeGroceryList(req.body.id)
         }
