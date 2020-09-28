@@ -1,6 +1,6 @@
 function get(url) {
     //Step1: fetch data
-    return fetch(url,{
+    return fetch(url, {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",

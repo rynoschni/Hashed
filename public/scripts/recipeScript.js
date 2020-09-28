@@ -13,7 +13,7 @@ const getRecipes = () => {
     
     // uses GET to access the API
 
-    const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/searchComplex?query=${searchData.value}&instructionsRequired=true&addRecipeNutrition=true&number=9&fillIngredients=true`;
+    const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?query=${searchData.value}&instructionsRequired=true&addRecipeNutrition=true&number=9&fillIngredients=true`;
     const returnObj = get(url).then(function (response) {
       //Assigning the JSON response as an array
         const items = response;
@@ -57,7 +57,7 @@ const getRecipes = () => {
             recipeOriginLink.href = `${recipe.sourceUrl}`
             recipeOriginLink.innerHTML = `${recipe.title}`
             searchCardDiv.appendChild(recipeDescription)
-            recipeDescription.innerHTML = `${recipe.summary.slice(0,256)}...`
+            recipeDescription.innerHTML = `${recipe.summary.split('. ').splice(0,2).join('. ')}...`
             searchCardDiv.appendChild(recipeInfoDiv)
             recipeInfoDiv.appendChild(recipeCalories)
             recipeCalories.innerText = `Calories: ${recipe.nutrition.nutrients[0].amount}`

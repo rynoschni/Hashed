@@ -55,8 +55,11 @@ class groceryListReturn {
     static async moveFromGroceryToPantry(data, user_id){
         try{
             const response = await db.result (`INSERT INTO pantry (item, qty, units, user_id) VALUES ($1, $2, $3, $4);`, [data.item, data.qty, data.units, user_id])
+            console.log('added to pantry: ', response)
+            return response
         }
         catch(error){
+            return error.message
 
         }
     }
