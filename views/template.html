@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width initial-scale = 1"/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
         <link rel="stylesheet" href="/css/styles.css">
+        <link rel="icon" type="image/png" href="/images/favicon_io/favicon-32x32.png">
     </head>
     <body>
         <section class="hero is-medium is-success">
@@ -13,8 +14,8 @@
                 <nav class="navbar">
                     <div class="container">
                         <div class="navbar-brand">
-                            ${!!is_logged_in ? `<a class="navbar-item" href="/home"><h1 class="title">Hashed</h1></a>` : `
-                            <a class="navbar-item navbar-end" href="/"><h1 class="title">Hashed</h1></a> `}
+                            ${!!is_logged_in ? `<a class="navbar-item" href="/home"><img src="/images/Hashed-logo-128h.png" alt="Hashed"><h1 class="title">Hashed</h1></a>` : `
+                            <a class="navbar-item navbar-end" href="/"><h1 class="title"><img src="/images/Hashed-logo-128h.png" alt="Hashed">Hashed</h1></a> `}
                         
                                 ${!!is_logged_in ? `<div class="navbar-item is-grouped-centered">Hi ${name}</div>` : ``}
                             
