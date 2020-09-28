@@ -6,7 +6,7 @@
 <br>
     
 <h2><u>The Team:</u></h2>
-<h3></h3>
+<h3>Brittani Ericksen: https://github.com/brittani-ericksen</h3>
 <p><b>Primary Team Role:</b> </p>
 <p><b>Contributions:</b> </p>
 <br>
@@ -14,11 +14,11 @@
 <p><b>Primary Team Role:</b> </p>
 <p><b>Contributions:</b> </p>
 <br>
-<h3></h3>
+<h3>Ryan Schniederjan: https://github.com/rynoschni</h3>
 <p><b>Primary Team Role:</b> </p>
 <p><b>Contributions:</b> </p>
 <br>
-<h3></h3>
+<h3>Eric Schorling: https://github.com/willeschor</h3>
 <p><b>Primary Team Role:</b> </p>
 <p><b>Contributions:</b> </p>
 <br>
