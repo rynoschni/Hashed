@@ -25,10 +25,11 @@ select {
 }
 
 .home-hero{
-    background-image: url("../images/shopping-cart.jpg");
+    background-image: url("../images/shopping-cart-2.png");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;
+    width: auto;
+    height: 100%;
     
 }
 
