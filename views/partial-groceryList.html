@@ -65,7 +65,9 @@
                             if (!grocery.completed){
                                 return `<li>
                                     <input type="checkbox" class="todo" id="${grocery.id}" name ="id" value="${grocery.id}">
-                                    <label for="${grocery.id}">${grocery.qty} ${grocery.units} ${grocery.item}</label>
+                                    <input type="text" class="grocery-list-input" id="${grocery.id}" name="update" value="${grocery.qty} ${grocery.units} ${grocery.item}">
+                                    <label id="groceryItem" for="${grocery.id}">${grocery.qty} ${grocery.units} ${grocery.item}</label>
+                                    <button name="edit" class="edit" id="edit ${grocery.id}" class="edit">Edit</button>
                                 </li>`
                             }
                         }).join('')}
