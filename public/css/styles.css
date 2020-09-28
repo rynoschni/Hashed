@@ -16,7 +16,7 @@ select {
 }
 
 .hero-title {
-    color: black !important;
+    color: rgb(65, 165, 65) !important;
     font-size: 2.5rem;
 }
 

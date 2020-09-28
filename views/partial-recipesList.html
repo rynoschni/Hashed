@@ -36,14 +36,14 @@
             </div>
         </div>
         <div class="column is-one-third has-text-centered">
-            <section>
+            <div class="content">
                 <h4>Your Recipes:</h4>
-                    <dl style="list-style-type: none;">
-                        ${list.map(recipe =>{
-                        return `<li><a href="/recipes/${recipe.id}">${recipe.title}</a></li>`
-                        }).join('')}
-                    </dl>
-            </section>
+                <dl style="list-style-type: none;">
+                    ${list.map(recipe =>{
+                    return `<li><a href="/recipes/${recipe.id}">${recipe.title}</a></li>`
+                    }).join('')}
+                </dl>
+            </div>
         </div>
         <div class="column is-1"></div>
     </div>
