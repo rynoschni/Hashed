@@ -43,7 +43,6 @@ select {
     background-size: cover;
     width: auto;
     height: 100%;
-    
 }
 
 .input-is-inline {
@@ -92,9 +91,9 @@ select {
     text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
 }
 
-.recipeResults {
-    
-}
+/* .recipeResults {
+
+} */
 
 .search_button {
     margin-top: .75rem;
