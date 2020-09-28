@@ -23,6 +23,7 @@ const debounce = (callback, delay)=>{
 const getIngred = (value) => {
     console.log(`Test Item search Value: ${value}`);
     // uses GET to access the API
+    //rapid api url https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/ingredients/autocomplete?
     const url = `https://api.spoonacular.com/food/ingredients/autocomplete?query=${value}&metaInformation=true&apiKey=${key}`;
     get(url).then(function (response) {
       //Assigning the JSON response as an array
