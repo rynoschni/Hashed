@@ -4,7 +4,7 @@ const itemList = document.getElementById('itemList');
 const itemSearch = document.getElementById('itemSearch');
 const units = document.getElementById('unitsList');
 const hiddenInfo = document.getElementById('hiddenInfo');
-const key = '3633c51b86b2490a866cac434f6bfb09';
+// const key = '3633c51b86b2490a866cac434f6bfb09';
 
 // const itemSearchButton = document.getElementByID('itemSearchButton');
 //Debounce delay
@@ -23,8 +23,7 @@ const debounce = (callback, delay)=>{
 const getIngred = (value) => {
     console.log(`Test Item search Value: ${value}`);
     // uses GET to access the API
-    //rapid api url https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/ingredients/autocomplete?
-    const url = `https://api.spoonacular.com/food/ingredients/autocomplete?query=${value}&metaInformation=true&apiKey=${key}`;
+    const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/ingredients/autocomplete?query=${value}&metaInformation=true`;
     get(url).then(function (response) {
       //Assigning the JSON response as an array
         const items = response;
@@ -54,7 +53,7 @@ const clickedMatch = (matches) => {
             
             itemSearch.value = suggestMatch.innerHTML;
             let itemName = itemSearch.value
-            const url = `https://api.spoonacular.com/food/ingredients/autocomplete?query=${itemName}&metaInformation=true&apiKey=${key}`;
+            const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/ingredients/autocomplete?query=${itemName}&metaInformation=true`;
             get(url).then(function (response) {
               //Assigning the JSON response as an array
                 const item = response;

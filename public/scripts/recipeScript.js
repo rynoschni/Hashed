@@ -4,7 +4,7 @@ const searchData = document.getElementById('recipeSearch');
 const searchButton = document.getElementById('searchButton');
 const searchURL = document.getElementById('urlSearch');
 const searchURLButton = document.getElementById('urlSearchButton');
-const apiKey = '3633c51b86b2490a866cac434f6bfb09';
+// const apiKey = '3633c51b86b2490a866cac434f6bfb09';
 // const itemSearchButton = document.getElementByID('itemSearchButton');
 // console.log('clicked')
 
@@ -13,7 +13,7 @@ const getRecipes = () => {
     
     // uses GET to access the API
 
-    const url = `https://api.spoonacular.com/recipes/complexSearch?query=${searchData.value}&instructionsRequired=true&addRecipeNutrition=true&number=9&fillIngredients=true&apiKey=${apiKey}`;
+    const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?query=${searchData.value}&instructionsRequired=true&addRecipeNutrition=true&number=9&fillIngredients=true`;
     const returnObj = get(url).then(function (response) {
       //Assigning the JSON response as an array
         const items = response;
@@ -100,7 +100,7 @@ const getURLRecipes = () => {
 
     // uses GET to access the API
 
-    const url = `https://api.spoonacular.com/recipes/extract?url=${searchURL.value}&apiKey=${apiKey}`;
+    const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/extract?url=${searchURL.value}`;
     const returnObj = get(url).then(function (response) {
         //Assigning the JSON response as an array
         const recipe = response;
