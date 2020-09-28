@@ -120,9 +120,11 @@ select {
 }
 
 #add {
+    padding: 5px;
     vertical-align: middle;
 }
 
 #subtract {
+    padding: 5px;
     vertical-align: middle;
 }
