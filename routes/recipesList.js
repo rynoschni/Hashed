@@ -39,26 +39,7 @@ router.get('/:name?', async (req, res) => {
     }
 })
 
-// When adding a recipe from api to database, grab all of extendedIngredients and add as single object. Pulling from database will only call the info that is also created when manually creating recipe.
-// {
-//     "extendedIngredients": [
-//         {
-//             "id": 1001,
-//             "measures": {
-//                 "metric": {
-//                     "amount": 1.0,
-//                     "unitLong": "Tbsp",
-//                 },
-//                 "us": {
-//                     "amount": 1.0,
-//                     "unitLong": "Tbsp",
-//                 }
-//             },
-//             "name": "butter",
-//             "original": "1 tbsp butter",
-//         },
-//     ]
-// }
+
 
 router.post('/', async (req, res) => {
     console.log("add:", req.body)
