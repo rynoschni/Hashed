@@ -16,5 +16,7 @@ editButton.forEach((edit)=>{
         editLineUnit.hidden = false
         editLineItem.hidden = false
         editID.checked = true
+        const groceryItem = document.getElementById(`groceryItem ${edit.id.slice(5)}`)
+        groceryItem.hidden = true
     })
 })

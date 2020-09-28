@@ -53,7 +53,8 @@ class pantryListReturn {
     }
     static async incrementPantryItem (pantryItem_id, qty){
         try {
-            const response = await db.result(`UPDATE pantry SET qty = $1 + 1 WHERE id = $2`, [qty, pantryItem_id])
+            let newQty = Number(qty) + 1;
+            const response = await db.result(`UPDATE pantry SET qty = $1 WHERE id = $2`, [newQty, pantryItem_id])
         }
         catch (error) {
             return error.message
@@ -61,8 +62,9 @@ class pantryListReturn {
     }
     static async decrementPantryItem (pantryItem_id, qty){
         try {
+            let newQty = Number(qty) - 1 < 0 ? 0 : Number(qty) - 1;
             console.log(pantryItem_id)
-            const response = await db.result(`UPDATE pantry SET qty = $1 - 1 WHERE id = $2`, [qty, pantryItem_id])
+            const response = await db.result(`UPDATE pantry SET qty = $1 WHERE id = $2`, [newQty, pantryItem_id])
         }
         catch (error) {
             return error.message
