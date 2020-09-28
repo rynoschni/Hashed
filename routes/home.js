@@ -1,6 +1,7 @@
 'use strict'
 const express = require('express'),
-    router = express.Router();
+    router = express.Router(),
+    bcrypt = require('bcryptjs');
 const User = require('../models/userLogs');
 
 router.get('/', async (req, res) => {
@@ -25,25 +26,18 @@ router.get('/logout', (req, res) => {
     res.redirect('/')
 })
 
-router.post("/", (req, res) => {
-    const { email, password } = req.body
-    const userInstance = new User(null, null, email, password);
-    userInstance.login().then(response => {
-        req.session.is_logged_in = response.isValid;
-        // console.log(req.session.is_logged_in)
-        // console.log('TESTING');
-        if (!!response.isValid) {
-            const { name, email, user_id } = response;
-            req.session.name = `${name}`;
-            req.session.email = `${email}`;
-            req.session.user_id = user_id;
-            console.log("session: ", req.session)
-            res.redirect('/home')
-        } else {
-            res.sendStatus(401)
-        }
+router.post('/', async (req, res) => {
+    const user_id = req.session.user_id;
+    const { name, email, password } = req.body;
+    //SALTing the HASH
+    const salt = bcrypt.genSaltSync(10);
+    const hash = bcrypt.hashSync(password, salt);
+
+    const userInstance = new User(user_id, name, email, hash);
+    userInstance.update().then(response =>{
+        res.redirect('/home');
     })
-})
+});
 
 
 module.exports = router
