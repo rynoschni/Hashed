@@ -61,6 +61,7 @@ class pantryListReturn {
     }
     static async decrementPantryItem (pantryItem_id, qty){
         try {
+            console.log(pantryItem_id)
             const response = await db.result(`UPDATE pantry SET qty = $1 - 1 WHERE id = $2`, [qty, pantryItem_id])
         }
         catch (error) {

@@ -1,90 +1,78 @@
 <h1>HASHED</h1>
-<img src="">
+<img src="images/">
 
 <h2><u>Overview:</u></h2>
-<p>Ut laboris nulla nulla occaecat qui proident nisi eiusmod.</p>
+<p>Hashed provides grocery list, pantry list, and recipe search functionality.</p>
 <br>
     
 <h2><u>The Team:</u></h2>
-<h3>Brittney Ericksen: https://github.com/brittani-ericksen</h3>
-<p><b>Primary Team Role:</b> JavaScript</p>
-<p><b>Contributions:</b> API Testing</p>
-<br>
-<h3>Eric Shorling: https://github.com/JustinSGardner</h3>
-<p><b>Primary Team Role:</b> HTML and CSS</p>
-<p><b>Contributions:</b> Testing and UI/UX</p>
+<h3>Brittani Ericksen: https://github.com/brittani-ericksen</h3>
+<p><b>Primary Team Role:</b> </p>
+<p><b>Contributions:</b> </p>
 <br>
 <h3>Matthew Everett: https://github.com/Mjheverett</h3>
-<p><b>Primary Team Role:</b> JavaScript Lead</p>
-<p><b>Contributions:</b> API Integrations</p>
+<p><b>Primary Team Role:</b> </p>
+<p><b>Contributions:</b> </p>
 <br>
-<h3>Harmony Trevena: https://github.com/harmonytrevena</h3>
-<p><b>Primary Team Role:</b> HTML, CSS and JavaScript</p>
-<p><b>Contributions:</b> UI/UX and Responsive Design</p>
+<h3>Ryan Schniederjan: https://github.com/rynoschni</h3>
+<p><b>Primary Team Role:</b> </p>
+<p><b>Contributions:</b> </p>
+<br>
+<h3>Eric Schorling: https://github.com/willeschor</h3>
+<p><b>Primary Team Role:</b> </p>
+<p><b>Contributions:</b> </p>
 <br>
 
 <h2><u>What We Used:</u></h2>
 <h3>Languages:</h3>
 <ul>
+    <li>Node.js</li>
+    <li>Express</li>
+    <li>PostgreSQL</li>
     <li>HTML5</li>
     <li>CSS</li>
     <li>JavaScript</li>
-    <li>JSON</li>
-    <li>Node.js</li>
-    <li>PostgreSQL</li>
 </ul>
 <h3>Frameworks:</h3>
 <ul>
     <li>Bulma</li>
-    <li>Express</li>
 </ul>
 <h3>APIs:</h3>
 <ul>
-    <li><a href="https://www.openbrewerydb.org/">Spoon</a></li>
+    <li><a href="https://spoonacular.com/food-api">Spoonacular</a></li>
 </ul>
 <br>
 
 <h2><u>MVP (Minimum Viable Product):</u></h2>
 <ul>
-    <li>Provide Weather and Local Events</li>
-    <li>Select from Listed Cities (DigitalCrafts Campus Cities)</li>
-    <li>Mobile-first Development</li>
-    <li>Category Selections</li>
-    <li>Useful and Informative</li>
+    <li>Add and remove items to a Grocery list.</li>
+    <li>Mark items as completed while shopping.</li>
 </ul>
 <br>
 
 <h2><u>Stretch Goals Completed:</u></h2>
 <ul>
-    <li>Clickable Links for Additional Information</li>
-    <li>Focused Recommendations</li>
+    <li>Recipe search by name and url.</li>
 </ul>
 <br>
+
 <h2><u>Stretch Goals Future:</u></h2>
 <ul>
-    <li>Additional Preferences Selections</li>
-    <li>Additional Information Displayed</li>
-    <li>Add Cross-browser Funtionaility for CSS Keyframes</li>
-    <ul>
-        <li>Images from Location</li>
-        <li>Operating Hours</li>
-    </ul>
-    <li>Additional Cities</li>
+    <li></li>
 </ul>
 <br>
 
 <h2><u>Challenges & Solutions:</u></h2>
 <h3>Some of the biggest challenges we faced with this project build included:</h2>
 <br>
-<p><b>Challenge:</b> Display events from a variety of sources and categories in an unbiased manner.</p>
-<p><b>Solution:</b> All events are aggreagted by a Promise.All call and combined into a single 'events' array. The array is sorted randomly and then sent to create the HTML elements from the sorted elements.</p>
+<p><b>Challenge:</b> </p>
+<p><b>Solution:</b> </p>
 <br>
-<p><b>Challenge:</b> Enable auto scolling for hero carousel in Moz and Safari.</p>
-<p><b>Solution:</b> Keyframes animations for the carousel do not work properly on Firefox and Safari browsers.
--webkit- and -moz- prefixes have been added in addition to the standard Keyframe with no change to behavior. Current solution allows user to manually scroll through images.</p>
+<p><b>Challenge:</b> </p>
+<p><b>Solution:</b> </p>
 <br>
-<p><b>Challenge:</b> Enable category selection to expand/narrow choices for events types.</p>
-<p><b>Solution:</b> Enabling API calls based on the category selection prevents the API from being called if the category is not selected. This both helps to narrow data, but also removed the necessity of adding Filters to the page for the initial product.</p>
+<p><b>Challenge:</b> </p>
+<p><b>Solution:</b> </p>
 <br>
     
 <h2><u>Code Snippets:</u></h2>
@@ -183,11 +171,11 @@ const categorySelection = () => {
 ```
 
 <h2>Live Demo</h2>
-<a href="https://to-do-today.netlify.app/">To-Do Today</a>
+<a href="">Hashed</a>
 <br>
-<h4>Preview of user navigating the event categories checkboxes and selecting an event (redirects user to Third Party Website).</h4>
-<img src="images/HomePage_to_ThirdPartyWebsite.gif">
+<h4>Preview of </h4>
+<img src="images/">
 <br>
-<h4>Preview of user navigating the page and being redirected to Google to learn more about the event.</h4>
-<img src="images/HomePage_to_GoogleSearch.gif">
+<h4>Preview of </h4>
+<img src="images/">
 

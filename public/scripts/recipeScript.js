@@ -73,7 +73,6 @@ const getRecipes = () => {
             recipeJSON.value = recipe;
             recipeJSON.name = "json"
             recipeJSON.hidden = true
-            //console.log("value", recipeJSON.value)
             searchCardDiv.appendChild(recipeInstructions)
             recipeInstructions.name = "instructions";
             recipeInstructions.value = `${recipe.analyzedInstructions[0].steps.map(steps => steps.step).join(':')}`

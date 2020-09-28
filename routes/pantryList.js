@@ -30,16 +30,16 @@ router.post('/', async (req, res) =>{
         console.log(req.body)
         await res.redirect('/pantry')
     }
-
-    if (req.body.add[0] === 'A'){
+    console.log(req.body)
+    if (req.body.add){
         let id = req.body.add.split('').slice(4).join('')
         await theList.incrementPantryItem(id, req.body[id])
         console.log(req.body)
         await res.redirect('/pantry')
     }
 
-    if (req.body.subtract === 'S'){
-        let id = req.body.add.split('').slice(9).join('')
+    if (req.body.subtract){
+        let id = req.body.subtract.split('').slice(9).join('')
         await theList.decrementPantryItem(id, req.body[id])
         console.log(req.body)
         await res.redirect('/pantry')
