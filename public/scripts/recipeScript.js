@@ -13,7 +13,7 @@ const getRecipes = () => {
     
     // uses GET to access the API
 
-    const url = `https://api.spoonacular.com/recipes/complexSearch?query=${searchData.value}&instructionsRequired=true&addRecipeNutrition=true&number=1&fillIngredients=true&apiKey=${apiKey}`;
+    const url = `https://api.spoonacular.com/recipes/complexSearch?query=${searchData.value}&instructionsRequired=true&addRecipeNutrition=true&number=9&fillIngredients=true&apiKey=${apiKey}`;
     const returnObj = get(url).then(function (response) {
       //Assigning the JSON response as an array
         const items = response;

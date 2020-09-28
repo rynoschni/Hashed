@@ -56,6 +56,7 @@ select {
     padding-right: calc(.75em - 1px);
     padding-top: calc(.5em - 1px);
     position: relative;
+    width: 4rem;
 }
 
 .input-is-inline:hover {
