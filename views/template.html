@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width initial-scale = 1"/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
         <link rel="stylesheet" href="/css/styles.css">
+        <link rel="icon" type="image/png" href="/images/favicon_io/favicon-32x32.png">
     </head>
     <body>
         <section class="hero is-medium is-success">
@@ -13,8 +14,8 @@
                 <nav class="navbar">
                     <div class="container">
                         <div class="navbar-brand">
-                            ${!!is_logged_in ? `<a class="navbar-item" href="/"><h1 class="title">Hashed</h1></a>` : `
-                            <a class="navbar-item navbar-end" href="/"><h1 class="title">Hashed</h1></a> `}
+                            ${!!is_logged_in ? `<a class="navbar-item" href="/home"><img src="/images/Hashed-logo-128h.png" alt="Hashed"><h1 class="title">Hashed</h1></a>` : `
+                            <a class="navbar-item navbar-end" href="/"><h1 class="title"><img src="/images/Hashed-logo-128h.png" alt="Hashed">Hashed</h1></a> `}
                         
                                 ${!!is_logged_in ? `<div class="navbar-item is-grouped-centered">Hi ${name}</div>` : ``}
                             
@@ -29,17 +30,8 @@
                             <div class="navbar-end">
                                 ${!!is_logged_in ? `
                                 <a href="/home" class="navbar-item">
-                                    Home
+                                    Profile Home
                                 </a>
-                                <!-- <a href="/grocery" class="navbar-item">
-                                    Groceries
-                                </a>
-                                <a href="/pantry" class="navbar-item">
-                                    Pantry
-                                </a>
-                                <a href="/recipes" class="navbar-item">
-                                    Recipes
-                                </a> -->
                                 <div class="navbar-item">
                                     <div class="buttons">
                                         <a class="button is-light" href="/logout">Logout</a>` 
@@ -64,27 +56,43 @@
             </div>
 
             <!-- Hero footer: will stick at the bottom -->
-            <div class="hero-foot">
+            <div class="hero-foot"> ${!!is_logged_in? `
                 <nav class="tabs is-boxed is-fullwidth">
                     <div class="container">
                         <ul>
-                            <li ${baseUrl === "/grocery" ? `class="is-active"` : `class='not-active'`}><a href="/grocery">Groceries</a></li>
-                            <li ${baseUrl === "/pantry" ? `class="is-active"` : ``}><a href="/pantry">Pantry</a></li>
-                            <li ${baseUrl === "/recipes" ? `class="is-active"` : ``}><a href="/recipes">Recipes</a></li>
+                            <li ${baseUrl === "/grocery" ? `class="is-active"` : `class='not-active'`}><a href="/grocery"><i class="fas fa-shopping-basket"></i> Groceries</a></li>
+                            <li ${baseUrl === "/pantry" ? `class="is-active"` : ``}><a href="/pantry"><i class="fas fa-apple-alt"></i>Pantry</a></li>
+                            <li ${baseUrl === "/recipes" ? `class="is-active"` : ``}><a href="/recipes"><i class="fas fa-archive"></i>Recipes</a></li>
                         </ul>
                     </div>
-                </nav>
+                </nav> `
+                :
+                ``}
             </div>
 
         </section>
+    <div class="columns">
+        <!-- <aside class="menu column is-one-fifth">
+            <p><a>Profile</a></li></p>
+            <p class="menulist"><i class="fas fa-apple-alt"></i><a href="/pantry"> Pantry List</a></p>
+            <p class="menulist"><i class="fas fa-shopping-basket"></i><a href="/grocery"> Grocery List</a></p>
+            <p class="menulist"><i class="fas fa-archive"></i><a href="/recipes"> Recipe List</a></p>
 
-        <main>${partial}</main>
+            <ul class="menu-list">
+                <li><a>Profile</a></li>
+                <li><i class="fas fa-apple-alt"></i><a href="/pantry"> Pantry List</a></li>
+                <li><i class="fas fa-shopping-basket"></i><a href="/grocery"> Grocery List</a></li>
+                <li><i class="fas fa-archive"></i><a href="/recipes"> Recipe List</a></li>
+            </ul>
+        </aside> -->
 
+        <main class="column is-full">${partial}</main>
+    </div>
         <footer class="footer">
             <div class="content has-text-centered">
                 <div>
                     <p>${!!is_logged_in ? 
-                    `<a href="/pantry">Home</a>` 
+                    `<a href="/home">Home</a>` 
                     : 
                     `<a href="/">Home</a> `}</p>
                 </div>
@@ -98,7 +106,7 @@
             </div>
         </footer>
         <script src="https://kit.fontawesome.com/b91ebdb5e6.js" crossorigin="anonymous"></script>
-        <script src="/scripts/scripts.js"></script>
+        <script src="/scripts/navbar.js"></script>
         ${scripts}
         
     </body>

@@ -1,10 +1,15 @@
 <br />
+<div class="is-content has-text-centered">
+    
+    <a href="/recipes">Recipe List</a>
+</div>
+<br />
 <section>
     <div class="columns is-mobile is-centered">
-        <div class="column content is-half has-text-centered">
-            <a href="/recipes">Recipe List</a>
+        <div class="column content is-one-quarter has-text-centered">
             <div class="box">
                 <h2>${data.title}</h2>
+
                 <article class="media">
                     <div class="media-left">
                         <figure class="image is-256x256">
@@ -38,7 +43,18 @@
                                 ${data.instructions.split(':').map(item=>  
                                 `<li>${item}</li>`).join('')}
                             </p>
+
+
                         </div>
-                    </div>
-                </article>
+                    </form>
+                    <br />
+                    <h4>Instructions</h4>
+                    <p>
+                        ${data.instructions.split(':').map(item=>  
+                        `<li>${item}</li>`).join('')}
+                    </p>
+                </div>
             </div>
+        </div>
+    </div>
+</section>
