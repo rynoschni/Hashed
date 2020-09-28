@@ -1,8 +1,7 @@
 <br />
-<section class="column">
+<section>
     <div class="columns is-mobile is-centered">
         <div class="column content is-two-thirds-mobile is-three-fifths-tablet is-half-desktop is-two-fifths-widescreen is-two-fifths-fullhd has-text-centered">
-            <!-- <h2>Pantry List</h2> -->
             <div class="field" id="addItemsButton">
                 <div class="control">
                     <button type='button' name="addItems" value="AddItems" class="button is-primary">Add Items</button>
@@ -19,7 +18,7 @@
                 
                 <div class="field is-grouped is-grouped-centered">
                     <div class="control">
-                        <input class="input-is-inline" type="text" value='' name="qty" placeholder="Quantity" required>
+                        <input class="input-is-inline" type="text" value='' name="qty" placeholder="Qty" required>
                         <div class="select">
                             <select id="unitsList" value="" name="unit">
                                 <option name="unit" value="each" selected>each</option>
@@ -33,7 +32,7 @@
                         <button type='submit' name="add" value="Add" class="button is-primary">Add</button>
                     </div>
                     <div class="control">
-                        <button type='button' name="close" value="Close" class="button is-danger" id="closeAddItems">Close</button>
+                        <button type='button' name="close" value="Close" class="button is-light" id="closeAddItems">Close</button>
                     </div>
                 </div>
                 <div id='hiddenInfo'></div>
