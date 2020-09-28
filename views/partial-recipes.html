@@ -33,12 +33,12 @@
         <div class="column content is-one-third">
             <div class="box">
                 <div class="content">
-                    <h4>Ingredients</h4>
+                    <h4 class="has-text-centered">Ingredients</h4>
                     <form action="/recipes/add/${recipe_id}" method="POST" id="addToShopping">
                         <p>
                             ${data.ingred.split(':').map(item => `<li>${item.split(',').join(' ')}</li>`).join('')}
                         </p>
-                        <div class="field">
+                        <div class="field is-grouped is-grouped-centered">
                             <div class="control">
                                 <button type='submit' name="addToShopping" value="AddToShopping" class="button is-link">Add to Shopping List</button>
                                 <button type='submit' name="cookIt" value="cookIt" class="button is-link">Cook Recipe</button>
@@ -46,7 +46,7 @@
                         </div>
                     </form>
                     <br />
-                    <h4>Instructions</h4>
+                    <h4 class="has-text-centered">Instructions</h4>
                     <p>
                         ${data.instructions.split(':').map(item=>  
                         `<li>${item}</li>`).join('')}
