@@ -19,6 +19,15 @@
                     <i class="${data.rating > 3 ? 'fas fa-star checked' : 'far fa-star'}"></i>
                     <i class="${data.rating > 4 ? 'fas fa-star checked' : 'far fa-star'}"></i>
                 </div>
+                <br />
+                <form action="/recipes/delete" method="POST" id="deleteRecipe">
+                    <div class="field is-grouped is-grouped-centered">
+                        <div class="control">
+                            <button type='button' name="editRecipe" value="EditRecipe" class="button is-link">Edit Recipe</button>
+                            <button type='submit' name="deleteRecipe" value="DeleteRecipe" class="button is-danger">Delete Recipe</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
         <div class="column content is-one-third">
