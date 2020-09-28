@@ -48,9 +48,10 @@
                             if (!pantryItem.completed){
                                 return `<li>
                                     <input type="checkbox" class="todo" id="${pantryItem.id}" name ="id" value="${pantryItem.id}">
-
-                                    <label for="${pantryItem.id}"> ${pantryItem.item}, <input type="text" id="qty" name="${pantryItem.id}" value="${pantryItem.qty}" class="input-is-inline"> ${pantryItem.units}
-
+                                    <span class="qtyChange" id="qtyChange ${pantryItem.id}" >${pantryItem.qty}</span>
+                                    <input type="text" id="qty ${pantryItem.id}" name="${pantryItem.id}" value="${pantryItem.qty}" class="hide input-is-inline" hidden> 
+                                    ${pantryItem.units}
+                                    <label for="${pantryItem.id}"> ${pantryItem.item}    
                                     <button class="button fas fa-plus is-small is-primary is-inverted" type="submit" name="add" value="Add ${pantryItem.id}" id="add">
                                         </button>
                                         <button class="button fas fa-minus is-small is-primary is-inverted" type="submit" name="subtract" value="Subtract ${pantryItem.id}" id="subtract">
@@ -62,7 +63,7 @@
                     </dl>
                     <div class="field is-grouped is-grouped-centered">
                         <div class="control">
-                            <button class="button is-primary" type="submit" name="update" value="Update" ${list.filter(pantry => !pantry.completed).length ? '' : 'disabled'}>Update</button>
+                            <button class="hide button is-primary" id="updateButton" type="submit" name="update" value="Update" hidden ${list.filter(pantry => !pantry.completed).length ? '' : 'disabled'}>Update</button>
                         </div>
                         <div class="control">
                             <button class="button is-danger" type="submit" name="delete" value="Delete" ${list.filter(pantry => !pantry.completed).length ? '' : 'disabled'}>Delete</button>
