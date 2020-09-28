@@ -27,6 +27,14 @@
                     </div>
                 </div>
                 
+
+                <div class="field" hidden>
+                    <div class="control">
+                        <input class="input" type='text' value='' name='recipe_id' placeholder="Recipe-ID" hidden>
+                    </div>
+                </div>
+                
+
                 <div class="field is-grouped is-grouped-centered">
                     <div class="control">
                         <button type='submit' name="add" value="Add" class="button is-primary">Add</button>
@@ -50,10 +58,14 @@
                             if (!grocery.completed){
                                 return `<li>
                                     <input type="checkbox" class="todo" id="${grocery.id}" name ="id" value="${grocery.id}">
-                                    <input type="text" class="grocery-list-input input-is-inline" id="${grocery.id}" name="update" value="${grocery.qty} ${grocery.units} ${grocery.item}">
+
+                                    <input type="text" class="grocery-list-input-qty" id="qty ${grocery.id}" name="update" value="${grocery.qty}" hidden>
+                                    <input type="text" class="grocery-list-input-unit" id="unit ${grocery.id}" name="update" value="${grocery.units}" hidden>
+                                    <input type="text" class="grocery-list-input-item" id="item ${grocery.id}" name="update" value="${grocery.item}" hidden>
                                     <label id="groceryItem" for="${grocery.id}">${grocery.qty} ${grocery.units} ${grocery.item}</label>
-                                    <button name="edit" class="button is-primary edit" id="edit ${grocery.id}" class="edit">Edit</button>
-                                    
+                                    <button name="edit" class="edit" id="edit ${grocery.id}" class="edit">Edit</button>
+                                    <button type="submit" name="updateItem" class="updateItem" id="updateItem ${grocery.id}" value="submit" hidden>Update</button>
+
                                 </li>`
                             }
                         }).join('')}
