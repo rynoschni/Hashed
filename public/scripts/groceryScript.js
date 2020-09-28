@@ -10,13 +10,14 @@ editButton.forEach((edit)=>{
         const editLineItem = document.getElementById(`item ${edit.id.slice(5)}`)
         const editID = document.getElementById(edit.id.slice(5))
         const updateItem = document.getElementById(`updateItem ${edit.id.slice(5)}`)
-        const groceryItem = document.getElementById(`groceryItem ${edit.id.slice(5)}`)
+        const groceryItem = document.getElementById(`groceryItem`)
         edit.classList.add('hide')
         updateItem.classList.remove('hide')
         editLineQty.hidden = false
         editLineUnit.hidden = false
         editLineItem.hidden = false
         editID.checked = true
+        editID.hidden = true
         groceryItem.hidden = true
     })
 })
