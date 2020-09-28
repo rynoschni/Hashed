@@ -68,15 +68,15 @@
                     </dl>
                     <div class="field is-grouped is-grouped-centered">
                         <div class="control">
-                            <button class="button is-primary" type="submit" name="update" value="Update">Update</button>
+                            <button class="button is-primary" type="submit" name="update" value="Update" ${list.filter(pantry => !pantry.completed).length ? '' : 'disabled'}>Update</button>
                         </div>
                         <div class="control">
-                            <button class="button is-danger" type="submit" name="delete" value="Delete">Delete</button>
+                            <button class="button is-danger" type="submit" name="delete" value="Delete" ${list.filter(pantry => !pantry.completed).length ? '' : 'disabled'}>Delete</button>
                         </div>
                     </div>
                     <div class="field is-centered">    
                         <div class="control">
-                            <button class="button is-primary" type="submit" name="grocery" value="Grocery">Add to Shopping List</button>
+                            <button class="button is-primary" type="submit" name="grocery" value="Grocery" ${list.filter(pantry => !pantry.completed).length ? '' : 'disabled'}>Add to Shopping List</button>
                         </div>
                     </div>
                 </form>
