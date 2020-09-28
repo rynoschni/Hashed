@@ -4,22 +4,26 @@ const express = require('express'),
 const theList = require('../models/groceryList')
 
 router.get('/', async (req, res) =>{
-    const groceryList = await theList.getGroceryList(req.session.user_id)
-    //console.log(todos)
-    res.render('template', {
-        locals: {
-            title:'Shopping List',
-            is_logged_in: req.session.is_logged_in,
-            list: groceryList,
-            name: req.session.name,
-            url: req.baseUrl,
-            baseUrl: req.baseUrl
-        },
-        partials: {
-            partial:'partial-groceryList',
-            scripts:'partial-api-scripts'
-        }
-    })
+    if (req.session.is_logged_in === true) {
+        const groceryList = await theList.getGroceryList(req.session.user_id)
+        //console.log(todos)
+        res.render('template', {
+            locals: {
+                title:'Shopping List',
+                is_logged_in: req.session.is_logged_in,
+                list: groceryList,
+                name: req.session.name,
+                url: req.baseUrl,
+                baseUrl: req.baseUrl
+            },
+            partials: {
+                partial:'partial-groceryList',
+                scripts:'partial-api-scripts'
+            }
+        })
+    } else {
+        res.redirect('/');
+    }
 })
 
 router.post('/', async (req, res) =>{

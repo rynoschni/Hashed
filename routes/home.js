@@ -5,20 +5,24 @@ const express = require('express'),
 const User = require('../models/userLogs');
 
 router.get('/', async (req, res) => {
-    res.render('template', {
-        locals: {
-            title: `Welcome ${req.session.name}!`,
-            name: req.session.name,
-            email: req.session.email,
-            is_logged_in: req.session.is_logged_in,
-            url: req.baseUrl,
-            baseUrl: req.baseUrl
-        },
-        partials: {
-            partial: 'partial-userHome',
-            scripts: 'partial-empty'
-        }
-    })
+    if (req.session.is_logged_in === true) {
+        res.render('template', {
+            locals: {
+                title: `Welcome ${req.session.name}!`,
+                name: req.session.name,
+                email: req.session.email,
+                is_logged_in: req.session.is_logged_in,
+                url: req.baseUrl,
+                baseUrl: req.baseUrl
+            },
+            partials: {
+                partial: 'partial-userHome',
+                scripts: 'partial-empty'
+            }
+        })
+    } else {
+        res.redirect('/');
+    }
 })
 
 router.get('/logout', (req, res) => {

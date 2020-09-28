@@ -17,9 +17,9 @@ router.post('/', async (req, res) =>{
             await theList.moveFromGroceryToPantry(selectedList[0], req.session.user_id)
         }
         else{
-            selectedList.map(groceryListItem=>{
+            for(let groceryListItem of selectedList){
                 return theList.moveFromGroceryToPantry(groceryListItem, req.session.user_id)
-            })
+            }
         }
         console.log("req.body pantry", req.body)
         await res.redirect('/grocery')
