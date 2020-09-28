@@ -1,6 +1,10 @@
 body {
     font-size: 20px;
+    
 }
+/* html::-webkit-scrollbar {
+    display: none;
+  } */
 
 select {
     margin-bottom: 2rem;
