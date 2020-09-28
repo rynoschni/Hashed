@@ -1,28 +1,22 @@
 <br />
 <section>
-    <div class="columns is-mobile is-centered">
-        <div class="column content is-four-fifths has-text-centered">
-            <!-- <h2>Recipes List</h2> -->
-            <!-- <div class="field" id="addItemsButton">
-                <div class="control">
-                    <button type='button' name="addItems" value="AddItems" class="button is-link">Add Recipes</button>
-                </div>
-            </div> -->
-            <!-- Add recipe form -->
+    <div class="columns is-centered">
+        <div class="column is-1"></div>
+        <div class="column content has-text-centered">
             <div id="addItems">
                 <div class="field">
                     <div class="control">
-                        <input id="recipeSearch" class="input" type='text' name='recipeSearch' placeholder="Search recipes..." required>
+                        <input id="recipeSearch" class="input is-rounded" type='text' name='recipeSearch' placeholder="Search recipes..." required>
                     </div>
                     <div class="control">
-                        <input id="searchButton" class="button is-link search_button" type="button" value='Search' name='Search'>
+                        <input id="searchButton" class="button is-primary search_button" type="button" value='Search' name='Search'>
                     </div>
                     <br />
                     <div class="control">
                         <input id="urlSearch" class="input is-rounded" type='text' name='urlSearch' placeholder="Get recipe from url..">
                     </div>
                     <div class="control">
-                        <input id="urlSearchButton" class="button is-link search_button" type="button" value='Search' name='URLSearch'>
+                        <input id="urlSearchButton" class="button is-primary search_button" type="button" value='Search' name='URLSearch'>
                     </div>
                 </div>
 
@@ -40,16 +34,17 @@
                     </div>
                 </div>
             </div>
-            <br />
-            <section>
-                <h4>Recipes:</h4>
-                    <dl style="list-style-type: none;">
-                        ${list.map(recipe =>{
-                        return `<li><a href="/recipes/${recipe.id}">${recipe.title}</a></li>`
-                        }).join('')}
-                    </dl>
-            </section>
-            <br />
         </div>
+        <div class="column is-one-third has-text-centered">
+            <div class="content">
+                <h4>Your Recipes:</h4>
+                <dl style="list-style-type: none;">
+                    ${list.map(recipe =>{
+                    return `<li><a href="/recipes/${recipe.id}">${recipe.title}</a></li>`
+                    }).join('')}
+                </dl>
+            </div>
+        </div>
+        <div class="column is-1"></div>
     </div>
 <section>

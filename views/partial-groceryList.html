@@ -1,17 +1,17 @@
 <br />
 <section>
     <div class="columns is-mobile is-centered">
-        <div class="column content is-four-fifths has-text-centered">
+        <div class="column content is-two-thirds-mobile is-three-fifths-tablet is-half-desktop is-two-fifths-widescreen is-two-fifths-fullhd has-text-centered">
             <div class="field" id="addItemsButton">
                 <div class="control">
-                    <button type='button' name="addItems" value="AddItems" class="button is-link">Add Items</button>
+                    <button type='button' name="addItems" value="AddItems" class="button is-primary">Add Items</button>
                 </div>
             </div>
             <!-- Add Items form activated by Add Items Button above -->
             <form action='/grocery/add' method="POST" id="addItems">
                 <div class="field">
                     <div class="control">
-                        <input id="itemSearch" class="input" type='text' value='' name='groceries' placeholder="Grocery Item" required>
+                        <input id="itemSearch" class="input is-rounded" type='text' value='' name='groceries' placeholder="Grocery Item" required>
                     </div>
                     <div class="match-list" id="itemList"></div>
                 </div>
@@ -34,9 +34,10 @@
                     </div>
                 </div>
                 
+
                 <div class="field is-grouped is-grouped-centered">
                     <div class="control">
-                        <button type='submit' name="add" value="Add" class="button is-link">Add</button>
+                        <button type='submit' name="add" value="Add" class="button is-primary">Add</button>
                     </div>
                     <div class="control">
                         <button type='button' name="close" value="Close" class="button" id="closeAddItems">Close</button>
@@ -44,7 +45,10 @@
                 </div>
                 <div id='hiddenInfo'></div>
             </form>
-            <br />
+        </div>
+    </div>
+    <div class="columns is-mobile is-centered">
+        <div class="column content is-full-mobile is-four-fifths-tablet is-four-fifths-desktop is-four-fifths-widescreen is-four-fifths-fullhd has-text-centered">
             <!-- Displayed Shopping list -->
             <section>
                 <h4>Things to buy:</h4>
@@ -54,22 +58,24 @@
                             if (!grocery.completed){
                                 return `<li>
                                     <input type="checkbox" class="todo" id="${grocery.id}" name ="id" value="${grocery.id}">
+
                                     <input type="text" class="grocery-list-input-qty" id="qty ${grocery.id}" name="update" value="${grocery.qty}" hidden>
                                     <input type="text" class="grocery-list-input-unit" id="unit ${grocery.id}" name="update" value="${grocery.units}" hidden>
                                     <input type="text" class="grocery-list-input-item" id="item ${grocery.id}" name="update" value="${grocery.item}" hidden>
                                     <label id="groceryItem" for="${grocery.id}">${grocery.qty} ${grocery.units} ${grocery.item}</label>
                                     <button name="edit" class="edit" id="edit ${grocery.id}" class="edit">Edit</button>
                                     <button type="submit" name="updateItem" class="updateItem" id="updateItem ${grocery.id}" value="submit" hidden>Update</button>
+
                                 </li>`
                             }
                         }).join('')}
                     </dl>
                     <div class="field is-grouped is-grouped-centered">
                         <div class="control">
-                            <button class="button is-link" type="submit" name="update" value="Update" ${list.filter(grocery => !grocery.completed).length ? '' : 'disabled'}>Update</button>
+                            <button class="button is-primary" type="submit" name="update" value="Update" ${list.filter(grocery => !grocery.completed).length ? '' : 'disabled'}>Update</button>
                         </div>
                         <div class="control">
-                            <button class="button is-link is-danger" type="submit" name="delete" value="Delete" ${list.filter(grocery => !grocery.completed).length ? '' : 'disabled'}>Delete</button>
+                            <button class="button is-primary is-danger" type="submit" name="delete" value="Delete" ${list.filter(grocery => !grocery.completed).length ? '' : 'disabled'}>Delete</button>
                         </div>
                     </div>
                 </form>
@@ -91,10 +97,10 @@
                     </dl>
                     <div class="field is-grouped is-grouped-centered">
                         <div class="control">
-                            <button type='submit' name="undo" value="Undo" class="button is-link" ${list.filter(grocery => grocery.completed).length ? '' : 'disabled'}>Move to Shopping List</button>
+                            <button type='submit' name="undo" value="Undo" class="button is-primary" ${list.filter(grocery => grocery.completed).length ? '' : 'disabled'}>Move to Shopping List</button>
                         </div>
                         <div class="control">
-                            <button type='submit' name="pantry" value="Pantry" class="button is-link" ${list.filter(grocery=>
+                            <button type='submit' name="pantry" value="Pantry" class="button is-primary" ${list.filter(grocery=>
                                 grocery.completed).length ? '' : 'disabled'}>Move to Pantry</button>
                         </div>
                     </div>

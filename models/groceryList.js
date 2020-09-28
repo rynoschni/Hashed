@@ -32,7 +32,9 @@ class groceryListReturn {
 
     static async createGroceryList(data, theID){
         try{
+
             const response = await db.result('INSERT INTO shopping (item, qty, units, recipe_id, completed, user_id) VALUES($1, $2, $3, 1, false, $5);', [data.groceries, data.qty, data.unit, data.recipe_id, theID]);
+
             console.log("create response is:", response);
             return response;
         }

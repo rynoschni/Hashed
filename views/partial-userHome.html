@@ -1,29 +1,30 @@
 <section>
     <div class="columns is-mobile is-centered">
-        <div class="column content is-four-fifths has-text-centered">
+        <div class="column content is-two-thirds has-text-centered">
             <br />
             <div class="container">
-                <h3>Welcome to your profile page.  Here you can update your User information.</h3>
+                <h3>Update your information or select a tab to get started.</h3>
             </div>
-            <form class="block">
-                <form action="/routes/home.js" method="POST"></form>
-                    <div class="content is-centered">
+            <form class="block" action="/home" method="POST">
+                <div class="columns">    
+                    <div class="column is-one-third content is-centered">
                         <figure class="image is-128x128">
                             <image class="is-rounded" src="../images/avatar-1280.png"/><span class="tag is-danger">Profile pic coming soon!</span>
-
                         </figure>
                     </div>
+                    <div class="column is-two-thirds">
                         <div class="field">
                             <label class="label">Full Name</label>
                             <div class="control">
-                                <input class="input is-rounded" type="text" value="${name}" name="name">
+                                <!-- <input class="hide" type="" -->
+                                <input class="input is-rounded" type="text" value="${name}" name="name" required>
                             </div>
                         </div>
         
                         <div class="field">
                             <label class="label">Email</label>
                             <div class="control has-icons-left has-icons-right">
-                                <input class="input is-rounded" type="email" value="${email}" name="email">
+                                <input class="input is-rounded" type="email" value="${email}" name="email" required>
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-envelope"></i>
                                 </span>
@@ -33,19 +34,30 @@
                         <div class="field">
                             <label class="label">Password</label>
                             <p class="control has-icons-left">
-                                <input class="input is-rounded" type="password" placeholder="password" name="password">
+                                <input class="input is-rounded" type="password" placeholder="password" name="password" required>
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-lock"></i>
                                 </span>
                             </p>
                         </div>
-        
-                        <div class="field is-grouped is-grouped-centered">
-                            <div class="control">
-                                <button type="submit" class="button is-link">Update</button>
-                            </div>
+                    </div>
+    
+                    <div class="field">
+                        <label class="label">Password</label>
+                        <p class="control has-icons-left">
+                            <input class="input is-rounded" type="password" placeholder="password" name="password">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                        </p>
+                    </div>
+    
+                    <div class="field is-grouped is-grouped-centered">
+                        <div class="control">
+                            <button type="submit" class="button is-primary">Update</button>
                         </div>
-                </form
+                    </div>
+            </form>
 
                 
             </div>
