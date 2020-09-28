@@ -74,6 +74,12 @@ select {
     border-color: #b5b5b5;
 }
 
+.is-horizontal-center {
+    display: flex;
+    justify-content: center;
+    
+}
+
 .match-list{
     background-color: white;
     border-radius: .3rem;
@@ -89,6 +95,12 @@ select {
     border-radius:5px;
     /* text-align: left; */
     text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+}
+
+.profileCard {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* .recipeResults {
