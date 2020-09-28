@@ -18,7 +18,7 @@
                 
                 <div class="field is-grouped is-grouped-centered">
                     <div class="control">
-                        <input class="input-is-inline" type="text" value='' name="qty" placeholder="Quantity" required>
+                        <input class="input-is-inline" type="text" value='' name="qty" placeholder="Qty" required>
                         <div class="select">
                             <select id='unitsList' value="" name="unit">
                                 <option name="unit" value="each" selected>each</option>
@@ -27,20 +27,12 @@
                     </div>
                 </div>
                 
-
-                <div class="field" hidden>
-                    <div class="control">
-                        <input class="input" type='text' value='' name='recipe_id' placeholder="Recipe-ID" hidden>
-                    </div>
-                </div>
-                
-
                 <div class="field is-grouped is-grouped-centered">
                     <div class="control">
                         <button type='submit' name="add" value="Add" class="button is-primary">Add</button>
                     </div>
                     <div class="control">
-                        <button type='button' name="close" value="Close" class="button" id="closeAddItems">Close</button>
+                        <button type='button' name="close" value="Close" class="button is-light" id="closeAddItems">Close</button>
                     </div>
                 </div>
                 <div id='hiddenInfo'></div>
@@ -63,7 +55,7 @@
                                     <input type="text" class="grocery-list-input-unit" id="unit ${grocery.id}" name="update" value="${grocery.units}" hidden>
                                     <input type="text" class="grocery-list-input-item" id="item ${grocery.id}" name="update" value="${grocery.item}" hidden>
                                     <label id="groceryItem" for="${grocery.id}">${grocery.qty} ${grocery.units} ${grocery.item}</label>
-                                    <button name="edit" class="edit" id="edit ${grocery.id}" class="edit">Edit</button>
+                                    <button name="edit" class="button is-small is-primary edit" id="edit ${grocery.id}" class="edit">Edit</button>
                                     <button type="submit" name="updateItem" class="updateItem" id="updateItem ${grocery.id}" value="submit" hidden>Update</button>
 
                                 </li>`
