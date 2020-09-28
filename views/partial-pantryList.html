@@ -1,8 +1,7 @@
 <br />
-<section class="column">
+<section>
     <div class="columns is-mobile is-centered">
         <div class="column content is-two-thirds-mobile is-three-fifths-tablet is-half-desktop is-two-fifths-widescreen is-two-fifths-fullhd has-text-centered">
-            <!-- <h2>Pantry List</h2> -->
             <div class="field" id="addItemsButton">
                 <div class="control">
                     <button type='button' name="addItems" value="AddItems" class="button is-primary">Add Items</button>
@@ -19,7 +18,7 @@
                 
                 <div class="field is-grouped is-grouped-centered">
                     <div class="control">
-                        <input class="input-is-inline" type="text" value='' name="qty" placeholder="Quantity" required>
+                        <input class="input-is-inline" type="text" value='' name="qty" placeholder="Qty" required>
                         <div class="select">
                             <select id="unitsList" value="" name="unit">
                                 <option name="unit" value="each" selected>each</option>
@@ -33,7 +32,7 @@
                         <button type='submit' name="add" value="Add" class="button is-primary">Add</button>
                     </div>
                     <div class="control">
-                        <button type='button' name="close" value="Close" class="button is-danger" id="closeAddItems">Close</button>
+                        <button type='button' name="close" value="Close" class="button is-light" id="closeAddItems">Close</button>
                     </div>
                 </div>
                 <div id='hiddenInfo'></div>
@@ -52,12 +51,12 @@
 
                                     <label for="${pantryItem.id}"> ${pantryItem.item}, <input type="text" id="qty" name="${pantryItem.id}" value="${pantryItem.qty}" class="input-is-inline"> ${pantryItem.units}</label>
 
-                                    <button class="button is-small" type="submit" name="add" value="Add ${pantryItem.id}" id="add">
+                                    <button class="button is-small is-white" type="submit" name="add" value="Add ${pantryItem.id}" id="add">
                                             <span class="icon is-small">
                                                 <i class="fas fa-plus"></i>
                                             </span>
                                         </button>
-                                        <button class="button is-small" type="submit" name="subtract" value="Subtract ${pantryItem.id}" id="subtract">
+                                        <button class="button is-small is-white" type="submit" name="subtract" value="Subtract ${pantryItem.id}" id="subtract">
                                             <span class="icon is-small">
                                                 <i class="fas fa-minus"></i>
                                             </span>

@@ -1,3 +1,4 @@
+const { response } = require("express");
 const db = require("./conn")
 
 class groceryListReturn {
@@ -13,13 +14,22 @@ class groceryListReturn {
 
     static async getGroceryList(user_id){
         try{
-            const response = await db.any(`SELECT * FROM shopping WHERE user_id = $1;`, [user_id])
+            const response = await db.any(`SELECT * FROM shopping WHERE user_id = $1 ORDER BY id ASC;`, [user_id])
             return response
         }
         catch (error){
             return error.message
         }
     };
+    static async getGroceryListIDs(user_id){
+        try{
+            const response = await db.any(`SELECT id FROM shopping WHERE user_id = $1 AND completed = false ORDER BY id ASC;`, [user_id])
+            return response
+        }
+        catch(error){
+            return error.message
+        }
+    }
     static async getGroceryListItem(item_id){
         try{
             const response = await db.any(`SELECT * FROM shopping WHERE id = $1;`,[item_id])
@@ -62,10 +72,11 @@ class groceryListReturn {
         }
     };
 
-    static async updateGroceryListItem (item_id, item_info){
+    static async updateGroceryListItem (item_id, item, qty, units){
         try{
-            const response = await db.result('UPDATE shopping SET item = $1, qty = $2, units = $3 WHERE id = $4;',[item_info[2], item_info[0], item_info[1], item_id])
+            const response = await db.result('UPDATE shopping SET item = $1, qty = $2, units = $3 WHERE id = $4;',[item, qty, units, item_id])
             console.log('edit response: ', response)
+            console.log("update: ", response)
             return response
         }
         catch (error) {

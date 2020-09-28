@@ -18,7 +18,7 @@
                 
                 <div class="field is-grouped is-grouped-centered">
                     <div class="control">
-                        <input class="input-is-inline" type="text" value='' name="qty" placeholder="Quantity" required>
+                        <input class="input-is-inline" type="text" value='' name="qty" placeholder="Qty" required>
                         <div class="select">
                             <select id='unitsList' value="" name="unit">
                                 <option name="unit" value="each" selected>each</option>
@@ -27,28 +27,20 @@
                     </div>
                 </div>
                 
-
-                <div class="field" hidden>
-                    <div class="control">
-                        <input class="input" type='text' value='' name='recipe_id' placeholder="Recipe-ID" hidden>
-                    </div>
-                </div>
-                
-
                 <div class="field is-grouped is-grouped-centered">
                     <div class="control">
                         <button type='submit' name="add" value="Add" class="button is-primary">Add</button>
                     </div>
                     <div class="control">
-                        <button type='button' name="close" value="Close" class="button" id="closeAddItems">Close</button>
+                        <button type='button' name="close" value="Close" class="button is-light" id="closeAddItems">Close</button>
                     </div>
                 </div>
                 <div id='hiddenInfo'></div>
             </form>
         </div>
     </div>
-    <div class="columns is-mobile is-centered">
-        <div class="column content is-full-mobile is-four-fifths-tablet is-four-fifths-desktop is-four-fifths-widescreen is-four-fifths-fullhd has-text-centered">
+    <div class="columns is-mobile is-centered">    
+        <div class="column content is-full-mobile is-four-fifths-tablet is-four-fifths-desktop is-four-fifths-widescreen is-four-fifths-fullhd has-text-centered">      
             <!-- Displayed Shopping list -->
             <section>
                 <h4>Things to buy:</h4>
@@ -58,7 +50,6 @@
                             if (!grocery.completed){
                                 return `<li>
                                     <input type="checkbox" class="todo" id="${grocery.id}" name ="id" value="${grocery.id}">
-
                                     <input type="text" class="grocery-list-input-qty" id="qty ${grocery.id}" name="update" value="${grocery.qty}" hidden>
                                     <input type="text" class="grocery-list-input-unit" id="unit ${grocery.id}" name="update" value="${grocery.units}" hidden>
                                     <input type="text" class="grocery-list-input-item" id="item ${grocery.id}" name="update" value="${grocery.item}" hidden>
@@ -72,7 +63,7 @@
                     </dl>
                     <div class="field is-grouped is-grouped-centered">
                         <div class="control">
-                            <button class="button is-primary" type="submit" name="update" value="Update" ${list.filter(grocery => !grocery.completed).length ? '' : 'disabled'}>Update</button>
+                            <button class="button is-primary" type="submit" name="updateChecked" value="Update" ${list.filter(grocery => !grocery.completed).length ? '' : 'disabled'}>Got It!</button>
                         </div>
                         <div class="control">
                             <button class="button is-primary is-danger" type="submit" name="delete" value="Delete" ${list.filter(grocery => !grocery.completed).length ? '' : 'disabled'}>Delete</button>
@@ -97,7 +88,7 @@
                     </dl>
                     <div class="field is-grouped is-grouped-centered">
                         <div class="control">
-                            <button type='submit' name="undo" value="Undo" class="button is-primary" ${list.filter(grocery => grocery.completed).length ? '' : 'disabled'}>Move to Shopping List</button>
+                            <button type='submit' name="undo" value="Undo" class="button is-primary" ${list.filter(grocery => grocery.completed).length ? '' : 'disabled'}>Move Back to Shopping List</button>
                         </div>
                         <div class="control">
                             <button type='submit' name="pantry" value="Pantry" class="button is-primary" ${list.filter(grocery=>
