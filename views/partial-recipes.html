@@ -9,40 +9,31 @@
         <div class="column content is-one-quarter has-text-centered">
             <div class="box">
                 <h2>${data.title}</h2>
-
-                <article class="media">
-                    <div class="media-left">
-                        <figure class="image is-256x256">
-                            <img src="${data.image}" alt="Image">
-                        </figure>
-                        <div>
-                            <i class="${data.rating > 0 ? 'fas fa-star checked' : 'far fa-star'}"></i>
-                            <i class="${data.rating > 1 ? 'fas fa-star checked' : 'far fa-star'}"></i>
-                            <i class="${data.rating > 2 ? 'fas fa-star checked' : 'far fa-star'}"></i>
-                            <i class="${data.rating > 3 ? 'fas fa-star checked' : 'far fa-star'}"></i>
-                            <i class="${data.rating > 4 ? 'fas fa-star checked' : 'far fa-star'}"></i>
-                        </div>
-                    </div>
-                    <div class="media-content">
-                        <div class="content">
-                            <h4>Ingredients</h4>
-                            <form  action="/recipes/add/${recipe_id}" method="POST" id="addToShopping">
-                                <p>
-                                    ${data.ingred.split(':').map(item => `<li>${item.split(',').join(' ')}</li>`).join('')}
-                                </p>
-                                <div class="field">
-                                    <div class="control">
-                                        <button type='submit' name="addToShopping" value="AddToShopping" class="button is-link">Add to Shopping List</button>
-                                        <button type='submit' name="cookIt" value="cookIt" class="button is-link">Cook Recipe</button>
-                                    </div>
-                                </div>
-                            </form>
-                            <br />
-                            <h4>Instructions</h4>
-                            <p>
-                                ${data.instructions.split(':').map(item=>  
-                                `<li>${item}</li>`).join('')}
-                            </p>
+                <figure class="image">
+                    <img src="${data.image}" alt="Image">
+                </figure>
+                <div>
+                    <i class="${data.rating > 0 ? 'fas fa-star checked' : 'far fa-star'}"></i>
+                    <i class="${data.rating > 1 ? 'fas fa-star checked' : 'far fa-star'}"></i>
+                    <i class="${data.rating > 2 ? 'fas fa-star checked' : 'far fa-star'}"></i>
+                    <i class="${data.rating > 3 ? 'fas fa-star checked' : 'far fa-star'}"></i>
+                    <i class="${data.rating > 4 ? 'fas fa-star checked' : 'far fa-star'}"></i>
+                </div>
+            </div>
+        </div>
+        <div class="column content is-one-third">
+            <div class="box">
+                <div class="content">
+                    <h4>Ingredients</h4>
+                    <form action="/recipes/add/${recipe_id}" method="POST" id="addToShopping">
+                        <p>
+                            ${data.ingred.split(':').map(item => `<li>${item.split(',').join(' ')}</li>`).join('')}
+                        </p>
+                        <div class="field">
+                            <div class="control">
+                                <button type='submit' name="addToShopping" value="AddToShopping" class="button is-link">Add to Shopping List</button>
+                                <button type='submit' name="cookIt" value="cookIt" class="button is-link">Cook Recipe</button>
+                            </div>
                         </div>
                     </form>
                     <br />
