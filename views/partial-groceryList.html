@@ -47,8 +47,8 @@
             </form>
         </div>
     </div>
-    <div class="columns is-mobile is-centered">
-        <div class="column content is-full-mobile is-four-fifths-tablet is-four-fifths-desktop is-four-fifths-widescreen is-four-fifths-fullhd has-text-centered">
+    <div class="columns is-mobile is-centered">    
+        <div class="column content is-full-mobile is-four-fifths-tablet is-four-fifths-desktop is-four-fifths-widescreen is-four-fifths-fullhd has-text-centered">      
             <!-- Displayed Shopping list -->
             <section>
                 <h4>Things to buy:</h4>
@@ -72,7 +72,7 @@
                     </dl>
                     <div class="field is-grouped is-grouped-centered">
                         <div class="control">
-                            <button class="button is-primary" type="submit" name="update" value="Update" ${list.filter(grocery => !grocery.completed).length ? '' : 'disabled'}>Update</button>
+                            <button class="button is-primary" type="submit" name="update" value="Update" ${list.filter(grocery => !grocery.completed).length ? '' : 'disabled'}>Got It!</button>
                         </div>
                         <div class="control">
                             <button class="button is-primary is-danger" type="submit" name="delete" value="Delete" ${list.filter(grocery => !grocery.completed).length ? '' : 'disabled'}>Delete</button>
@@ -97,7 +97,7 @@
                     </dl>
                     <div class="field is-grouped is-grouped-centered">
                         <div class="control">
-                            <button type='submit' name="undo" value="Undo" class="button is-primary" ${list.filter(grocery => grocery.completed).length ? '' : 'disabled'}>Move to Shopping List</button>
+                            <button type='submit' name="undo" value="Undo" class="button is-primary" ${list.filter(grocery => grocery.completed).length ? '' : 'disabled'}>Move Back to Shopping List</button>
                         </div>
                         <div class="control">
                             <button type='submit' name="pantry" value="Pantry" class="button is-primary" ${list.filter(grocery=>
