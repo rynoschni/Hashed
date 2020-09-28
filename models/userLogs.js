@@ -30,17 +30,21 @@ class UserModel {
             console.log("Login Response: ", response)
             const isValid = await this.checkPassword(response.password)
             if (!!isValid){
-                const {name, id} = response;
-                return { isValid, name, user_id: id}
+                const {name, email, id} = response;
+                return { isValid, name, email, user_id: id};
+                
             } else{
                 return {isValid};
             }
+            
         }
         catch (error){
             console.error("Error: ", error.message);
             return error.message;
         }
-    }
+    
+    } 
+    
 }
 
 module.exports = UserModel

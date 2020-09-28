@@ -46,6 +46,7 @@ server.listen(port, hostname, () => {
 
 const rootController = require('./routes/index');
 const userController = require('./routes/user');
+const loginController = require('./routes/login');
 const shoppingController = require('./routes/groceryList');
 const pantryController = require('./routes/pantryList');
 const updateController = require('./routes/updateList');
@@ -61,7 +62,7 @@ const homeController = require('./routes/home');
 
 
 app.use('/', rootController);
-app.use('/login', rootController);
+app.use('/login', loginController);
 app.use('/signup', userController);
 app.use('/grocery', shoppingController);
 app.use('/grocery/add', groceryAddController);
