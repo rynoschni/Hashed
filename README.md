@@ -26,10 +26,12 @@
 <h2><u>What We Used:</u></h2>
 <h3>Languages:</h3>
 <ul>
+    <li>Node.js</li>
+    <li>Express</li>
+    <li>PostgreSQL</li>
     <li>HTML5</li>
     <li>CSS</li>
     <li>JavaScript</li>
-    <li>JSON</li>
 </ul>
 <h3>Frameworks:</h3>
 <ul>
@@ -43,15 +45,17 @@
 
 <h2><u>MVP (Minimum Viable Product):</u></h2>
 <ul>
-    <li></li>
+    <li>Add and remove items to a Grocery list.</li>
+    <li>Mark items as completed while shopping.</li>
 </ul>
 <br>
 
 <h2><u>Stretch Goals Completed:</u></h2>
 <ul>
-    <li></li>
+    <li>Recipe search by name and url.</li>
 </ul>
 <br>
+
 <h2><u>Stretch Goals Future:</u></h2>
 <ul>
     <li></li>
