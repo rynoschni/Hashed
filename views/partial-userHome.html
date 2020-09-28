@@ -1,18 +1,19 @@
 <section>
     <div class="columns is-mobile is-centered">
-        <div class="column content is-four-fifths has-text-centered">
+        <div class="column content is-two-thirds has-text-centered">
             <br />
             <div class="container">
                 <h3>Welcome to your profile page.  Here you can update your User information.</h3>
             </div>
-            <form class="block">
-                <form action="/routes/home.js" method="POST"></form>
-                    <div class="content is-centered">
+            <form class="block" action="/routes/home.js" method="POST">
+                <div class="columns">    
+                    <div class="column is-one-third content is-centered">
                         <figure class="image is-128x128">
                             <image class="is-rounded" src="../images/avatar-1280.png"/><span class="tag is-danger">Profile pic coming soon!</span>
 
                         </figure>
                     </div>
+                    <div class="column is-two-thirds">
                         <div class="field">
                             <label class="label">Full Name</label>
                             <div class="control">
@@ -45,7 +46,8 @@
                                 <button type="submit" class="button is-link">Update</button>
                             </div>
                         </div>
-                </form
+                    </div>
+            </form>
 
                 
             </div>
