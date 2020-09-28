@@ -11,14 +11,14 @@ router.post('/', async (req, res) =>{
             console.log(item.id)
             console.log(req.body.id)
             return req.body.id.indexOf(String(item.id)) >= 0
-            })
+        })
         console.log(selectedList)
         if((typeof req.body.id) === 'string'){
             await theList.moveFromGroceryToPantry(selectedList[0], req.session.user_id)
         }
         else{
             for(let groceryListItem of selectedList){
-                return theList.moveFromGroceryToPantry(groceryListItem, req.session.user_id)
+                await theList.moveFromGroceryToPantry(groceryListItem, req.session.user_id)
             }
         }
         console.log("req.body pantry", req.body)
