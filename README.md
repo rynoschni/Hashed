@@ -11,7 +11,7 @@
 <p><b>Contributions:</b> </p>
 <br>
 <h3>Matthew Everett: https://github.com/Mjheverett</h3>
-<p><b>Primary Team Role:</b> Pages and Forms</p>
+<p><b>Primary Team Role:</b> UI/UX</p>
 <p><b>Contributions:</b> Bulma enthusiast, layout and formatting guru.</p>
 <br>
 <h3>Ryan Schniederjan: https://github.com/rynoschni</h3>
@@ -48,24 +48,22 @@
     <li>Add and remove items to a Grocery list.</li>
     <li>Mark items as completed while shopping.</li>
     <li>Recipe list to store and view ingredients and instructions.</li>
-    <li></li>
-    <li></li>
 </ul>
 <br>
 
 <h2><u>Stretch Goals Completed:</u></h2>
 <ul>
     <li>Recipe search by name and url.</li>
-    <li>Move items between pantry and grocery lists.</li>
+    <li>Move items between grocery and pantry lists.</li>
     <li>Add all items from recipe to grocery list.</li>
-    <li></li>
-    <li></li>
+    <li>Edit quantities of items on grocery and pantry lists.</li>
+    <li>Edit item names and units on grocery and pantry lists.</li>
 </ul>
 <br>
 
 <h2><u>Stretch Goals Future:</u></h2>
 <ul>
-    <li></li>
+    <li>Automatically merge quantities of the same items when added to lists.</li>
     <li></li>
     <li></li>
 </ul>
@@ -83,7 +81,15 @@
 <p><b>Challenge:</b> </p>
 <p><b>Solution:</b> </p>
 <br>
-    
+
+<h2><u>Screenshots:</u></h2>
+
+<h3>Recipe Search and List:</h3>
+<img src="public/images/Recipe-Search-Page.png">
+
+<h3>Recipe Page:</h3>
+<img src="public/images/Recipe-Page.png">
+
 <h2><u>Code Snippets:</u></h2>
 
 <h4></h4>
