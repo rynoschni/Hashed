@@ -1,5 +1,5 @@
 <h1>HASHED</h1>
-<img src="images/Main-Page.png">
+<img src="public/images/Main-Page.png">
 
 <h2><u>Overview:</u></h2>
 <p>Hashed provides grocery list, pantry list, and recipe search functionality.</p>
