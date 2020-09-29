@@ -10,9 +10,15 @@ pantrySpans.forEach(item => {
         item.hidden = true
         inputBox.classList.toggle('hide')
         console.log('clicked')
-        const updateButton = document.getElementById('updateButton')
-        updateButton.hidden = false
-        updateButton.classList.toggle('hide')
+        // const updateButton = document.getElementById('updateButton')
+        // updateButton.hidden = false
+        // updateButton.classList.toggle('hide')
+        const subButton = document.getElementById(`subtract ${item.id.slice(10)}`)
+        const addButton = document.getElementById(`add ${item.id.slice(10)}`)
+        const confirmButton = document.getElementById(`updateItem ${item.id.slice(10)}`)
+        confirmButton.classList.toggle('hide')
+        subButton.classList.toggle('hide')
+        addButton.classList.toggle('hide')
     })
 })
 

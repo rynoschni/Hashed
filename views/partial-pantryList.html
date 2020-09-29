@@ -39,9 +39,10 @@
             </form>
         </div>
     </div> 
-    <div class="columns is-mobile is-centered">
+    <div class="columns is-centered">
         <div class="column content is-full-mobile is-four-fifths-tablet is-four-fifths-desktop is-four-fifths-widescreen is-four-fifths-fullhd has-text-centered">
             <section>
+                <h4>In the Pantry:</h4>
                 <form action="/pantry" method="POST">
                     <dl style="list-style-type: none;"> 
                         ${list.map(pantryItem =>{
@@ -56,15 +57,16 @@
                                     </button>
                                     <button class=" hide button fas fa-minus is-small is-primary is-inverted" type="submit" name="subtract" value="Subtract ${pantryItem.id}" id="subtract ${pantryItem.id}">
                                     </button>
+                                    <button type="submit" name="updateItem" class="hide updateItem button fas fa-check is-white has-text-primary hide" id="updateItem ${pantryItem.id}" value="submit"></button>
                                     </label>
                                 </li>`
                             }
                         }).join('')}
                     </dl>
                     <div class="field is-grouped is-grouped-centered">
-                        <div class="control">
+                        <!-- <div class="control">
                             <button class="hide button is-primary" id="updateButton" type="submit" name="update" value="Update" hidden ${list.filter(pantry => !pantry.completed).length ? '' : 'disabled'}>Update</button>
-                        </div>
+                        </div> -->
                         <div class="control">
                             <button class="button is-danger" type="submit" name="delete" value="Delete" ${list.filter(pantry => !pantry.completed).length ? '' : 'disabled'}>Delete</button>
                         </div>

@@ -2,11 +2,23 @@
 
 const searchData = document.getElementById('recipeSearch');
 const searchButton = document.getElementById('searchButton');
+
 const searchURL = document.getElementById('urlSearch');
 const searchURLButton = document.getElementById('urlSearchButton');
-// const apiKey = '3633c51b86b2490a866cac434f6bfb09';
-// const itemSearchButton = document.getElementByID('itemSearchButton');
-// console.log('clicked')
+
+const searchBox = document.getElementById('recipeSearch')
+searchBox.addEventListener('focus', e=>{
+    const searchBoxButton = document.getElementById('searchButton')
+    searchBoxButton.classList.remove('hide')
+    searchURLButton.classList.add('hide')
+})
+
+searchURL.addEventListener('focus', e=>{
+    const URLButton = document.getElementById('urlSearchButton');
+    URLButton.classList.remove('hide')
+    searchButton.classList.add('hide')
+})
+
 
 //Function to access API, filter results and assign value to DOM
 const getRecipes = () => {
@@ -82,7 +94,6 @@ const getRecipes = () => {
             recipeInstructions.type = "text"
             searchCardDiv.appendChild(recipeIngredients)
             recipeIngredients.name = "ingred"
-            // recipeIngredients.value = `${recipe.nutrition.ingredients.map(ingredient => `${ingredient.amount},${ingredient.unit}, ${ingredient.name}`).join(':')}`
             recipeIngredients.value = `${recipe.extendedIngredients.map(ingredient => `${ingredient.measures.us.amount},${ingredient.measures.us.unitLong}, ${ingredient.name}`).join(':')}`
             recipeIngredients.hidden = true
             recipeInstructions.hidden = true
@@ -108,7 +119,7 @@ const getURLRecipes = () => {
         //const searchCardDiv = document.getElementById('searchCards')
 
 
-        const cardHolder = document.getElementById('cardHolder')
+        const cardHolder = document.getElementById('cardHolderURL')
 
         // returns single value under items. Need to refactor from .map( recipe) to be items
         
@@ -189,6 +200,11 @@ searchButton.addEventListener('click', (e)=>{
     e.preventDefault();
     console.log(`Test Item search Value: ${searchData.value}`);
     console.log('clicked');
+    const urlContainer = document.getElementById('cardHolderURL')
+    urlContainer.hidden = true
+    const recipeContainer = document.getElementById('cardHolder')
+    recipeContainer.innerHTML = ''
+    recipeContainer.hidden = false
     getRecipes();
 });
 
@@ -197,5 +213,10 @@ searchURLButton.addEventListener('click', (e) => {
     e.preventDefault();
     console.log(`Test Item search Value: ${searchURL.value}`);
     console.log('clicked');
+    const urlContainer = document.getElementById('cardHolderURL')
+    urlContainer.innerHTML = ''
+    urlContainer.hidden = false
+    const recipeContainer = document.getElementById('cardHolder')
+    recipeContainer.hidden = true
     getURLRecipes();
 });
