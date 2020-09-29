@@ -2,9 +2,6 @@ body {
     font-size: 20px;
     
 }
-/* html::-webkit-scrollbar {
-    display: none;
-  } */
 
 select {
     margin-bottom: 2rem;
@@ -12,7 +9,7 @@ select {
 
 .addRecipeButton {
     margin-top: 0.75rem;
-    margin-bottom: 1.5rem;1
+    margin-bottom: 1.5rem;
 }
 
 .card-class {
