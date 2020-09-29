@@ -20,7 +20,7 @@
 <br>
 <h3>Eric Schorling: https://github.com/willeschor</h3>
 <p><b>Primary Team Role:</b> Database Routes</p>
-<p><b>Contributions:</b> JavaScript wizard.</p>
+<p><b>Contributions:</b> JavaScript wizard. Built routes to connect pages and data throughout pages. Created DOM manipulation within each page to provide improved user experience and allow both frontend and backend worked together to update pages.</p>
 <br>
 
 <h2><u>What We Used:</u></h2>
@@ -73,14 +73,11 @@
 <h2><u>Challenges & Solutions:</u></h2>
 <h3>Some of the biggest challenges we faced with this project build included:</h2>
 <br>
-<p><b>Challenge:</b> </p>
-<p><b>Solution:</b> </p>
+<p><b>Challenge:</b> Create a link between recipes and grocery list. </p>
+<p><b>Solution:</b> Set up a specific route to handle the movement of items to the grocery list. Connected the two areas through this link. All data is presented in a string so had to set up logic to parse the string into a usable version for the database and add each item properly. Also, ensured that data was population from recipe add to database by setting up string to build properly from array provided by API JSON.</p>
 <br>
-<p><b>Challenge:</b> </p>
-<p><b>Solution:</b> </p>
-<br>
-<p><b>Challenge:</b> </p>
-<p><b>Solution:</b> </p>
+<p><b>Challenge:</b> Create a solid DOM / Database interaction to make updating items easier on Pantry and Grocery lists.</p>
+<p><b>Solution:</b> Utilized DOM manipulation through Vanilla JS in a scripts file to create responsive design that added and removed elements as the user interacted with the page. Utilized forms throughout the page to collect data that was changed and send it back to the database. This required the use of some hidden fields and some additional logic to tie the updated data to the database without displaying unwanted data to the user. </p>
 <br>
 
 <h2><u>Screenshots:</u></h2>
@@ -90,23 +87,3 @@
 
 <h3>Recipe Page:</h3>
 <img src="public/images/Recipe-Page.png">
-
-<h2><u>Code Snippets:</u></h2>
-
-<h4></h4>
-
-``` javascript
-
-```
-<br>
-<h4></h4>
-
-``` javascript
-
-```
-<br>
-<h4></h4>
-
-``` javascript
-
-```
