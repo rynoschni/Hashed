@@ -160,3 +160,15 @@ dl {
     padding: 5px;
     vertical-align: middle;
 }
+
+.card-class {
+    border: 1px solid black;
+    box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, .2);
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.card-class :hover{
+    transform: 1.5;
+}
