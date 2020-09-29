@@ -2,7 +2,7 @@
 <img src="public/images/Main-Page.png">
 
 <h2><u>Overview:</u></h2>
-<p>Hashed provides grocery list, pantry list, and recipe search functionality.</p>
+<p>With Hashed you can create a shopping list, pantry list, and save your favorite recipes for later. <strong>Completed your grocery run?</strong> Add those items straight to your pantry. <strong>Running low on your favorite snack?</strong> One button click and it's back on the list. You can also add everything you need straight from your saved recipes to ensure you never miss an ingredient.</p>
 <br>
     
 <h2><u>The Team:</u></h2>
