@@ -7,8 +7,8 @@
     
 <h2><u>The Team:</u></h2>
 <h3>Brittani Ericksen: https://github.com/brittani-ericksen</h3>
-<p><b>Primary Team Role:</b> </p>
-<p><b>Contributions:</b> </p>
+<p><b>Primary Team Role:</b> Design</p>
+<p><b>Contributions:</b> Assisted with initial API setup and worked on design elements throughout.</p>
 <br>
 <h3>Matthew Everett: https://github.com/Mjheverett</h3>
 <p><b>Primary Team Role:</b> UI/UX</p>
