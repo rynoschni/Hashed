@@ -11,16 +11,16 @@
 <p><b>Contributions:</b> </p>
 <br>
 <h3>Matthew Everett: https://github.com/Mjheverett</h3>
-<p><b>Primary Team Role:</b> </p>
-<p><b>Contributions:</b> </p>
+<p><b>Primary Team Role:</b> Pages and Forms</p>
+<p><b>Contributions:</b> Bulma enthusiast, layout and formatting guru.</p>
 <br>
 <h3>Ryan Schniederjan: https://github.com/rynoschni</h3>
 <p><b>Primary Team Role:</b> </p>
 <p><b>Contributions:</b> </p>
 <br>
 <h3>Eric Schorling: https://github.com/willeschor</h3>
-<p><b>Primary Team Role:</b> </p>
-<p><b>Contributions:</b> </p>
+<p><b>Primary Team Role:</b> Database Routes</p>
+<p><b>Contributions:</b> JavaScript wizard.</p>
 <br>
 
 <h2><u>What We Used:</u></h2>
@@ -39,7 +39,7 @@
 </ul>
 <h3>APIs:</h3>
 <ul>
-    <li><a href="https://spoonacular.com/food-api">Spoonacular</a></li>
+    <li><a href="https://spoonacular.com/food-api">Spoonacular - Academic</a></li>
 </ul>
 <br>
 
@@ -47,17 +47,26 @@
 <ul>
     <li>Add and remove items to a Grocery list.</li>
     <li>Mark items as completed while shopping.</li>
+    <li>Recipe list to store and view ingredients and instructions.</li>
+    <li></li>
+    <li></li>
 </ul>
 <br>
 
 <h2><u>Stretch Goals Completed:</u></h2>
 <ul>
     <li>Recipe search by name and url.</li>
+    <li>Move items between pantry and grocery lists.</li>
+    <li>Add all items from recipe to grocery list.</li>
+    <li></li>
+    <li></li>
 </ul>
 <br>
 
 <h2><u>Stretch Goals Future:</u></h2>
 <ul>
+    <li></li>
+    <li></li>
     <li></li>
 </ul>
 <br>
