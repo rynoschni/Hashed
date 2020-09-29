@@ -156,7 +156,7 @@ const getURLRecipes = () => {
         recipeOriginLink.href = `${recipe.sourceUrl}`
         recipeOriginLink.innerHTML = `${recipe.title}`
         searchCardDiv.appendChild(recipeDescription)
-        recipeDescription.innerHTML = `${recipe.summar ? recipe.summary.split('. ').splice(0,2).join('. '): "No Summary Available"}...`
+        recipeDescription.innerHTML = `${recipe.summary ? recipe.summary.split('. ').splice(0,2).join('. '): "No Summary Available"}...`
         searchCardDiv.appendChild(recipeInfoDiv)
         // recipeInfoDiv.appendChild(recipeCalories)
         // recipeCalories.innerText = `Calories: ${recipe.nutrition.nutrients[0].amount}`
