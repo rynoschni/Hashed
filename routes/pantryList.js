@@ -25,7 +25,7 @@ router.get('/', async (req, res) =>{
 })
 
 router.post('/', async (req, res) =>{
-    if (req.body.update === 'Update'){
+    if (req.body.updateItem){
         for (let id in req.body){
             if (id !== 'update'){
                 await theList.updatePantryList(id, req.body[id])

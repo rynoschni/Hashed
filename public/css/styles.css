@@ -135,6 +135,6 @@ dl {
     vertical-align: middle;
 }
 
-.pantry-list {
-    width: 30%;
-}
+/* .pantry-list {
+    max-width: 100%;
+} */
