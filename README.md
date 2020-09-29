@@ -64,8 +64,9 @@
 <h2><u>Stretch Goals Future:</u></h2>
 <ul>
     <li>Automatically merge quantities of the same items when added to lists.</li>
-    <li></li>
-    <li></li>
+    <li>Recipe editing and creation.</li>
+    <li>Nutritional information.</li>
+    <li>User settings for fields to view.</li>
 </ul>
 <br>
 
