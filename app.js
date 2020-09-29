@@ -1,9 +1,9 @@
 'use strict'
+var port = process.env.PORT || 3333;
 const express = require('express'),
     app = express(),
     http = require('http'),
     hostname = '127.0.0.1',
-    port = process.env.PORT || 3333,
     path = require('path'),
     es6Renderer = require('express-es6-template-engine'),
     helmet = require('helmet'),
