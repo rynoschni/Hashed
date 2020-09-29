@@ -145,7 +145,7 @@ const getURLRecipes = () => {
         recipeOriginLink.href = `${recipe.sourceUrl}`
         recipeOriginLink.innerHTML = `${recipe.title}`
         searchCardDiv.appendChild(recipeDescription)
-        recipeDescription.innerHTML = `${recipe.summary.split('. ').splice(0,2).join('. ')}...`
+        recipeDescription.innerHTML = `${recipe.summar ? recipe.summary.split('. ').splice(0,2).join('. '): "No Summary Available"}...`
         searchCardDiv.appendChild(recipeInfoDiv)
         // recipeInfoDiv.appendChild(recipeCalories)
         // recipeCalories.innerText = `Calories: ${recipe.nutrition.nutrients[0].amount}`
@@ -155,8 +155,11 @@ const getURLRecipes = () => {
         recipeTime.innerText = `Time: ${recipe.readyInMinutes}`
         searchCardDiv.appendChild(addRecipeButton)
         addRecipeButton.type = "submit"
-        addRecipeButton.value = "add"
+        addRecipeButton.value= "Add to Recipes"
         addRecipeButton.name = "Add"
+        addRecipeButton.classList.add("button")
+        addRecipeButton.classList.add("is-primary")
+        addRecipeButton.classList.add("addRecipeButton")
         searchCardDiv.appendChild(recipeJSON)
         recipeJSON.value = recipe;
         recipeJSON.name = "json"

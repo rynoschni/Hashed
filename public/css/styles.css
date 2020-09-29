@@ -15,6 +15,12 @@ select {
     margin-bottom: 1.5rem;
 }
 
+dl {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .checked {
     color: orange;
 }
@@ -127,4 +133,8 @@ select {
 #subtract {
     padding: 5px;
     vertical-align: middle;
+}
+
+.pantry-list {
+    width: 30%;
 }
