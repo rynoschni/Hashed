@@ -79,9 +79,6 @@
 <p><b>Challenge:</b> Create a solid DOM / Database interaction to make updating items easier on Pantry and Grocery lists.</p>
 <p><b>Solution:</b> Utilized DOM manipulation through Vanilla JS in a scripts file to create responsive design that added and removed elements as the user interacted with the page. Utilized forms throughout the page to collect data that was changed and send it back to the database. This required the use of some hidden fields and some additional logic to tie the updated data to the database without displaying unwanted data to the user. </p>
 <br>
-<p><b>Challenge:</b> </p>
-<p><b>Solution:</b> </p>
-<br>
 
 <h2><u>Screenshots:</u></h2>
 
@@ -90,23 +87,3 @@
 
 <h3>Recipe Page:</h3>
 <img src="public/images/Recipe-Page.png">
-
-<h2><u>Code Snippets:</u></h2>
-
-<h4></h4>
-
-``` javascript
-
-```
-<br>
-<h4></h4>
-
-``` javascript
-
-```
-<br>
-<h4></h4>
-
-``` javascript
-
-```
