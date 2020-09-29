@@ -3,29 +3,22 @@
 const searchData = document.getElementById('recipeSearch');
 const searchButton = document.getElementById('searchButton');
 
+const searchURL = document.getElementById('urlSearch');
+const searchURLButton = document.getElementById('urlSearchButton');
 
 const searchBox = document.getElementById('recipeSearch')
 searchBox.addEventListener('focus', e=>{
     const searchBoxButton = document.getElementById('searchButton')
-    searchBoxButton.classList.toggle('hide')
+    searchBoxButton.classList.remove('hide')
+    searchURLButton.classList.add('hide')
 })
-searchBox.addEventListener('blur', e=>{
-    const searchBoxButton = document.getElementById('searchButton')
-    searchBoxButton.classList.toggle('hide')
-})
-
-const searchURL = document.getElementById('urlSearch');
-const searchURLButton = document.getElementById('urlSearchButton');
-
 
 searchURL.addEventListener('focus', e=>{
     const URLButton = document.getElementById('urlSearchButton');
-    URLButton.classList.toggle('hide')
+    URLButton.classList.remove('hide')
+    searchButton.classList.add('hide')
 })
-searchURL.addEventListener('blur', e=>{
-    const URLButton = document.getElementById('urlSearchButton');
-    URLButton.classList.toggle('hide')
-})
+
 
 //Function to access API, filter results and assign value to DOM
 const getRecipes = () => {
