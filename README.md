@@ -15,8 +15,8 @@
 <p><b>Contributions:</b> Bulma enthusiast, layout and formatting guru.</p>
 <br>
 <h3>Ryan Schniederjan: https://github.com/rynoschni</h3>
-<p><b>Primary Team Role:</b> </p>
-<p><b>Contributions:</b> </p>
+<p><b>Primary Team Role:</b> API integration & graphics</p>
+<p><b>Contributions:</b> Setup the API script for the Grocery and Pantry routes.  Built the API auto-fill in the search to better guide users with their selections.  Created the user profile page, route, and model for user to update their information.  Created the logo, homepage and hero images.</p>
 <br>
 <h3>Eric Schorling: https://github.com/willeschor</h3>
 <p><b>Primary Team Role:</b> Database Routes</p>
@@ -67,6 +67,7 @@
     <li>Recipe editing and creation.</li>
     <li>Nutritional information.</li>
     <li>User settings for fields to view.</li>
+    <li>Recipe Sharing and/or community.</li>
 </ul>
 <br>
 
