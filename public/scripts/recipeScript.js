@@ -34,7 +34,7 @@ const getRecipes = () => {
 
         
         const cardHolder = document.getElementById('cardHolder')
-
+        //creates recipe cards
         items.results.map(recipe=>{
             const searchCardDiv = document.createElement('form')
             const recipeTitledata = document.createElement('input')
@@ -54,6 +54,7 @@ const getRecipes = () => {
             const recipeOriginLink = document.createElement('a')
             cardHolder.appendChild(searchCardDiv)
             searchCardDiv.appendChild(recipeTitle)
+            searchCardDiv.classList.add('card-class')
             searchCardDiv.action =`/recipes/add`;
             searchCardDiv.method = "POST"
             recipeTitle.innerText = `${recipe.title}`
@@ -110,15 +111,10 @@ const getRecipes = () => {
 const getURLRecipes = () => {
 
     // uses GET to access the API
-
     const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/extract?url=${searchURL.value}`;
     const returnObj = get(url).then(function (response) {
         //Assigning the JSON response as an array
         const recipe = response;
-        console.log(recipe);
-        //const searchCardDiv = document.getElementById('searchCards')
-
-
         const cardHolder = document.getElementById('cardHolderURL')
 
         // returns single value under items. Need to refactor from .map( recipe) to be items
@@ -143,6 +139,7 @@ const getURLRecipes = () => {
         searchCardDiv.appendChild(recipeTitle)
         searchCardDiv.action = `/recipes/add`;
         searchCardDiv.method = "POST"
+        searchCardDiv.classList.add('card-class')
         recipeTitle.innerText = `${recipe.title}`
         searchCardDiv.appendChild(recipeTitledata)
         recipeTitledata.value = `${recipe.title}`
@@ -158,8 +155,6 @@ const getURLRecipes = () => {
         searchCardDiv.appendChild(recipeDescription)
         recipeDescription.innerHTML = `${recipe.summary ? recipe.summary.split('. ').splice(0,2).join('. '): "No Summary Available"}...`
         searchCardDiv.appendChild(recipeInfoDiv)
-        // recipeInfoDiv.appendChild(recipeCalories)
-        // recipeCalories.innerText = `Calories: ${recipe.nutrition.nutrients[0].amount}`
         recipeInfoDiv.appendChild(recipeServings)
         recipeServings.innerText = `Servings: ${recipe.servings}`
         recipeInfoDiv.appendChild(recipeTime)
