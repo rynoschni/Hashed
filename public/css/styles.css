@@ -159,6 +159,6 @@ dl {
     padding: 5px;
 }
 
-.card-class:hover{
+.card-class :hover{
     transform: 1.5;
 }
